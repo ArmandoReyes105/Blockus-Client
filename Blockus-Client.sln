@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blockus-Client", "Blockus-Client\Blockus-Client.csproj", "{0342F44C-F704-46DC-885E-B7C3D53629F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0342F44C-F704-46DC-885E-B7C3D53629F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0342F44C-F704-46DC-885E-B7C3D53629F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0342F44C-F704-46DC-885E-B7C3D53629F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0342F44C-F704-46DC-885E-B7C3D53629F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {180D3A31-ECE4-4A24-963E-F504BB52E324}
+	EndGlobalSection
+EndGlobal
