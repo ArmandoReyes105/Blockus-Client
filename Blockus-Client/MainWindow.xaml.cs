@@ -33,5 +33,6 @@ namespace Blockus_Client
             image.BeginAnimation(Image.OpacityProperty, FadeOut);
         }
 
+        
     }
 }

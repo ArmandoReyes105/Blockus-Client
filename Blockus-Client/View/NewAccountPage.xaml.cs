@@ -65,5 +65,10 @@ namespace Blockus_Client.View
                 MessageBox.Show("Ah ocurrido un error al intentar crear su cuenta", "Error al crear cuenta", MessageBoxButton.OK); 
             }
         }
+
+        private void goToLogin(object sender, RoutedEventArgs e)
+        {
+            NavigationManager.Instance.NavigateTo(new LoginPage());
+        }
     }
 }

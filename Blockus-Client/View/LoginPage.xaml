@@ -15,7 +15,7 @@
             <ColumnDefinition Width="640"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="1" Content="Crear cuenta" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}"/>
+        <Button Grid.Column="1" Content="Crear cuenta" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 10, 30, 10" Style="{StaticResource Text_Button}" Click="goToNewAccountPage"/>
 
         <StackPanel Grid.Column="0" VerticalAlignment="Top" Margin="15, 0, 0, 0">
             <TextBlock Text="Blockus" Style="{StaticResource Game_Title}"/>
@@ -40,12 +40,12 @@
                 <Button x:Name="btn_PlayAsGuest" Content="Como invitado" Margin="30, 15, 0, 0" Click="LoginAsGuest" Style="{StaticResource Border_Button}" Width="160" Height="40" HorizontalAlignment="Left"/>
             </StackPanel>
 
-            <Button Content="¿Aún no tienes cuenta? Crea una" HorizontalAlignment="Left" Margin="30, 10, 0, 0" Style="{StaticResource Text_Button}"/>
+            <Button Content="¿Aún no tienes cuenta? Crea una" HorizontalAlignment="Left" Margin="30, 10, 0, 0" Style="{StaticResource Text_Button}" Click="goToNewAccountPage"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
             <Viewbox>
-                <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" Margin="0, 75, 100, 0" HorizontalAlignment="Center">
+                <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" Margin="10, 75, 100, 30" HorizontalAlignment="Center">
                     <Image.RenderTransform>
                         <RotateTransform x:Name="imageRotation" Angle="90" CenterX="220" CenterY="220"/>
                     </Image.RenderTransform>

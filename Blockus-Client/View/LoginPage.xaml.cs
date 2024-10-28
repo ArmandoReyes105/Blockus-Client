@@ -1,4 +1,5 @@
 ﻿using Blockus_Client.BlockusService;
+using Blockus_Client.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,8 @@ namespace Blockus_Client.View
                 var service = new AccountServiceClient();
                 var account = service.Login(txt_Username.Text, txt_Password.Password);
 
+                string password = HashManager.HashPassword(txt_Password.Password);
+
                 if (account != null)
                 {
                     MessageBox.Show("Bienvenido: " + account.Username);
@@ -60,6 +63,11 @@ namespace Blockus_Client.View
             {
                 return true;
             }
+        }
+
+        private void goToNewAccountPage(object sender, RoutedEventArgs e)
+        {
+            NavigationManager.Instance.NavigateTo(new NewAccountPage());
         }
     }
 }

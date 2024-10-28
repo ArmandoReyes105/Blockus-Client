@@ -15,7 +15,7 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="1" Content="Iniciar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}"/>
+        <Button Grid.Column="1" Content="Iniciar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Click="goToLogin"/>
 
         <Viewbox>
             <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" Margin="0 0 136 0" HorizontalAlignment="Center">
