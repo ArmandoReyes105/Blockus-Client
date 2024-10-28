@@ -1,28 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Blockus_Client.Helpers;
+using Blockus_Client.View;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace Blockus_Client
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+
+            NavigationManager.Instance.Initialize(Frame_Main, this);
+            NavigationManager.Instance.NavigateTo(new NewAccountPage());
+
+            PlayImageAnimation(Image_BlueEllipse, .5, 3);
+            PlayImageAnimation(Image_YellowEllipse, .45, 4); 
         }
+
+        private void PlayImageAnimation(Image image, double animationValue, int time)
+        {
+            DoubleAnimation FadeOut = new DoubleAnimation
+            {
+                To = animationValue,
+                Duration = TimeSpan.FromSeconds(time),
+                AutoReverse = true,
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+
+            image.BeginAnimation(Image.OpacityProperty, FadeOut);
+        }
+
     }
 }
