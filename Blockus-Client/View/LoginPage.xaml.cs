@@ -50,6 +50,7 @@ namespace Blockus_Client.View
         private void LoginAsGuest(object sender, RoutedEventArgs e)
         {
             //TODO
+            //TODO again
         }
 
         private bool completeFields()
