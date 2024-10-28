@@ -31,10 +31,10 @@ namespace Blockus_Client.View
         {
             if (completeFields())
             {
-                var service = new AccountServiceClient();
-                var account = service.Login(txt_Username.Text, txt_Password.Password);
-
                 string password = HashManager.HashPassword(txt_Password.Password);
+                var service = new AccountServiceClient();
+                var account = service.Login(txt_Username.Text, password);
+
 
                 if (account != null)
                 {

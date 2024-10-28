@@ -190,5 +190,8 @@
   <ItemGroup>
     <Resource Include="Resources\Images\SquareOfBlocks.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Lang\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

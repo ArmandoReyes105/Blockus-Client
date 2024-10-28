@@ -50,15 +50,17 @@ namespace Blockus_Client.View
             }
 
             string password = HashManager.HashPassword(txt_Password.Password);
+            account.Password = password;
 
-            //var accountClient = new AccountServiceClient();
-            //int result = accountClient.CreateAccount(account);
-            int result = 1; 
-            //accountClient.Close();
+            var accountClient = new AccountServiceClient();
+            int result = accountClient.CreateAccount(account);
+            //int result = 1; 
+            accountClient.Close();
 
             if (result != 0)
             {
                 MessageBox.Show("Su cuenta ah sido creada exitosamente", "Cuenta creada", MessageBoxButton.OK);
+                //TODO goToLobby()
             }
             else
             {
