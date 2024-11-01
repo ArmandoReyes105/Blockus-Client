@@ -25,7 +25,7 @@ namespace Blockus_Client.View
             InitializeComponent();
         }
 
-        private void btn_Friends_Click(object sender, RoutedEventArgs e)
+        private void FriendList(object sender, RoutedEventArgs e)
         {
 
         }

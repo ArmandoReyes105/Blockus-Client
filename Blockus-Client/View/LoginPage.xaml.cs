@@ -39,6 +39,7 @@ namespace Blockus_Client.View
                 if (account != null)
                 {
                     MessageBox.Show("Bienvenido: " + account.Username);
+                    NavigationManager.Instance.NavigateTo(new LobbyPage());
                 }
                 else
                 {
@@ -69,6 +70,11 @@ namespace Blockus_Client.View
         private void goToNewAccountPage(object sender, RoutedEventArgs e)
         {
             NavigationManager.Instance.NavigateTo(new NewAccountPage());
+        }
+
+        private void ForgotPassword(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

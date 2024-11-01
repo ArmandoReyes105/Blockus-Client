@@ -31,7 +31,7 @@
 
                 <TextBlock Text="Contraseña" Style="{StaticResource Normal_Text}"/>
                 <PasswordBox Name="txt_Password" Width="350" HorizontalAlignment="Left" Style="{StaticResource Normal_PasswordBox}" MaxLength="100"/>
-                <Button Content="Olvide mi contrasenia" HorizontalAlignment="Left" Style="{StaticResource Text_Button}"/>
+                <Button Content="Olvide mi contrasenia" HorizontalAlignment="Left" Style="{StaticResource Text_Button}" Click="ForgotPassword"/>
 
             </StackPanel>
 
