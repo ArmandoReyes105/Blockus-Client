@@ -1,6 +1,7 @@
 ﻿using Blockus_Client.Helpers;
 using Blockus_Client.View;
 using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
@@ -12,9 +13,10 @@ namespace Blockus_Client
         public MainWindow()
         {
             InitializeComponent();
+            this.Closing += Window_Closing;
 
             NavigationManager.Instance.Initialize(Frame_Main, this);
-            NavigationManager.Instance.NavigateTo(new NewAccountPage());
+            NavigationManager.Instance.NavigateTo(new LoginPage());
 
             PlayImageAnimation(Image_BlueEllipse, .5, 3);
             PlayImageAnimation(Image_YellowEllipse, .45, 4); 
@@ -31,6 +33,11 @@ namespace Blockus_Client
             };
 
             image.BeginAnimation(Image.OpacityProperty, FadeOut);
+        }
+
+        private void Window_Closing (object sender, CancelEventArgs e)
+        {
+            SessionManager.Instance.LogOut(); 
         }
 
         

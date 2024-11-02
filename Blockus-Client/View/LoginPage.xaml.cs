@@ -1,5 +1,6 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -14,24 +15,50 @@ namespace Blockus_Client.View
             AnimationManager.RotateImage(imageRotation, 12); 
         }
 
-        private void Login(object sender, RoutedEventArgs e)
+        private async void Login(object sender, RoutedEventArgs e)
         {
             if (AreFieldsComplete())
             {
                 string password = HashManager.HashPassword(txt_Password.Password);
-                var service = new AccountServiceClient();
-                var account = service.Login(txt_Username.Text, password);
+                AccountDTO account; 
 
-
-                if (account != null)
+                try
                 {
-                    MessageBox.Show("Bienvenido: " + account.Username + account.Id_Account + account.Email + account.ProfileImage + account.AccountPassword);
-                    NavigationManager.Instance.NavigateTo(new LobbyPage());
+                    var service = new SessionServiceClient();
+                    account = await service.LogInAsync(txt_Username.Text, password);
                 }
-                else
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    account = null; 
+                }
+                
+                if (account == null)
+                {
+                    MessageBox.Show("Lo sentimos, ocurrio un error al intentarse contectar con el servidor");
+                    return; 
+                }
+
+                if (account.Id == -1)
+                {
+                    MessageBox.Show("Lo sentimos, ocurrio un error al intentar recuperar su información");
+                    return;
+                }
+
+                if (account.Id == 0)
                 {
                     MessageBox.Show("Credenciales incorrectas");
+                    return; 
                 }
+
+                if (account.Id == -2)
+                {
+                    MessageBox.Show("No se puede iniciar sesión: Tu usuario ya tiene una sesión activa");
+                    return; 
+                }
+
+                SessionManager.Instance.LogIn(account); 
+                NavigationManager.Instance.NavigateTo(new LobbyPage());
             }
         }
 
@@ -54,7 +81,7 @@ namespace Blockus_Client.View
             return result; 
         }
 
-        private void goToNewAccountPage(object sender, RoutedEventArgs e)
+        private void GoToNewAccountPage(object sender, RoutedEventArgs e)
         {
             NavigationManager.Instance.NavigateTo(new NewAccountPage());
         }

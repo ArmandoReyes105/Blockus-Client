@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="Helpers\AnimationManager.cs" />
     <Compile Include="Helpers\HashManager.cs" />
+    <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Validations\AccountValidator.cs" />
     <Compile Include="Validations\ValidatorHelper.cs" />
     <Compile Include="View\LobbyPage.xaml.cs">
@@ -147,6 +148,9 @@
     <None Include="App.config" />
     <None Include="Connected Services\BlockusService\BlockusService.wsdl" />
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.Account.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.AccountDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BlockusService\item.xsd">
