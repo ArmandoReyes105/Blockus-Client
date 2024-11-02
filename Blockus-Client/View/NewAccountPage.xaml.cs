@@ -14,20 +14,8 @@ namespace Blockus_Client.View
         public NewAccountPage()
         {
             InitializeComponent();
-            RotateImage(imageRotation); 
-        }
-
-        private void RotateImage(RotateTransform rotateTransform)
-        {
-            DoubleAnimation rotationAnimation = new DoubleAnimation
-            {
-                From = 0,              
-                To = 360,              
-                Duration = TimeSpan.FromSeconds(10),
-                RepeatBehavior = RepeatBehavior.Forever 
-            };
-
-            rotateTransform.BeginAnimation(RotateTransform.AngleProperty, rotationAnimation);
+            AnimationManager.FadeIn(this, .75);
+            AnimationManager.RotateImage(imageRotation, 10);
         }
 
         private void CreateAccount(object sender, RoutedEventArgs e)
