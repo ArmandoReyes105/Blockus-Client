@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\AnimationManager.cs" />
     <Compile Include="Helpers\HashManager.cs" />
     <Compile Include="Validations\AccountValidator.cs" />
     <Compile Include="Validations\ValidatorHelper.cs" />
