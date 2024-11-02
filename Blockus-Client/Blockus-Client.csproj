@@ -75,6 +75,9 @@
     <Compile Include="View\NewAccountPage.xaml.cs">
       <DependentUpon>NewAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProfileConfigurationPage.xaml.cs">
+      <DependentUpon>ProfileConfigurationPage.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfileConfigurationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Lang\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ProfilePictures\DefaultProfilePic_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

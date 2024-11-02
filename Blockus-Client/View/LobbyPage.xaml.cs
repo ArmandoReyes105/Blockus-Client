@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Blockus_Client.BlockusService;
+using Blockus_Client.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,12 +34,16 @@ namespace Blockus_Client.View
 
         private void AccountConfig(object sender, RoutedEventArgs e)
         {
-
+            NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
         {
-
+            if (MessageBox.Show("Are you sure you want to log out?", "Logout Confirmation", 
+                MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                NavigationManager.Instance.NavigateTo(new LoginPage());
+            }
         }
 
         private void CreateMatch(object sender, RoutedEventArgs e)

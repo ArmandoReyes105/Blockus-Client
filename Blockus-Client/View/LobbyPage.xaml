@@ -15,7 +15,7 @@
             <ColumnDefinition Width="640"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" VerticalAlignment="Top" Margin="15, 0, 0, 0">
+    <StackPanel Grid.Column="0" VerticalAlignment="Top" Margin="15, 0, 0, 0">
 
         <TextBlock Text="Blockus" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10, 0, 0, 0" Style="{StaticResource Game_Title}"/>
         <Button x:Name="btn_CreateMatch" Content="Crear partida" HorizontalAlignment="Left" Margin="30, 110, 0, 5" Style="{StaticResource Lobby_Button}" Click="CreateMatch"/>
