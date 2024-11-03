@@ -24,9 +24,8 @@
   <Metadata>
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="278a833f-3d8c-4752-856a-f0a83ce7e601" SourceId="1" SourceUrl="http://localhost:8080/?disco" />
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="1f2503b5-5f5d-4558-bedf-172a5c4a8dab" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd2" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="7661b4b3-689a-4c59-bcb1-b7ef540c2f8a" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd3" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="570b05d9-bcc6-4c32-bffd-c441f6b6c346" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="ef447f90-c016-4b20-b82d-ae9715393705" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="570b05d9-bcc6-4c32-bffd-c441f6b6c346" SourceId="1" SourceUrl="http://localhost:8080/?xsd=xsd0" />
     <MetadataFile FileName="BlockusService.wsdl" MetadataType="Wsdl" ID="6d8e29d7-55d7-4b06-a78f-67382280d7c9" SourceId="1" SourceUrl="http://localhost:8080/?wsdl" />
   </Metadata>
   <Extensions>

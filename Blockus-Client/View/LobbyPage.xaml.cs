@@ -30,7 +30,7 @@ namespace Blockus_Client.View
 
         private void JoinMatch(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void LogOut(object sender, RoutedEventArgs e)
