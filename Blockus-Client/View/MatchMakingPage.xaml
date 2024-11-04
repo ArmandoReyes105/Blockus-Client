@@ -45,10 +45,10 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <UserControls:PlayerCard Grid.Column="0" Margin="10 0"/>
-                <UserControls:PlayerCard Grid.Column="1" Margin="10 0"/>
-                <UserControls:PlayerCard Grid.Column="2" Margin="10 0"/>
-                <UserControls:PlayerCard Grid.Column="3" Margin="10 0"/>
+                <UserControls:PlayerCard x:Name="UC_CardOne" Grid.Column="0" Margin="10 0"/>
+                <UserControls:PlayerCard x:Name="uc_CardTwo" Grid.Column="1" Margin="10 0"/>
+                <UserControls:PlayerCard x:Name="uc_CardThree" Grid.Column="2" Margin="10 0"/>
+                <UserControls:PlayerCard x:Name="uc_CardFour" Grid.Column="3" Margin="10 0"/>
             </Grid>
             
             <!--Match Configuration-->
@@ -82,9 +82,9 @@
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="20 0" VerticalAlignment="Center">
                     <TextBlock Text="Buscando jugadores . . ." Style="{StaticResource Normal_Text}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10">
-                        <TextBlock Text="0" Style="{StaticResource Subtitle_Text}"/>
+                        <TextBlock x:Name="txt_Players" Text="0" Style="{StaticResource Subtitle_Text}"/>
                         <TextBlock Text="/" Style="{StaticResource Subtitle_Text}"/>
-                        <TextBlock Text="0" Style="{StaticResource Subtitle_Text}"/>
+                        <TextBlock x:Name="txt_TotalPlayers" Text="0" Style="{StaticResource Subtitle_Text}"/>
                     </StackPanel>
                 </StackPanel>
 
@@ -95,7 +95,7 @@
                         <Button Content="4" Style="{StaticResource Text_Button}" FontSize="18" Margin="50 0 0 0"/>
                     </StackPanel>
                     <TextBlock Text="Código de partida" Style="{StaticResource Normal_Text}" HorizontalAlignment="Right"/>
-                    <TextBlock Text="------" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}" HorizontalAlignment="Right" Margin="0 10 0 0"/>
+                    <TextBlock Name="txt_MatchCode" Text="------" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}" HorizontalAlignment="Right" Margin="0 10 0 0"/>
                 </StackPanel>
                 
             </Grid>

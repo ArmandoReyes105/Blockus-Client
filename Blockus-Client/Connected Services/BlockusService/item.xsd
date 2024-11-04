@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Services.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Services.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services.Enums" />
   <xs:complexType name="AccountDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -10,4 +11,29 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AccountDTO" nillable="true" type="tns:AccountDTO" />
+  <xs:complexType name="PublicAccountDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfileImage" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PublicAccountDTO" nillable="true" type="tns:PublicAccountDTO" />
+  <xs:complexType name="MatchDTO">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="ColorsOrder" nillable="true" type="q1:ArrayOfColor" />
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="MatchType" type="q2:GameType" />
+      <xs:element minOccurs="0" name="NumberOfPlayers" type="xs:int" />
+      <xs:element minOccurs="0" name="Players" nillable="true" type="tns:ArrayOfPublicAccountDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchDTO" nillable="true" type="tns:MatchDTO" />
+  <xs:complexType name="ArrayOfPublicAccountDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PublicAccountDTO" nillable="true" type="tns:PublicAccountDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPublicAccountDTO" nillable="true" type="tns:ArrayOfPublicAccountDTO" />
 </xs:schema>

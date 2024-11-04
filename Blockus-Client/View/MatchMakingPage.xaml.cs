@@ -1,28 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using Blockus_Client.BlockusService;
+using Blockus_Client.Helpers;
+using System.Runtime.CompilerServices;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Blockus_Client.View
 {
-    /// <summary>
-    /// Lógica de interacción para MatchMakingPage.xaml
-    /// </summary>
     public partial class MatchMakingPage : Page
     {
+
+        private MatchDTO match; 
+
         public MatchMakingPage()
         {
             InitializeComponent();
+
+            InitializeMatch();
+        }
+
+        private void InitializeMatch()
+        {
+
+            var currentAccount = SessionManager.Instance.GetCurrentAccount();
+
+            PublicAccountDTO publicAccount = new PublicAccountDTO
+            {
+                Id = currentAccount.Id,
+                Username = currentAccount.Username,
+                ProfileImage = currentAccount.ProfileImage
+            };
+
+            MatchMakingServiceClient client = new MatchMakingServiceClient();
+            match = client.CreateMatch(publicAccount);
+            client.Close();
+
+            LoadInformation(); 
+        }
+
+        private void LoadInformation()
+        {
+            txt_MatchCode.Text = match.MatchCode;
+            txt_Players.Text = match.Players.Length.ToString();
+            txt_TotalPlayers.Text = match.NumberOfPlayers.ToString();
+
+            var playerCards = new[] { UC_CardOne, uc_CardTwo, uc_CardThree, uc_CardFour};
+
+            for (int i = 0; i < match.Players.Length; i++)
+            {
+                playerCards[i].LoadPlayerInformation(match.Players[i], match.ColorsOrder[i]);
+            }
         }
     }
 }

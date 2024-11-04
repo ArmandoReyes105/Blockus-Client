@@ -164,6 +164,9 @@
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.AccountDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.MatchDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BlockusService\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -171,6 +174,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\BlockusService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BlockusService\item3.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -215,6 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\ProfileImage-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ProfileImage-2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

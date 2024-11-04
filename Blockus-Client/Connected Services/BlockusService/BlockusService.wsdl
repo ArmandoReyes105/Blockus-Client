@@ -16,11 +16,20 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMatchMakingService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services.Dtos" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services.Enums" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAccountService_CreateAccount_InputMessage">
@@ -41,6 +50,18 @@
   <wsdl:message name="ISessionService_LogOut_OutputMessage">
     <wsdl:part name="parameters" element="tns:LogOutResponse" />
   </wsdl:message>
+  <wsdl:message name="IMatchMakingService_CreateMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_CreateMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_JoinToMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_JoinToMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToMatchResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAccountService">
     <wsdl:operation name="CreateAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/CreateAccount" message="tns:IAccountService_CreateAccount_InputMessage" />
@@ -55,6 +76,16 @@
     <wsdl:operation name="LogOut">
       <wsdl:input wsaw:Action="http://tempuri.org/ISessionService/LogOut" message="tns:ISessionService_LogOut_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISessionService/LogOutResponse" message="tns:ISessionService_LogOut_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMatchMakingService">
+    <wsdl:operation name="CreateMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/CreateMatch" message="tns:IMatchMakingService_CreateMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/CreateMatchResponse" message="tns:IMatchMakingService_CreateMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="JoinToMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/JoinToMatch" message="tns:IMatchMakingService_JoinToMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/JoinToMatchResponse" message="tns:IMatchMakingService_JoinToMatch_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAccountService" type="tns:IAccountService">
@@ -92,6 +123,28 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IMatchMakingService" type="tns:IMatchMakingService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IMatchMakingService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CreateMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/CreateMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JoinToMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/JoinToMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IAccountService" binding="tns:NetTcpBinding_IAccountService">
       <soap12:address location="net.tcp://localhost:8090/Services" />
@@ -100,6 +153,12 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_ISessionService" binding="tns:NetTcpBinding_ISessionService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IMatchMakingService" binding="tns:NetTcpBinding_IMatchMakingService">
       <soap12:address location="net.tcp://localhost:8090/Services" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
