@@ -25,7 +25,7 @@ namespace Blockus_Client.View
 
         private void CreateMatch(object sender, RoutedEventArgs e)
         {
-
+            NavigationManager.Instance.NavigateTo(new MatchMakingPage()); 
         }
 
         private void JoinMatch(object sender, RoutedEventArgs e)
