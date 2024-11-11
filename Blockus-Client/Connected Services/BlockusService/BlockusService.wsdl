@@ -30,6 +30,7 @@
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services.Dtos" />
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services.Enums" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IAccountService_CreateAccount_InputMessage">
@@ -62,6 +63,27 @@
   <wsdl:message name="IMatchMakingService_JoinToMatch_OutputMessage">
     <wsdl:part name="parameters" element="tns:JoinToMatchResponse" />
   </wsdl:message>
+  <wsdl:message name="IMatchMakingService_LeaveMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerEntry_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerEntry" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerEntry_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerExit_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerExit" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerExit_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyHostExit_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyHostExit" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyHostExit_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyHostExitResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAccountService">
     <wsdl:operation name="CreateAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/CreateAccount" message="tns:IAccountService_CreateAccount_InputMessage" />
@@ -86,6 +108,21 @@
     <wsdl:operation name="JoinToMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/JoinToMatch" message="tns:IMatchMakingService_JoinToMatch_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/JoinToMatchResponse" message="tns:IMatchMakingService_JoinToMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/LeaveMatch" message="tns:IMatchMakingService_LeaveMatch_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerEntry">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerEntry" message="tns:IMatchMakingService_NotifyPlayerEntry_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerEntryResponse" message="tns:IMatchMakingService_NotifyPlayerEntry_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerExit">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerExit" message="tns:IMatchMakingService_NotifyPlayerExit_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerExitResponse" message="tns:IMatchMakingService_NotifyPlayerExit_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyHostExit">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyHostExit" message="tns:IMatchMakingService_NotifyHostExit_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyHostExitResponse" message="tns:IMatchMakingService_NotifyHostExit_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAccountService" type="tns:IAccountService">
@@ -137,6 +174,39 @@
     </wsdl:operation>
     <wsdl:operation name="JoinToMatch">
       <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/JoinToMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/LeaveMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerEntry">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/NotifyPlayerEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerExit">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/NotifyPlayerExit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyHostExit">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/NotifyHostExit" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

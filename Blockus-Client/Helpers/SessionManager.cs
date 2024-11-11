@@ -44,5 +44,10 @@ namespace Blockus_Client.Helpers
         {
             return currentAccount;
         }
+
+        public string GetUsername()
+        {
+            return currentAccount.Username;
+        }
     }
 }

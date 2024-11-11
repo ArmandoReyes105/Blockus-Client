@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
        
-        <Image Name="Image_ProfileImage" Source="/Resources/Images/ProfileImage-1.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Name="Image_ProfileImage" Source="/Resources/Images/ProfileImage-0.png" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Border x:Name="Border_Stroke" BorderThickness="3" BorderBrush="{StaticResource Gray}" CornerRadius="5"/>
         <Border CornerRadius="5" Height="175" VerticalAlignment="Bottom">
             <Border.Background>

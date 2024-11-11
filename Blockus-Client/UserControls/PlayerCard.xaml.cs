@@ -1,4 +1,5 @@
 ﻿using Blockus_Client.BlockusService;
+using Blockus_Client.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -13,6 +14,22 @@ namespace Blockus_Client.UserControls
         public PlayerCard()
         {
             InitializeComponent();
+        }
+
+        public void ResetInformation()
+        {
+            txt_Username.Text = "Esperando jugador ...";
+
+            SolidColorBrush brush = (SolidColorBrush)Application.Current.Resources["Gray"];
+
+            Border_Stroke.BorderBrush = brush;
+            GradientStop_PlayerColor.Color = brush.Color;
+
+            string path = "/Blockus-Client;component/Resources/Images/ProfileImage-0.png";
+            Uri uri = new Uri(path, UriKind.Relative);
+            Image_ProfileImage.Source = new BitmapImage(uri);
+
+            AnimationManager.FadeIn(this, .75);
         }
 
         public void LoadPlayerInformation(PublicAccountDTO account, BlockusService.Color color)
@@ -44,6 +61,8 @@ namespace Blockus_Client.UserControls
                 Uri uri = new Uri(imagePath, UriKind.Relative);
                 Image_ProfileImage.Source = new BitmapImage(uri); 
             }
+
+            AnimationManager.FadeIn(this, .75); 
         }
     }
 }

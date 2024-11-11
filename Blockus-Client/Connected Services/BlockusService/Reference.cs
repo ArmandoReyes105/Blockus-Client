@@ -209,9 +209,6 @@ namespace Blockus_Client.BlockusService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Color[] ColorsOrderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string HostField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -224,7 +221,7 @@ namespace Blockus_Client.BlockusService {
         private int NumberOfPlayersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.PublicAccountDTO[] PlayersField;
+        private System.Collections.Generic.Dictionary<Blockus_Client.BlockusService.Color, Blockus_Client.BlockusService.PublicAccountDTO> PlayersField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -233,19 +230,6 @@ namespace Blockus_Client.BlockusService {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Color[] ColorsOrder {
-            get {
-                return this.ColorsOrderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ColorsOrderField, value) != true)) {
-                    this.ColorsOrderField = value;
-                    this.RaisePropertyChanged("ColorsOrder");
-                }
             }
         }
         
@@ -302,7 +286,7 @@ namespace Blockus_Client.BlockusService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.PublicAccountDTO[] Players {
+        public System.Collections.Generic.Dictionary<Blockus_Client.BlockusService.Color, Blockus_Client.BlockusService.PublicAccountDTO> Players {
             get {
                 return this.PlayersField;
             }
@@ -325,6 +309,17 @@ namespace Blockus_Client.BlockusService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GameType", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
+    public enum GameType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Private = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Public = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Color", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
     public enum Color : int {
         
@@ -339,17 +334,6 @@ namespace Blockus_Client.BlockusService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Green = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GameType", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
-    public enum GameType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Private = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Public = 1,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -461,7 +445,7 @@ namespace Blockus_Client.BlockusService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IMatchMakingService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IMatchMakingService", CallbackContract=typeof(Blockus_Client.BlockusService.IMatchMakingServiceCallback))]
     public interface IMatchMakingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/CreateMatch", ReplyAction="http://tempuri.org/IMatchMakingService/CreateMatchResponse")]
@@ -471,10 +455,29 @@ namespace Blockus_Client.BlockusService {
         System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> CreateMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO hostAccount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/JoinToMatch", ReplyAction="http://tempuri.org/IMatchMakingService/JoinToMatchResponse")]
-        void JoinToMatch(string username, string matchCode);
+        Blockus_Client.BlockusService.MatchDTO JoinToMatch(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/JoinToMatch", ReplyAction="http://tempuri.org/IMatchMakingService/JoinToMatchResponse")]
-        System.Threading.Tasks.Task JoinToMatchAsync(string username, string matchCode);
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> JoinToMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMatchMakingService/LeaveMatch")]
+        void LeaveMatch(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMatchMakingService/LeaveMatch")]
+        System.Threading.Tasks.Task LeaveMatchAsync(string username);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMatchMakingServiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/NotifyPlayerEntry", ReplyAction="http://tempuri.org/IMatchMakingService/NotifyPlayerEntryResponse")]
+        void NotifyPlayerEntry(Blockus_Client.BlockusService.MatchDTO matchDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/NotifyPlayerExit", ReplyAction="http://tempuri.org/IMatchMakingService/NotifyPlayerExitResponse")]
+        void NotifyPlayerExit(Blockus_Client.BlockusService.MatchDTO matchDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/NotifyHostExit", ReplyAction="http://tempuri.org/IMatchMakingService/NotifyHostExitResponse")]
+        void NotifyHostExit(Blockus_Client.BlockusService.MatchDTO matchDTO);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -483,25 +486,26 @@ namespace Blockus_Client.BlockusService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MatchMakingServiceClient : System.ServiceModel.ClientBase<Blockus_Client.BlockusService.IMatchMakingService>, Blockus_Client.BlockusService.IMatchMakingService {
+    public partial class MatchMakingServiceClient : System.ServiceModel.DuplexClientBase<Blockus_Client.BlockusService.IMatchMakingService>, Blockus_Client.BlockusService.IMatchMakingService {
         
-        public MatchMakingServiceClient() {
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public MatchMakingServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public MatchMakingServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public MatchMakingServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public MatchMakingServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
         public Blockus_Client.BlockusService.MatchDTO CreateMatch(Blockus_Client.BlockusService.PublicAccountDTO hostAccount) {
@@ -512,12 +516,20 @@ namespace Blockus_Client.BlockusService {
             return base.Channel.CreateMatchAsync(hostAccount);
         }
         
-        public void JoinToMatch(string username, string matchCode) {
-            base.Channel.JoinToMatch(username, matchCode);
+        public Blockus_Client.BlockusService.MatchDTO JoinToMatch(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode) {
+            return base.Channel.JoinToMatch(account, matchCode);
         }
         
-        public System.Threading.Tasks.Task JoinToMatchAsync(string username, string matchCode) {
-            return base.Channel.JoinToMatchAsync(username, matchCode);
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> JoinToMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode) {
+            return base.Channel.JoinToMatchAsync(account, matchCode);
+        }
+        
+        public void LeaveMatch(string username) {
+            base.Channel.LeaveMatch(username);
+        }
+        
+        public System.Threading.Tasks.Task LeaveMatchAsync(string username) {
+            return base.Channel.LeaveMatchAsync(username);
         }
     }
 }
