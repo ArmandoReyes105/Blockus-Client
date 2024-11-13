@@ -124,45 +124,18 @@ namespace Blockus_Client.BlockusService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Account", Namespace="http://schemas.datacontract.org/2004/07/Data.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PublicAccountDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
     [System.SerializableAttribute()]
-    public partial class Account : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class PublicAccountDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AccountPasswordField;
+        private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.BlackList BlackListField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Friends[] FriendsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Friends[] Friends1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Id_AccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.ProfileConfiguration[] ProfileConfigurationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ProfileImageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Report[] ReportField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Report[] Report1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Results[] ResultsField;
+        private int ProfileImageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -178,98 +151,20 @@ namespace Blockus_Client.BlockusService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AccountPassword {
+        public int Id {
             get {
-                return this.AccountPasswordField;
+                return this.IdField;
             }
             set {
-                if ((object.ReferenceEquals(this.AccountPasswordField, value) != true)) {
-                    this.AccountPasswordField = value;
-                    this.RaisePropertyChanged("AccountPassword");
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.BlackList BlackList {
-            get {
-                return this.BlackListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BlackListField, value) != true)) {
-                    this.BlackListField = value;
-                    this.RaisePropertyChanged("BlackList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Friends[] Friends {
-            get {
-                return this.FriendsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FriendsField, value) != true)) {
-                    this.FriendsField = value;
-                    this.RaisePropertyChanged("Friends");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Friends[] Friends1 {
-            get {
-                return this.Friends1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Friends1Field, value) != true)) {
-                    this.Friends1Field = value;
-                    this.RaisePropertyChanged("Friends1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id_Account {
-            get {
-                return this.Id_AccountField;
-            }
-            set {
-                if ((this.Id_AccountField.Equals(value) != true)) {
-                    this.Id_AccountField = value;
-                    this.RaisePropertyChanged("Id_Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.ProfileConfiguration[] ProfileConfiguration {
-            get {
-                return this.ProfileConfigurationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProfileConfigurationField, value) != true)) {
-                    this.ProfileConfigurationField = value;
-                    this.RaisePropertyChanged("ProfileConfiguration");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ProfileImage {
+        public int ProfileImage {
             get {
                 return this.ProfileImageField;
             }
@@ -277,45 +172,6 @@ namespace Blockus_Client.BlockusService {
                 if ((this.ProfileImageField.Equals(value) != true)) {
                     this.ProfileImageField = value;
                     this.RaisePropertyChanged("ProfileImage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Report[] Report {
-            get {
-                return this.ReportField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportField, value) != true)) {
-                    this.ReportField = value;
-                    this.RaisePropertyChanged("Report");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Report[] Report1 {
-            get {
-                return this.Report1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Report1Field, value) != true)) {
-                    this.Report1Field = value;
-                    this.RaisePropertyChanged("Report1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Results[] Results {
-            get {
-                return this.ResultsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ResultsField, value) != true)) {
-                    this.ResultsField = value;
-                    this.RaisePropertyChanged("Results");
                 }
             }
         }
@@ -345,21 +201,27 @@ namespace Blockus_Client.BlockusService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BlackList", Namespace="http://schemas.datacontract.org/2004/07/Data.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MatchDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
     [System.SerializableAttribute()]
-    public partial class BlackList : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class MatchDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Account AccountField;
+        private string HostField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> BannedDateField;
+        private string MatchCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Id_Banned_AccountField;
+        private Blockus_Client.BlockusService.GameType MatchTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NumberOfPlayersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.Dictionary<Blockus_Client.BlockusService.Color, Blockus_Client.BlockusService.PublicAccountDTO> PlayersField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -372,40 +234,66 @@ namespace Blockus_Client.BlockusService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Account Account {
+        public string Host {
             get {
-                return this.AccountField;
+                return this.HostField;
             }
             set {
-                if ((object.ReferenceEquals(this.AccountField, value) != true)) {
-                    this.AccountField = value;
-                    this.RaisePropertyChanged("Account");
+                if ((object.ReferenceEquals(this.HostField, value) != true)) {
+                    this.HostField = value;
+                    this.RaisePropertyChanged("Host");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> BannedDate {
+        public string MatchCode {
             get {
-                return this.BannedDateField;
+                return this.MatchCodeField;
             }
             set {
-                if ((this.BannedDateField.Equals(value) != true)) {
-                    this.BannedDateField = value;
-                    this.RaisePropertyChanged("BannedDate");
+                if ((object.ReferenceEquals(this.MatchCodeField, value) != true)) {
+                    this.MatchCodeField = value;
+                    this.RaisePropertyChanged("MatchCode");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id_Banned_Account {
+        public Blockus_Client.BlockusService.GameType MatchType {
             get {
-                return this.Id_Banned_AccountField;
+                return this.MatchTypeField;
             }
             set {
-                if ((this.Id_Banned_AccountField.Equals(value) != true)) {
-                    this.Id_Banned_AccountField = value;
-                    this.RaisePropertyChanged("Id_Banned_Account");
+                if ((this.MatchTypeField.Equals(value) != true)) {
+                    this.MatchTypeField = value;
+                    this.RaisePropertyChanged("MatchType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NumberOfPlayers {
+            get {
+                return this.NumberOfPlayersField;
+            }
+            set {
+                if ((this.NumberOfPlayersField.Equals(value) != true)) {
+                    this.NumberOfPlayersField = value;
+                    this.RaisePropertyChanged("NumberOfPlayers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.Dictionary<Blockus_Client.BlockusService.Color, Blockus_Client.BlockusService.PublicAccountDTO> Players {
+            get {
+                return this.PlayersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlayersField, value) != true)) {
+                    this.PlayersField = value;
+                    this.RaisePropertyChanged("Players");
                 }
             }
         }
@@ -420,519 +308,32 @@ namespace Blockus_Client.BlockusService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Friends", Namespace="http://schemas.datacontract.org/2004/07/Data.Model")]
-    [System.SerializableAttribute()]
-    public partial class Friends : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.DataContractAttribute(Name="GameType", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
+    public enum GameType : int {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Private = 0,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Account AccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Account Account1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> Id_AccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> Id_Account_FriendField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Id_FriendField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Account Account {
-            get {
-                return this.AccountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AccountField, value) != true)) {
-                    this.AccountField = value;
-                    this.RaisePropertyChanged("Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Account Account1 {
-            get {
-                return this.Account1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Account1Field, value) != true)) {
-                    this.Account1Field = value;
-                    this.RaisePropertyChanged("Account1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id_Account {
-            get {
-                return this.Id_AccountField;
-            }
-            set {
-                if ((this.Id_AccountField.Equals(value) != true)) {
-                    this.Id_AccountField = value;
-                    this.RaisePropertyChanged("Id_Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id_Account_Friend {
-            get {
-                return this.Id_Account_FriendField;
-            }
-            set {
-                if ((this.Id_Account_FriendField.Equals(value) != true)) {
-                    this.Id_Account_FriendField = value;
-                    this.RaisePropertyChanged("Id_Account_Friend");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id_Friend {
-            get {
-                return this.Id_FriendField;
-            }
-            set {
-                if ((this.Id_FriendField.Equals(value) != true)) {
-                    this.Id_FriendField = value;
-                    this.RaisePropertyChanged("Id_Friend");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Public = 1,
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProfileConfiguration", Namespace="http://schemas.datacontract.org/2004/07/Data.Model")]
-    [System.SerializableAttribute()]
-    public partial class ProfileConfiguration : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Runtime.Serialization.DataContractAttribute(Name="Color", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
+    public enum Color : int {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Red = 0,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Account AccountField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Blue = 1,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> BoardStyleField;
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Yellow = 2,
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> Id_AccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Id_ConfigurationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> TilesStyleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Account Account {
-            get {
-                return this.AccountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AccountField, value) != true)) {
-                    this.AccountField = value;
-                    this.RaisePropertyChanged("Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> BoardStyle {
-            get {
-                return this.BoardStyleField;
-            }
-            set {
-                if ((this.BoardStyleField.Equals(value) != true)) {
-                    this.BoardStyleField = value;
-                    this.RaisePropertyChanged("BoardStyle");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id_Account {
-            get {
-                return this.Id_AccountField;
-            }
-            set {
-                if ((this.Id_AccountField.Equals(value) != true)) {
-                    this.Id_AccountField = value;
-                    this.RaisePropertyChanged("Id_Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id_Configuration {
-            get {
-                return this.Id_ConfigurationField;
-            }
-            set {
-                if ((this.Id_ConfigurationField.Equals(value) != true)) {
-                    this.Id_ConfigurationField = value;
-                    this.RaisePropertyChanged("Id_Configuration");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> TilesStyle {
-            get {
-                return this.TilesStyleField;
-            }
-            set {
-                if ((this.TilesStyleField.Equals(value) != true)) {
-                    this.TilesStyleField = value;
-                    this.RaisePropertyChanged("TilesStyle");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/Data.Model")]
-    [System.SerializableAttribute()]
-    public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Account AccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Account Account1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> Id_ComplainantField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Id_ReportField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> Id_ReportedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ReportDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ReportDescriptionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Account Account {
-            get {
-                return this.AccountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AccountField, value) != true)) {
-                    this.AccountField = value;
-                    this.RaisePropertyChanged("Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Account Account1 {
-            get {
-                return this.Account1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Account1Field, value) != true)) {
-                    this.Account1Field = value;
-                    this.RaisePropertyChanged("Account1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id_Complainant {
-            get {
-                return this.Id_ComplainantField;
-            }
-            set {
-                if ((this.Id_ComplainantField.Equals(value) != true)) {
-                    this.Id_ComplainantField = value;
-                    this.RaisePropertyChanged("Id_Complainant");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id_Report {
-            get {
-                return this.Id_ReportField;
-            }
-            set {
-                if ((this.Id_ReportField.Equals(value) != true)) {
-                    this.Id_ReportField = value;
-                    this.RaisePropertyChanged("Id_Report");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id_Reported {
-            get {
-                return this.Id_ReportedField;
-            }
-            set {
-                if ((this.Id_ReportedField.Equals(value) != true)) {
-                    this.Id_ReportedField = value;
-                    this.RaisePropertyChanged("Id_Reported");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ReportDate {
-            get {
-                return this.ReportDateField;
-            }
-            set {
-                if ((this.ReportDateField.Equals(value) != true)) {
-                    this.ReportDateField = value;
-                    this.RaisePropertyChanged("ReportDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ReportDescription {
-            get {
-                return this.ReportDescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReportDescriptionField, value) != true)) {
-                    this.ReportDescriptionField = value;
-                    this.RaisePropertyChanged("ReportDescription");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Results", Namespace="http://schemas.datacontract.org/2004/07/Data.Model")]
-    [System.SerializableAttribute()]
-    public partial class Results : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Blockus_Client.BlockusService.Account AccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> Id_AccountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Id_ResultField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> LossesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> VictoriesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Blockus_Client.BlockusService.Account Account {
-            get {
-                return this.AccountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AccountField, value) != true)) {
-                    this.AccountField = value;
-                    this.RaisePropertyChanged("Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id_Account {
-            get {
-                return this.Id_AccountField;
-            }
-            set {
-                if ((this.Id_AccountField.Equals(value) != true)) {
-                    this.Id_AccountField = value;
-                    this.RaisePropertyChanged("Id_Account");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id_Result {
-            get {
-                return this.Id_ResultField;
-            }
-            set {
-                if ((this.Id_ResultField.Equals(value) != true)) {
-                    this.Id_ResultField = value;
-                    this.RaisePropertyChanged("Id_Result");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Losses {
-            get {
-                return this.LossesField;
-            }
-            set {
-                if ((this.LossesField.Equals(value) != true)) {
-                    this.LossesField = value;
-                    this.RaisePropertyChanged("Losses");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Victories {
-            get {
-                return this.VictoriesField;
-            }
-            set {
-                if ((this.VictoriesField.Equals(value) != true)) {
-                    this.VictoriesField = value;
-                    this.RaisePropertyChanged("Victories");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IService1")]
-    public interface IService1 {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : Blockus_Client.BlockusService.IService1, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<Blockus_Client.BlockusService.IService1>, Blockus_Client.BlockusService.IService1 {
-        
-        public Service1Client() {
-        }
-        
-        public Service1Client(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Green = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -944,12 +345,6 @@ namespace Blockus_Client.BlockusService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/CreateAccount", ReplyAction="http://tempuri.org/IAccountService/CreateAccountResponse")]
         System.Threading.Tasks.Task<int> CreateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Login", ReplyAction="http://tempuri.org/IAccountService/LoginResponse")]
-        Blockus_Client.BlockusService.Account Login(string username, string password);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/Login", ReplyAction="http://tempuri.org/IAccountService/LoginResponse")]
-        System.Threading.Tasks.Task<Blockus_Client.BlockusService.Account> LoginAsync(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -985,14 +380,6 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task<int> CreateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO) {
             return base.Channel.CreateAccountAsync(accountDTO);
-        }
-        
-        public Blockus_Client.BlockusService.Account Login(string username, string password) {
-            return base.Channel.Login(username, password);
-        }
-        
-        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.Account> LoginAsync(string username, string password) {
-            return base.Channel.LoginAsync(username, password);
         }
     }
     
@@ -1054,6 +441,95 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task LogOutAsync(string username) {
             return base.Channel.LogOutAsync(username);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IMatchMakingService", CallbackContract=typeof(Blockus_Client.BlockusService.IMatchMakingServiceCallback))]
+    public interface IMatchMakingService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/CreateMatch", ReplyAction="http://tempuri.org/IMatchMakingService/CreateMatchResponse")]
+        Blockus_Client.BlockusService.MatchDTO CreateMatch(Blockus_Client.BlockusService.PublicAccountDTO hostAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/CreateMatch", ReplyAction="http://tempuri.org/IMatchMakingService/CreateMatchResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> CreateMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO hostAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/JoinToMatch", ReplyAction="http://tempuri.org/IMatchMakingService/JoinToMatchResponse")]
+        Blockus_Client.BlockusService.MatchDTO JoinToMatch(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/JoinToMatch", ReplyAction="http://tempuri.org/IMatchMakingService/JoinToMatchResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> JoinToMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMatchMakingService/LeaveMatch")]
+        void LeaveMatch(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IMatchMakingService/LeaveMatch")]
+        System.Threading.Tasks.Task LeaveMatchAsync(string username);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMatchMakingServiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/NotifyPlayerEntry", ReplyAction="http://tempuri.org/IMatchMakingService/NotifyPlayerEntryResponse")]
+        void NotifyPlayerEntry(Blockus_Client.BlockusService.MatchDTO matchDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/NotifyPlayerExit", ReplyAction="http://tempuri.org/IMatchMakingService/NotifyPlayerExitResponse")]
+        void NotifyPlayerExit(Blockus_Client.BlockusService.MatchDTO matchDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/NotifyHostExit", ReplyAction="http://tempuri.org/IMatchMakingService/NotifyHostExitResponse")]
+        void NotifyHostExit(Blockus_Client.BlockusService.MatchDTO matchDTO);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMatchMakingServiceChannel : Blockus_Client.BlockusService.IMatchMakingService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MatchMakingServiceClient : System.ServiceModel.DuplexClientBase<Blockus_Client.BlockusService.IMatchMakingService>, Blockus_Client.BlockusService.IMatchMakingService {
+        
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MatchMakingServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public Blockus_Client.BlockusService.MatchDTO CreateMatch(Blockus_Client.BlockusService.PublicAccountDTO hostAccount) {
+            return base.Channel.CreateMatch(hostAccount);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> CreateMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO hostAccount) {
+            return base.Channel.CreateMatchAsync(hostAccount);
+        }
+        
+        public Blockus_Client.BlockusService.MatchDTO JoinToMatch(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode) {
+            return base.Channel.JoinToMatch(account, matchCode);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> JoinToMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode) {
+            return base.Channel.JoinToMatchAsync(account, matchCode);
+        }
+        
+        public void LeaveMatch(string username) {
+            base.Channel.LeaveMatch(username);
+        }
+        
+        public System.Threading.Tasks.Task LeaveMatchAsync(string username) {
+            return base.Channel.LeaveMatchAsync(username);
         }
     }
 }

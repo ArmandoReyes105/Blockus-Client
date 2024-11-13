@@ -9,30 +9,29 @@
       d:Background="{StaticResource BackgroundColor}"
       Title="LobbyPage">
 
-    <Grid Margin="0, 15, 15, 15">
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="640"/>
-            <ColumnDefinition Width="640"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" VerticalAlignment="Top" Margin="15, 0, 0, 0">
+        <TextBlock Text="Blockus" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Game_Title}"/>
 
-        <TextBlock Text="Blockus" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10, 0, 0, 0" Style="{StaticResource Game_Title}"/>
-        <Button x:Name="btn_CreateMatch" Content="Crear partida" HorizontalAlignment="Left" Margin="30, 110, 0, 5" Style="{StaticResource Lobby_Button}" Click="CreateMatch"/>
-        <Button x:Name="btn_JoinMatch" Content="Unirse a partida" HorizontalAlignment="Left" Margin="30, 00, 0, 5" Style="{StaticResource Lobby_Button}" Click="JoinMatch"/>
-        <Button x:Name="btn_Friends" Content="Mis amigos" HorizontalAlignment="Left" Margin="30, 0, 0, 5" Style="{StaticResource Lobby_Button}" Click="FriendList"/>
-        <Button x:Name="btn_Config" Content="Configuracion" HorizontalAlignment="Left" Margin="30, 0, 0, 5" Style="{StaticResource Lobby_Button}" Click="AccountConfig"/>
-        <Button x:Name="btn_LogOut" Content="Cerrar sesion" HorizontalAlignment="Left" Margin="30, 0, 0, 15" Style="{StaticResource Lobby_Button}" Click="LogOut"/>
-    </StackPanel>
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30, 0, 50, 0">
+            <Button x:Name="btn_CreateMatch" Content="Crear partida" Style="{StaticResource Underline_Button}" Click="CreateMatch" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_JoinMatch" Content="Unirse a partida" Style="{StaticResource Underline_Button}" Click="JoinMatch" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_Friends" Content="Mis amigos" Style="{StaticResource Underline_Button}" Click="FriendList" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_Config" Content="Configuracion" Style="{StaticResource Underline_Button}" Click="AccountConfig" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_LogOut" Content="Cerrar sesion" Style="{StaticResource Underline_Button}" Click="LogOut" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+        </StackPanel>
 
-    <StackPanel Grid.Column="1">
-        <Viewbox>
-            <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" Margin="10, 75, 100, 30" HorizontalAlignment="Center">
+        <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="70" Grid.Column="1">
+            <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image.RenderTransform>
-                    <RotateTransform x:Name="imageRotation" Angle="90" CenterX="220" CenterY="220"/>
+                    <RotateTransform x:Name="imageRotation" Angle="0" CenterX="220" CenterY="220"/>
                 </Image.RenderTransform>
             </Image>
         </Viewbox>
-    </StackPanel>
+
     </Grid>
 </Page>

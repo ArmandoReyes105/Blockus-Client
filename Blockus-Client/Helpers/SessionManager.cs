@@ -5,8 +5,8 @@ namespace Blockus_Client.Helpers
 {
     public class SessionManager
     {
-        public static SessionManager _instance;
-        public static AccountDTO currentAccount = null; 
+        private static SessionManager _instance;
+        private static AccountDTO currentAccount = null; 
 
         private SessionManager() { }
 
@@ -38,6 +38,16 @@ namespace Blockus_Client.Helpers
 
                 currentAccount = null;
             }
+        }
+
+        public AccountDTO GetCurrentAccount()
+        {
+            return currentAccount;
+        }
+
+        public string GetUsername()
+        {
+            return currentAccount.Username;
         }
     }
 }

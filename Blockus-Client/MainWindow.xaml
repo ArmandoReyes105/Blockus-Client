@@ -13,7 +13,7 @@
         <Image Source="Resources/Images/Blue-Ellipse.png" VerticalAlignment="Top" HorizontalAlignment="Right" Name="Image_BlueEllipse"/>
         <Image Source="Resources/Images/Yellow-Ellipse.png" VerticalAlignment="Bottom" HorizontalAlignment="Left" Name="Image_YellowEllipse"/>
 
-        <Frame Name="Frame_Main" Style="{StaticResource Normal_Frame}"/>
+        <Frame Name="Frame_Main" Style="{StaticResource Normal_Frame}" JournalOwnership="OwnsJournal"/>
     </Grid>
     
 </Window>

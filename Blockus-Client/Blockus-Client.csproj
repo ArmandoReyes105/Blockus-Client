@@ -66,13 +66,25 @@
     <Compile Include="Helpers\AnimationManager.cs" />
     <Compile Include="Helpers\HashManager.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="UserControls\PlayerCard.xaml.cs">
+      <DependentUpon>PlayerCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Validations\AccountValidator.cs" />
     <Compile Include="Validations\ValidatorHelper.cs" />
+    <Compile Include="View\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\JoinMatchPage.xaml.cs">
+      <DependentUpon>JoinMatchPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LobbyPage.xaml.cs">
       <DependentUpon>LobbyPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MatchMakingPage.xaml.cs">
+      <DependentUpon>MatchMakingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewAccountPage.xaml.cs">
       <DependentUpon>NewAccountPage.xaml</DependentUpon>
@@ -106,6 +118,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Styles\RadioButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Styles\TextBlockStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,11 +130,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\PlayerCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\JoinMatchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LobbyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MatchMakingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,10 +179,10 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Connected Services\BlockusService\BlockusService.wsdl" />
-    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.Account.datasource">
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.AccountDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.AccountDTO.datasource">
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.MatchDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BlockusService\item.xsd">
@@ -163,6 +195,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\BlockusService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BlockusService\item4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -204,6 +239,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Lang\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ProfileImage-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ProfileImage-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\ProfileImage-0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
