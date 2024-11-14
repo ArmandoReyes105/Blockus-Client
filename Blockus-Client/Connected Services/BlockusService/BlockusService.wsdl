@@ -38,6 +38,24 @@
   <wsdl:message name="IAccountService_CreateAccount_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
   </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAccountResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResults" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAccountResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetProfileConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetProfileConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileConfigurationResponse" />
+  </wsdl:message>
   <wsdl:message name="ISessionService_LogIn_InputMessage">
     <wsdl:part name="parameters" element="tns:LogIn" />
   </wsdl:message>
@@ -67,6 +85,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/CreateAccount" message="tns:IAccountService_CreateAccount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/CreateAccountResponse" message="tns:IAccountService_CreateAccount_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/UpdateAccount" message="tns:IAccountService_UpdateAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/UpdateAccountResponse" message="tns:IAccountService_UpdateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetAccountResults" message="tns:IAccountService_GetAccountResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetAccountResultsResponse" message="tns:IAccountService_GetAccountResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetProfileConfiguration" message="tns:IAccountService_GetProfileConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetProfileConfigurationResponse" message="tns:IAccountService_GetProfileConfiguration_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ISessionService">
     <wsdl:operation name="LogIn">
@@ -93,6 +123,33 @@
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
     <wsdl:operation name="CreateAccount">
       <soap12:operation soapAction="http://tempuri.org/IAccountService/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/UpdateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountResults">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/GetAccountResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/GetProfileConfiguration" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

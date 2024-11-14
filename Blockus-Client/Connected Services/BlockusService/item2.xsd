@@ -15,6 +15,48 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="accountDTO" nillable="true" type="q2:AccountDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateAccountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAccount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountResultsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="GetAccountResultsResult" nillable="true" type="q3:ResultsDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAccount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="GetProfileConfigurationResult" nillable="true" type="q4:ProfileConfigurationDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="LogIn">
     <xs:complexType>
       <xs:sequence>
@@ -26,7 +68,7 @@
   <xs:element name="LogInResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="LogInResult" nillable="true" type="q2:AccountDTO" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="LogInResult" nillable="true" type="q5:AccountDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,28 +87,30 @@
   <xs:element name="CreateMatch">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="hostAccount" nillable="true" type="q3:PublicAccountDTO" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="hostAccount" nillable="true" type="q6:PublicAccountDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateMatchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="CreateMatchResult" nillable="true" type="q4:MatchDTO" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="CreateMatchResult" nillable="true" type="q7:MatchDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="JoinToMatch">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="account" nillable="true" type="q8:PublicAccountDTO" />
         <xs:element minOccurs="0" name="matchCode" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="JoinToMatchResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="JoinToMatchResult" type="xs:boolean" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

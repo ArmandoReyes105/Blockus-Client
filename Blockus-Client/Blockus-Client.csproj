@@ -71,6 +71,9 @@
     </Compile>
     <Compile Include="Validations\AccountValidator.cs" />
     <Compile Include="Validations\ValidatorHelper.cs" />
+    <Compile Include="View\ChangePasswordPage.xaml.cs">
+      <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LobbyPage.xaml.cs">
       <DependentUpon>LobbyPage.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,9 @@
     </Compile>
     <Compile Include="View\NewAccountPage.xaml.cs">
       <DependentUpon>NewAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileConfigurationPage.xaml.cs">
+      <DependentUpon>ProfileConfigurationPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +130,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ChangePasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LobbyPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfileConfigurationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +179,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.MatchDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.ProfileConfigurationDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.ResultsDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BlockusService\item.xsd">

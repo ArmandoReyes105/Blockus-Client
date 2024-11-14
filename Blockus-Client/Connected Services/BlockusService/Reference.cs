@@ -124,6 +124,192 @@ namespace Blockus_Client.BlockusService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultsDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class ResultsDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdAccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LossesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VictoriesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdAccount {
+            get {
+                return this.IdAccountField;
+            }
+            set {
+                if ((this.IdAccountField.Equals(value) != true)) {
+                    this.IdAccountField = value;
+                    this.RaisePropertyChanged("IdAccount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Losses {
+            get {
+                return this.LossesField;
+            }
+            set {
+                if ((this.LossesField.Equals(value) != true)) {
+                    this.LossesField = value;
+                    this.RaisePropertyChanged("Losses");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Victories {
+            get {
+                return this.VictoriesField;
+            }
+            set {
+                if ((this.VictoriesField.Equals(value) != true)) {
+                    this.VictoriesField = value;
+                    this.RaisePropertyChanged("Victories");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProfileConfigurationDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class ProfileConfigurationDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BoardStyleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdAccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TilesStyleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BoardStyle {
+            get {
+                return this.BoardStyleField;
+            }
+            set {
+                if ((this.BoardStyleField.Equals(value) != true)) {
+                    this.BoardStyleField = value;
+                    this.RaisePropertyChanged("BoardStyle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdAccount {
+            get {
+                return this.IdAccountField;
+            }
+            set {
+                if ((this.IdAccountField.Equals(value) != true)) {
+                    this.IdAccountField = value;
+                    this.RaisePropertyChanged("IdAccount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TilesStyle {
+            get {
+                return this.TilesStyleField;
+            }
+            set {
+                if ((this.TilesStyleField.Equals(value) != true)) {
+                    this.TilesStyleField = value;
+                    this.RaisePropertyChanged("TilesStyle");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PublicAccountDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
     [System.SerializableAttribute()]
     public partial class PublicAccountDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -361,6 +547,24 @@ namespace Blockus_Client.BlockusService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/CreateAccount", ReplyAction="http://tempuri.org/IAccountService/CreateAccountResponse")]
         System.Threading.Tasks.Task<int> CreateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/UpdateAccount", ReplyAction="http://tempuri.org/IAccountService/UpdateAccountResponse")]
+        int UpdateAccount(Blockus_Client.BlockusService.AccountDTO accountDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/UpdateAccount", ReplyAction="http://tempuri.org/IAccountService/UpdateAccountResponse")]
+        System.Threading.Tasks.Task<int> UpdateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetAccountResults", ReplyAction="http://tempuri.org/IAccountService/GetAccountResultsResponse")]
+        Blockus_Client.BlockusService.ResultsDTO GetAccountResults(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetAccountResults", ReplyAction="http://tempuri.org/IAccountService/GetAccountResultsResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.ResultsDTO> GetAccountResultsAsync(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetProfileConfiguration", ReplyAction="http://tempuri.org/IAccountService/GetProfileConfigurationResponse")]
+        Blockus_Client.BlockusService.ProfileConfigurationDTO GetProfileConfiguration(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetProfileConfiguration", ReplyAction="http://tempuri.org/IAccountService/GetProfileConfigurationResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.ProfileConfigurationDTO> GetProfileConfigurationAsync(int idAccount);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -396,6 +600,30 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task<int> CreateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO) {
             return base.Channel.CreateAccountAsync(accountDTO);
+        }
+        
+        public int UpdateAccount(Blockus_Client.BlockusService.AccountDTO accountDTO) {
+            return base.Channel.UpdateAccount(accountDTO);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO) {
+            return base.Channel.UpdateAccountAsync(accountDTO);
+        }
+        
+        public Blockus_Client.BlockusService.ResultsDTO GetAccountResults(int idAccount) {
+            return base.Channel.GetAccountResults(idAccount);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.ResultsDTO> GetAccountResultsAsync(int idAccount) {
+            return base.Channel.GetAccountResultsAsync(idAccount);
+        }
+        
+        public Blockus_Client.BlockusService.ProfileConfigurationDTO GetProfileConfiguration(int idAccount) {
+            return base.Channel.GetProfileConfiguration(idAccount);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.ProfileConfigurationDTO> GetProfileConfigurationAsync(int idAccount) {
+            return base.Channel.GetProfileConfigurationAsync(idAccount);
         }
     }
     
@@ -471,10 +699,10 @@ namespace Blockus_Client.BlockusService {
         System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> CreateMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO hostAccount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/JoinToMatch", ReplyAction="http://tempuri.org/IMatchMakingService/JoinToMatchResponse")]
-        void JoinToMatch(string username, string matchCode);
+        bool JoinToMatch(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchMakingService/JoinToMatch", ReplyAction="http://tempuri.org/IMatchMakingService/JoinToMatchResponse")]
-        System.Threading.Tasks.Task JoinToMatchAsync(string username, string matchCode);
+        System.Threading.Tasks.Task<bool> JoinToMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -512,12 +740,12 @@ namespace Blockus_Client.BlockusService {
             return base.Channel.CreateMatchAsync(hostAccount);
         }
         
-        public void JoinToMatch(string username, string matchCode) {
-            base.Channel.JoinToMatch(username, matchCode);
+        public bool JoinToMatch(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode) {
+            return base.Channel.JoinToMatch(account, matchCode);
         }
         
-        public System.Threading.Tasks.Task JoinToMatchAsync(string username, string matchCode) {
-            return base.Channel.JoinToMatchAsync(username, matchCode);
+        public System.Threading.Tasks.Task<bool> JoinToMatchAsync(Blockus_Client.BlockusService.PublicAccountDTO account, string matchCode) {
+            return base.Channel.JoinToMatchAsync(account, matchCode);
         }
     }
 }

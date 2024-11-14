@@ -20,7 +20,7 @@ namespace Blockus_Client.View
 
         private void AccountConfig(object sender, RoutedEventArgs e)
         {
-
+            NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
         }
 
         private void CreateMatch(object sender, RoutedEventArgs e)
