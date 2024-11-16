@@ -33,8 +33,8 @@ namespace Blockus_Client.Helpers
         {
             if (mainFrame != null)
             {
-                mainFrame.Navigate(page);
-                mainFrame.NavigationService.RemoveBackEntry(); 
+                mainFrame.NavigationService.RemoveBackEntry();
+                mainFrame.Content = page; 
             }
         }
 
