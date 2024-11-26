@@ -12,6 +12,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="AccountDTO" nillable="true" type="tns:AccountDTO" />
+  <xs:complexType name="ResultsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAccount" type="xs:int" />
+      <xs:element minOccurs="0" name="Losses" type="xs:int" />
+      <xs:element minOccurs="0" name="Victories" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultsDTO" nillable="true" type="tns:ResultsDTO" />
+  <xs:complexType name="ProfileConfigurationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoardStyle" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAccount" type="xs:int" />
+      <xs:element minOccurs="0" name="TilesStyle" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfileConfigurationDTO" nillable="true" type="tns:ProfileConfigurationDTO" />
+  <xs:complexType name="ArrayOfPublicAccountDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PublicAccountDTO" nillable="true" type="tns:PublicAccountDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPublicAccountDTO" nillable="true" type="tns:ArrayOfPublicAccountDTO" />
   <xs:complexType name="PublicAccountDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />

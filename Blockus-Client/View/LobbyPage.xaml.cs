@@ -15,12 +15,12 @@ namespace Blockus_Client.View
 
         private void FriendList(object sender, RoutedEventArgs e)
         {
-
+            NavigationManager.Instance.NavigateTo(new AccountFriendsPage());
         }
 
         private void AccountConfig(object sender, RoutedEventArgs e)
         {
-
+            NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
         }
 
         private void CreateMatch(object sender, RoutedEventArgs e)
