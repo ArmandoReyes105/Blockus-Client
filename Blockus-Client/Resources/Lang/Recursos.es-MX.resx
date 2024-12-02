@@ -117,133 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Global_noAccount" xml:space="preserve">
-    <value>Create an account</value>
+  <data name="GlobalNombreJuego" xml:space="preserve">
+    <value>Blockus</value>
   </data>
-  <data name="Global_continueButton" xml:space="preserve">
-    <value>Continue</value>
+  <data name="Global_username" xml:space="preserve">
+    <value>Nombre de usuario</value>
   </data>
-  <data name="Global_cancelButton" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="Global_okButton" xml:space="preserve">
-    <value>Ok</value>
-  </data>
-  <data name="Global_publicMode" xml:space="preserve">
-    <value>Game will search for a match you can join.</value>
-  </data>
-  <data name="Global_privateMode" xml:space="preserve">
-    <value>Enter the match code shared by the host to be able to play with your friends.</value>
-  </data>
-  <data name="Login_login" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="Login_guest" xml:space="preserve">
-    <value>Play as guest </value>
-  </data>
-  <data name="Login_noAccount" xml:space="preserve">
-    <value>Don't have an account? Register here</value>
-  </data>
-  <data name="Register_email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="Register_confirmPassword" xml:space="preserve">
-    <value>Confirm your password</value>
-  </data>
-  <data name="Register_emailRestriction" xml:space="preserve">
-    <value>Email must be '@gmail.com'</value>
-  </data>
-  <data name="Register_signUpNote" xml:space="preserve">
-    <value>Note: once you click on 'Continue' an email will be sent to the email address above, with a verification code for the correct creation of your account.</value>
-  </data>
-  <data name="Login_forgotPassword" xml:space="preserve">
-    <value>Forgot your password?</value>
-  </data>
-  <data name="Lobby_createMatch" xml:space="preserve">
-    <value>Create match</value>
-  </data>
-  <data name="Lobby_joinMatch" xml:space="preserve">
-    <value>Join match</value>
-  </data>
-  <data name="Lobby_Friends" xml:space="preserve">
-    <value>Friends</value>
-  </data>
-  <data name="Lobby_Configuration" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
-  <data name="Lobby_logout" xml:space="preserve">
-    <value>Logout</value>
-  </data>
-  <data name="Global_back" xml:space="preserve">
-    <value>Back</value>
-  </data>
-  <data name="MatchDetails_waitingPlayer" xml:space="preserve">
-    <value>Waiting for a player</value>
-  </data>
-  <data name="MatchDetails_gameMode" xml:space="preserve">
-    <value>Game mode:</value>
-  </data>
-  <data name="MatchDetails_private" xml:space="preserve">
-    <value>Private</value>
-  </data>
-  <data name="MatchDetails_public" xml:space="preserve">
-    <value>Public</value>
-  </data>
-  <data name="MatchDetails_searchingPlayers" xml:space="preserve">
-    <value>Searching for players</value>
-  </data>
-  <data name="MatchDetails_noPlayers" xml:space="preserve">
-    <value>Number of players: </value>
-  </data>
-  <data name="MatchDetails_note" xml:space="preserve">
-    <value>Only players with the match code can join.</value>
-  </data>
-  <data name="MatchDetails_matchCode" xml:space="preserve">
-    <value>Match code: </value>
-  </data>
-  <data name="JoinMatch_enterCode" xml:space="preserve">
-    <value>Enter the match code to join a match</value>
-  </data>
-  <data name="JoinMatch_join" xml:space="preserve">
-    <value>Join</value>
-  </data>
-  <data name="Friends_addedFriends" xml:space="preserve">
-    <value>My friends</value>
-  </data>
-  <data name="Friends_searchUser" xml:space="preserve">
-    <value>Search by username</value>
-  </data>
-  <data name="Configuration_Settings" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="Configuration_modifyPassword" xml:space="preserve">
-    <value>Change your password</value>
-  </data>
-  <data name="Configuration_stats" xml:space="preserve">
-    <value>Stats</value>
-  </data>
-  <data name="Configuration_victories" xml:space="preserve">
-    <value>Victories</value>
-  </data>
-  <data name="Configuration_loses" xml:space="preserve">
-    <value>Losses</value>
-  </data>
-  <data name="Configuration_boardStyle" xml:space="preserve">
-    <value>Board style</value>
-  </data>
-  <data name="Configuration_TilesStyle" xml:space="preserve">
-    <value>Tiles style: </value>
-  </data>
-  <data name="ModifyPassword_modify" xml:space="preserve">
-    <value>Change your password</value>
-  </data>
-  <data name="ModifyPassword_actualPassword" xml:space="preserve">
-    <value>Current password: </value>
-  </data>
-  <data name="ModifyPassword_newPassword" xml:space="preserve">
-    <value>Enter your new password: </value>
-  </data>
-  <data name="ModifyPassword_note" xml:space="preserve">
-    <value>NOTE: once your password is modified you will be asked to log in again with your new password.</value>
+  <data name="Global_password" xml:space="preserve">
+    <value>Contraseña</value>
   </data>
 </root>

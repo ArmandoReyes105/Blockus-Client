@@ -25,7 +25,11 @@
             <StackPanel Grid.Column="0" Margin="10, 40, 0, 10" x:Name="StackPanel_Friends">
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="10,40, 0, 10">
+            <StackPanel Grid.Column="1" Margin="10,40, 0, 10" x:Name="StackPanel_AddFriends">
+                <StackPanel Orientation="Horizontal" Margin="10, 15, 10, 10">
+                    <TextBox x:Name="txt_searchFriends" Text="Busca un usuario" Width="450"  Height="60" Style="{StaticResource Normal_TextBox}"/>
+                    <Button x:Name="btn_Search" Content="Buscar" Margin="25, -10, 0, 0" Width="100" Height="60" Style="{StaticResource Normal_Button}" Click="searchUser"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>

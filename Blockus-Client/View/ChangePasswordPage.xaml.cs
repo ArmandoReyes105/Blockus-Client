@@ -16,11 +16,16 @@ namespace Blockus_Client.View
 
         private void UpdateAccountPassword(object sender, RoutedEventArgs e)
         {
-            string enteredPassword = HashManager.HashPassword(txt_Password.Password);
-            string newPassword = HashManager.HashPassword(txt_NewPassword.Password);
-
-            if (!CheckPassword(sender, e))
+            if (!AreFieldsComplete())
                 return;
+
+            string enteredPassword = HashManager.HashPassword(txt_Password.Password);
+            string newPassword = txt_NewPassword.Password;
+
+            if (!ValidateNewPassword(newPassword) || !CheckPassword(sender, e))
+                return;
+
+            string hashedNewPassword = HashManager.HashPassword(newPassword);
 
             AccountDTO currentAccount = SessionManager.Instance.GetCurrentAccount();
             if (currentAccount == null)
@@ -29,7 +34,7 @@ namespace Blockus_Client.View
                 return;
             }
 
-            currentAccount.Password = newPassword;
+            currentAccount.Password = hashedNewPassword;
 
             var accountClient = new AccountServiceClient();
             int result = accountClient.UpdateAccount(currentAccount);
@@ -54,9 +59,6 @@ namespace Blockus_Client.View
 
         private bool CheckPassword(object sender, RoutedEventArgs e)
         {
-            if (!AreFieldsComplete())
-                return false;
-
             AccountDTO currentAccount = SessionManager.Instance.GetCurrentAccount();
             if (currentAccount == null)
             {
@@ -65,7 +67,7 @@ namespace Blockus_Client.View
             }
 
             string enteredPassword = HashManager.HashPassword(txt_Password.Password);
-            string newPassword = HashManager.HashPassword(txt_NewPassword.Password);
+            string newPassword = txt_NewPassword.Password;
 
             if (enteredPassword != currentAccount.Password)
             {
@@ -76,6 +78,23 @@ namespace Blockus_Client.View
             if (enteredPassword == newPassword)
             {
                 MessageBox.Show("La nueva contrasenia no puede ser igual a la actual");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidateNewPassword(string newPassword)
+        {
+            if (newPassword.Length < 8 || newPassword.Length > 16)
+            {
+                MessageBox.Show("La contrasenia debe tener entre 8 y 16 caracteres");
+                return false;
+            }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(newPassword, @"^[a-zA-z0-9]+$"))
+            {
+                MessageBox.Show("La contrasenia solo debe contener numeros o letras");
                 return false;
             }
 

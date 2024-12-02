@@ -42,13 +42,12 @@ namespace Blockus_Client.View
 
             var accountClient = new AccountServiceClient();
             int result = accountClient.CreateAccount(account);
-            //int result = 1; 
             accountClient.Close();
 
             if (result != 0)
             {
                 MessageBox.Show("Su cuenta ah sido creada exitosamente", "Cuenta creada", MessageBoxButton.OK);
-                //TODO goToLobby()
+                NavigationManager.Instance.NavigateTo(new LoginPage());
             }
             else
             {

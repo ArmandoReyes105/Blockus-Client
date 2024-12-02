@@ -3,6 +3,7 @@ using Blockus_Client.Helpers;
 using Blockus_Client.UserControls;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,6 +54,44 @@ namespace Blockus_Client.View
         private void GoToLobbyPage(object sender, RoutedEventArgs e)
         {
             NavigationManager.Instance.NavigateTo(new LobbyPage());
+        }
+
+        private void searchUser(object sender, RoutedEventArgs e)
+        {
+            var currentAccount = SessionManager.Instance.GetCurrentAccount();
+
+            if (AreFieldsComplete())
+            {
+                string username = txt_searchFriends.Text.Trim();
+                try
+                {
+                    var client = new AccountServiceClient();
+                    var searchResults = client.SearchByUsername(username);
+
+                    foreach (var searchResult in searchResults)
+                    {
+                        var userCard = new UserCard();
+                        userCard.LoadUserInformation(searchResult);
+                        StackPanel_AddFriends.Children.Add(userCard);
+                    }
+                } catch (EntityException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        private bool AreFieldsComplete()
+        {
+            bool result = true;
+
+            if (string.IsNullOrEmpty(txt_searchFriends.Text))
+            {
+                MessageBox.Show("Ingrese un username para buscarlo.");
+                result = false;
+            }
+
+            return result;
         }
     }
 }

@@ -567,6 +567,12 @@ namespace Blockus_Client.BlockusService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/DeleteFriend", ReplyAction="http://tempuri.org/IAccountService/DeleteFriendResponse")]
         System.Threading.Tasks.Task<int> DeleteFriendAsync(int idFriend, int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/SearchByUsername", ReplyAction="http://tempuri.org/IAccountService/SearchByUsernameResponse")]
+        Blockus_Client.BlockusService.PublicAccountDTO[] SearchByUsername(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/SearchByUsername", ReplyAction="http://tempuri.org/IAccountService/SearchByUsernameResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> SearchByUsernameAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -650,6 +656,14 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task<int> DeleteFriendAsync(int idFriend, int idAccount) {
             return base.Channel.DeleteFriendAsync(idFriend, idAccount);
+        }
+        
+        public Blockus_Client.BlockusService.PublicAccountDTO[] SearchByUsername(string username) {
+            return base.Channel.SearchByUsername(username);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> SearchByUsernameAsync(string username) {
+            return base.Channel.SearchByUsernameAsync(username);
         }
     }
     

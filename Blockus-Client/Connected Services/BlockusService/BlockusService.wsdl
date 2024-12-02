@@ -75,6 +75,12 @@
   <wsdl:message name="IAccountService_DeleteFriend_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteFriendResponse" />
   </wsdl:message>
+  <wsdl:message name="IAccountService_SearchByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByUsername" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_SearchByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByUsernameResponse" />
+  </wsdl:message>
   <wsdl:message name="ISessionService_LogIn_InputMessage">
     <wsdl:part name="parameters" element="tns:LogIn" />
   </wsdl:message>
@@ -148,6 +154,10 @@
     <wsdl:operation name="DeleteFriend">
       <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/DeleteFriend" message="tns:IAccountService_DeleteFriend_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/DeleteFriendResponse" message="tns:IAccountService_DeleteFriend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/SearchByUsername" message="tns:IAccountService_SearchByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/SearchByUsernameResponse" message="tns:IAccountService_SearchByUsername_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="ISessionService">
@@ -244,6 +254,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteFriend">
       <soap12:operation soapAction="http://tempuri.org/IAccountService/DeleteFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByUsername">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/SearchByUsername" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
