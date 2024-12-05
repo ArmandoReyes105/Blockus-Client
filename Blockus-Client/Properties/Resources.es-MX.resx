@@ -246,4 +246,100 @@
   <data name="ModifyPassword_note" xml:space="preserve">
     <value>NOTA: una vez modificada tu contraseña se pedirá que inicies sesión con tu nueva contraseña.</value>
   </data>
+  <data name="Global_gameName" xml:space="preserve">
+    <value>Blockus</value>
+  </data>
+  <data name="Global_password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Global_username" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="Global_language" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="Login_log" xml:space="preserve">
+    <value>Inicia</value>
+  </data>
+  <data name="Login_in" xml:space="preserve">
+    <value>Sesión</value>
+  </data>
+  <data name="Friends_search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="Error_noConnection" xml:space="preserve">
+    <value>Ocurrió un error al conectarse a la base de datos, por favor intente mas tarde.</value>
+  </data>
+  <data name="Error_unsuccesfulOperation" xml:space="preserve">
+    <value>Error al actualizar los datos, intente mas tarde.</value>
+  </data>
+  <data name="Error_noCoincidences" xml:space="preserve">
+    <value>Tu contraseña no coincide.</value>
+  </data>
+  <data name="Error_samePassword" xml:space="preserve">
+    <value>Tu contraseña nueva no puede ser igual a la actual.</value>
+  </data>
+  <data name="Error_smallPassword" xml:space="preserve">
+    <value>Tu contraseña debe tener entre 8 y 16 caracteres.</value>
+  </data>
+  <data name="Error_specialCharacters" xml:space="preserve">
+    <value>Tu contraseña solo debe contener numeros o letras.</value>
+  </data>
+  <data name="Error_incompleteFields" xml:space="preserve">
+    <value>Campos incompletos. Llene todos los campos e intente nuevamente.</value>
+  </data>
+  <data name="JoinMatch_noMatches" xml:space="preserve">
+    <value>No se encontro ninguna partida que coincida con el codigo ingresado.</value>
+  </data>
+  <data name="JoinMatch_fullMatch" xml:space="preserve">
+    <value>La partida a la que intentas unirte esta llena.</value>
+  </data>
+  <data name="JoinMatch_hostLeft" xml:space="preserve">
+    <value>El anfitrión abandonó la partida, serás llevado al menú principal.</value>
+  </data>
+  <data name="Error_retrievingData" xml:space="preserve">
+    <value>Lo sentimos, ocurrió un error al intentar recuperar su información.</value>
+  </data>
+  <data name="Error_wrongCredentials" xml:space="preserve">
+    <value>Credenciales incorrectas.</value>
+  </data>
+  <data name="Error_alreadyLogged" xml:space="preserve">
+    <value>No se puede iniciar sesión: ya tienes una sesión activa.</value>
+  </data>
+  <data name="MatchDetails_errorLeft" xml:space="preserve">
+    <value>Error: saliendo de la partida </value>
+  </data>
+  <data name="MatchDetails_createError" xml:space="preserve">
+    <value>Error: creando partida</value>
+  </data>
+  <data name="Error_serverConnection" xml:space="preserve">
+    <value>Ocurrió un error al intentar conectarse al servidor, intente nuevamente.</value>
+  </data>
+  <data name="Register_success" xml:space="preserve">
+    <value>Su cuenta ha sido creada exitosamente!</value>
+  </data>
+  <data name="UserCard" xml:space="preserve">
+    <value>Añadir amigo</value>
+  </data>
+  <data name="PlayerCard" xml:space="preserve">
+    <value>Esperando jugador</value>
+  </data>
+  <data name="FriendCard" xml:space="preserve">
+    <value>Eliminar amigo</value>
+  </data>
+  <data name="ModifyPassword_passwordModified" xml:space="preserve">
+    <value>Su contraseña ha sido actualizada exitosamente</value>
+  </data>
+  <data name="JoinMatch_unableToJoin" xml:space="preserve">
+    <value>Error al unirse a la partida</value>
+  </data>
+  <data name="Register_incorrectData" xml:space="preserve">
+    <value>Datos incorrectos</value>
+  </data>
+  <data name="Register_creationSuccess" xml:space="preserve">
+    <value>Cuenta creada</value>
+  </data>
+  <data name="Register_creationFailure" xml:space="preserve">
+    <value>Error al crear cuenta</value>
+  </data>
 </root>

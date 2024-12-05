@@ -14,6 +14,7 @@ namespace Blockus_Client.View
         public NewAccountPage()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
             AnimationManager.FadeIn(this, .75);
             AnimationManager.RotateImage(imageRotation, 10);
         }
@@ -33,7 +34,8 @@ namespace Blockus_Client.View
 
             if (validationResults.Count > 0)
             {
-                MessageBox.Show(validationResults[0].ErrorMessage, "Datos incorrectos", MessageBoxButton.OK);
+                MessageBox.Show(validationResults[0].ErrorMessage, Properties.Resources.Register_incorrectData, MessageBoxButton.OK);
+                //Datos incorrectos
                 return; 
             }
 
@@ -46,12 +48,12 @@ namespace Blockus_Client.View
 
             if (result != 0)
             {
-                MessageBox.Show("Su cuenta ah sido creada exitosamente", "Cuenta creada", MessageBoxButton.OK);
+                MessageBox.Show(Properties.Resources.Register_success, Properties.Resources.Register_creationSuccess, MessageBoxButton.OK);
                 NavigationManager.Instance.NavigateTo(new LoginPage());
             }
             else
             {
-                MessageBox.Show("Ah ocurrido un error al intentar crear su cuenta", "Error al crear cuenta", MessageBoxButton.OK); 
+                MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation, Properties.Resources.Register_creationFailure, MessageBoxButton.OK);
             }
         }
 

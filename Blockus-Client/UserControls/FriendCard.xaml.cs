@@ -27,6 +27,7 @@ namespace Blockus_Client.UserControls
         public FriendCard()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
         }
 
         public void ResetInformation()

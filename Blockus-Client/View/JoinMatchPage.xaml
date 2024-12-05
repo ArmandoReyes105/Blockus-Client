@@ -5,18 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Blockus_Client.View"
       xmlns:UserControls="clr-namespace:Blockus_Client.UserControls"
+      xmlns:p="clr-namespace:Blockus_Client.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="JoinMatchPage"
       d:Background="{StaticResource BackgroundColor}">
 
     <Grid>
-        <Button Content="Regresar" Click="LeaveMatch" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Margin="20"/>
+        <Button Content="{x:Static p:Resources.Global_back}" Click="LeaveMatch" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Margin="20"/>
 
         <StackPanel x:Name="StackPanel_Code" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Ingrese el código para poder unirse a la partida" Style="{StaticResource Subtitle_Text}"/>
+            <TextBlock Text="{x:Static p:Resources.JoinMatch_enterCode}" Style="{StaticResource Subtitle_Text}"/>
             <TextBox x:Name="TextBox_Code" Style="{StaticResource Normal_TextBox}" HorizontalContentAlignment="Center" MaxLength="6" Margin="0 30"/>
-            <Button Content="Unirse" Style="{StaticResource Normal_Button}" Width="200" Click="JoinToMatch"/>
+            <Button Content="{x:Static p:Resources.JoinMatch_join}" Style="{StaticResource Normal_Button}" Width="200" Click="JoinToMatch"/>
         </StackPanel>
 
         <Grid x:Name="Grid_Players" Visibility="Collapsed">

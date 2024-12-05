@@ -9,7 +9,7 @@ namespace Blockus_Client.View
         public LobbyPage()
         {
             InitializeComponent();
-
+            LanguageManager.ApplyCulture();
             AnimationManager.FadeIn(this, .75); 
         }
 

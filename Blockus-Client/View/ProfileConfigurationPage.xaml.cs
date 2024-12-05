@@ -10,6 +10,7 @@ namespace Blockus_Client.View
     {
         public ProfileConfigurationPage()
         {
+            LanguageManager.ApplyCulture();
             InitializeComponent();
             try
             {
@@ -17,7 +18,7 @@ namespace Blockus_Client.View
             }
             catch (Exception e)
             {
-                MessageBox.Show("Lo sentimos ocurrio un error al intentar comunicarse con el servidor");
+                MessageBox.Show(Properties.Resources.Error_serverConnection);
                 Console.WriteLine(e.Message);
                 SessionManager.Instance.LogOut();
                 NavigationManager.Instance.NavigateTo(new LoginPage());

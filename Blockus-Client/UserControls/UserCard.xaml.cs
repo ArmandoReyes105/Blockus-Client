@@ -17,6 +17,7 @@ namespace Blockus_Client.UserControls
         public UserCard()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
         }
 
         public void LoadUserInformation(PublicAccountDTO account)

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Blockus_Client.View"
       xmlns:p="clr-namespace:Blockus_Client.Properties"
-      mc:Ignorable="d" 
+    mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       d:Background="{StaticResource BackgroundColor}"
       Title="LoginPage">
@@ -16,32 +16,30 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="1" Content="Crear cuenta" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Click="GoToNewAccountPage"/>
-
-        <TextBlock Text="Blockus" Style="{StaticResource Game_Title}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock Text="{x:Static p:Resources.Global_gameName}" Style="{StaticResource Game_Title}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         
         <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="30 0 50 0">
 
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Iniciar " Style="{StaticResource Title_Text}"/>
-                <TextBlock Text="Sesión" Style="{StaticResource Title_Text}" Foreground="{StaticResource PrimaryColor}"/>
+                <TextBlock Text="{x:Static p:Resources.Login_log}" Style="{StaticResource Title_Text}"/>
+                <TextBlock Text="{x:Static p:Resources.Login_in}" Style="{StaticResource Title_Text}" Foreground="{StaticResource PrimaryColor}"/>
             </StackPanel>
 
             <StackPanel Orientation="Vertical" Margin="0 30 0 0">
-                <TextBlock Text="Nombre de usuario" Style="{StaticResource Normal_Text}"/>
+                <TextBlock Text="{x:Static p:Resources.Global_username}" Style="{StaticResource Normal_Text}"/>
                 <TextBox x:Name="txt_Username" Width="350" HorizontalAlignment="Left" Style="{StaticResource Normal_TextBox}" MaxLength="254"/>
 
-                <TextBlock Text="Contraseña" Style="{StaticResource Normal_Text}" Margin="0 15 0 0"/>
+                <TextBlock Text="{x:Static p:Resources.Global_password}" Style="{StaticResource Normal_Text}" Margin="0 15 0 0"/>
                 <PasswordBox Name="txt_Password" Width="350" HorizontalAlignment="Left" Style="{StaticResource Normal_PasswordBox}" MaxLength="16"/>
-                <Button Content="Olvide mi contraseña" HorizontalAlignment="Right" Style="{StaticResource Text_Button}" Click="ForgotPassword" FontSize="12"/>
+                <Button Content="{x:Static p:Resources.Login_forgotPassword}" HorizontalAlignment="Right" Style="{StaticResource Text_Button}" Click="ForgotPassword" FontSize="12"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
-                <Button x:Name="btn_Login" Content="Iniciar sesión" Margin="0" Click="Login" Style="{StaticResource Normal_Button}" Width="167" Height="40" HorizontalAlignment="Left"/>
-                <Button x:Name="btn_PlayAsGuest" Content="Como invitado" Margin="15 0 0 0" Click="LoginAsGuest" Style="{StaticResource Border_Button}" Width="168" Height="40" HorizontalAlignment="Left"/>
+                <Button x:Name="btn_Login" Content="{x:Static p:Resources.Login_login}" Margin="0" Click="Login" Style="{StaticResource Normal_Button}" Width="167" Height="40" HorizontalAlignment="Left"/>
+                <Button x:Name="btn_PlayAsGuest" Content="{x:Static p:Resources.Login_guest}" Margin="15 0 0 0" Click="LoginAsGuest" Style="{StaticResource Border_Button}" Width="168" Height="40" HorizontalAlignment="Left"/>
             </StackPanel>
 
-            <Button Content="¿Aún no tienes cuenta? Crea una" HorizontalAlignment="Left"  Style="{StaticResource Text_Button}" Click="GoToNewAccountPage" Margin="0 15 0 0"/>
+            <Button Content="{x:Static p:Resources.Login_noAccount}" HorizontalAlignment="Left"  Style="{StaticResource Text_Button}" Click="GoToNewAccountPage" Margin="0 15 0 0"/>
         </StackPanel>
 
         <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="70" Grid.Column="1">
@@ -51,6 +49,6 @@
                 </Image.RenderTransform>
             </Image>
         </Viewbox>
-
+        <Button Grid.Column="1" Content="{x:Static p:Resources.Global_language}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Style="{StaticResource Normal_Button}" Width="90" Click="ChangeLanguage"/>
     </Grid>
 </Page>

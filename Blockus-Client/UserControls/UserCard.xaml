@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blockus_Client.UserControls"
+             xmlns:p="clr-namespace:Blockus_Client.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="660">
     <Grid  Margin="10, 10, 10, 10">
@@ -15,7 +16,7 @@
 
         <Image Width="100" Height="100" Name="Image_UserProfileImage" Source="/Resources/Images/ProfileImage-0.png" Stretch="Fill" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
         <TextBlock x:Name="txt_Username" Text="USERNAME_PLACEHOLDER" Style="{StaticResource Normal_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-        <Button x:Name="btn_Add" Content=" Add friend " VerticalAlignment="Center" HorizontalAlignment="Center" Click="AddNewFriend" Style="{StaticResource Text_Button}" Grid.Column="2"/>
+        <Button x:Name="btn_Add" Content="{x:Static p:Resources.UserCard}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AddNewFriend" Style="{StaticResource Text_Button}" Grid.Column="2"/>
     </Grid>
 </UserControl>
 

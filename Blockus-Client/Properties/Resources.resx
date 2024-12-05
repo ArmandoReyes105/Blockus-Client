@@ -246,4 +246,100 @@
   <data name="ModifyPassword_note" xml:space="preserve">
     <value>NOTE: once your password is modified you will be asked to log in again with your new password.</value>
   </data>
+  <data name="Global_gameName" xml:space="preserve">
+    <value>Blockus</value>
+  </data>
+  <data name="Global_password" xml:space="preserve">
+    <value>password</value>
+  </data>
+  <data name="Global_username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Global_language" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Login_log" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Login_in" xml:space="preserve">
+    <value>your account</value>
+  </data>
+  <data name="Friends_search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Error_noConnection" xml:space="preserve">
+    <value>An error ocurred while trying to connect to the database, please try it later.</value>
+  </data>
+  <data name="Error_unsuccesfulOperation" xml:space="preserve">
+    <value>An error ocurred while updating your data, please try again later.</value>
+  </data>
+  <data name="Error_noCoincidences" xml:space="preserve">
+    <value>The entered data does not match</value>
+  </data>
+  <data name="Error_samePassword" xml:space="preserve">
+    <value>The new password cannot be the same as your current password.</value>
+  </data>
+  <data name="Error_smallPassword" xml:space="preserve">
+    <value>Your password must be 8-16 characters long.</value>
+  </data>
+  <data name="Error_specialCharacters" xml:space="preserve">
+    <value>Your password must only have letters and/or numbers.</value>
+  </data>
+  <data name="Error_incompleteFields" xml:space="preserve">
+    <value>Incomplete fields. Fill in all fields and try again.</value>
+  </data>
+  <data name="JoinMatch_noMatches" xml:space="preserve">
+    <value>No match found for the entered code.</value>
+  </data>
+  <data name="JoinMatch_fullMatch" xml:space="preserve">
+    <value>The match you tried to join is already full.</value>
+  </data>
+  <data name="JoinMatch_hostLeft" xml:space="preserve">
+    <value>The host has left the match, you will be sent back to the lobby.</value>
+  </data>
+  <data name="Error_retrievingData" xml:space="preserve">
+    <value>An error ocurred while trying to retrieve your data.</value>
+  </data>
+  <data name="Error_wrongCredentials" xml:space="preserve">
+    <value>Wrong credentials</value>
+  </data>
+  <data name="Error_alreadyLogged" xml:space="preserve">
+    <value>You are already logged in</value>
+  </data>
+  <data name="MatchDetails_errorLeft" xml:space="preserve">
+    <value>An error ocurred: leaving match </value>
+  </data>
+  <data name="MatchDetails_createError" xml:space="preserve">
+    <value>An error ocurred: creating match</value>
+  </data>
+  <data name="Error_serverConnection" xml:space="preserve">
+    <value>An error ocurred while trying to connect to the server, try again later.</value>
+  </data>
+  <data name="Register_success" xml:space="preserve">
+    <value>Your account has been succesfully created!</value>
+  </data>
+  <data name="UserCard" xml:space="preserve">
+    <value>Add friend</value>
+  </data>
+  <data name="PlayerCard" xml:space="preserve">
+    <value>Waiting for a player</value>
+  </data>
+  <data name="FriendCard_delete" xml:space="preserve">
+    <value>Delete friend</value>
+  </data>
+  <data name="ModifyPassword_passwordModified" xml:space="preserve">
+    <value>Your password has been modified succesfully </value>
+  </data>
+  <data name="JoinMatch_unableToJoin" xml:space="preserve">
+    <value>An error ocurred while trying to join the match</value>
+  </data>
+  <data name="Register_incorrectData" xml:space="preserve">
+    <value>Invalid data</value>
+  </data>
+  <data name="Register_creationSuccess" xml:space="preserve">
+    <value>Register success</value>
+  </data>
+  <data name="Register_creationFailure" xml:space="preserve">
+    <value>An error ocurred while creating your account</value>
+  </data>
 </root>

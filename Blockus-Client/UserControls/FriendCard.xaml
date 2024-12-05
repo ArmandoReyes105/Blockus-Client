@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blockus_Client.UserControls"
+             xmlns:p="clr-namespace:Blockus_Client.Properties"
              mc:Ignorable="d" 
              d:DesignWidth="660"
              d:DesignHeight="100">
@@ -16,6 +17,6 @@
 
         <Image Width="100" Height="100" Name="Image_FriendProfileImage" Source="/Resources/Images/ProfileImage-0.png" Stretch="Fill" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
         <TextBlock x:Name="txt_FriendName" Text="FRIENDNAME_PLACEHOLDER" Style="{StaticResource Normal_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-        <Button x:Name="btn_Remove" Content=" Remove friend " VerticalAlignment="Center" HorizontalAlignment="Center" Click="DeleteFriend" Style="{StaticResource Text_Button}" Grid.Column="2"/>
+        <Button x:Name="btn_Remove" Content="{x:Static p:Resources.FriendCard_delete}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="DeleteFriend" Style="{StaticResource Text_Button}" Grid.Column="2"/>
     </Grid>
 </UserControl>

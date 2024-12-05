@@ -25,6 +25,7 @@ namespace Blockus_Client.View
         
         public AccountFriendsPage()
         {
+            LanguageManager.ApplyCulture();
             InitializeComponent();
             try
             {
@@ -33,7 +34,7 @@ namespace Blockus_Client.View
                 InitializeFriendsInformation();
             } catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un error al comunicarse con el servidor. Intente mas tarde.\n");
+                MessageBox.Show(Properties.Resources.Error_serverConnection);
                 Console.WriteLine(ex.Message);
                 SessionManager.Instance.LogOut();
                 NavigationManager.Instance.NavigateTo(new LoginPage());
@@ -87,8 +88,7 @@ namespace Blockus_Client.View
 
             if (string.IsNullOrEmpty(txt_searchFriends.Text))
             {
-                MessageBox.Show("Ingrese un username para buscarlo.");
-                result = false;
+                MessageBox.Show(Properties.Resources.Error_incompleteFields);
             }
 
             return result;

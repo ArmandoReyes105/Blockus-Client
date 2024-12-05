@@ -17,6 +17,7 @@ namespace Blockus_Client.View
         public JoinMatchPage()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
             client = new MatchMakingServiceClient(new InstanceContext(this)); 
         }
 
@@ -43,7 +44,7 @@ namespace Blockus_Client.View
 
             }catch(Exception ex)
             {
-                HandleError("Error al unirse a la partida", ex); 
+                HandleError(Properties.Resources.JoinMatch_unableToJoin, ex); 
             }
 
         }
@@ -102,10 +103,10 @@ namespace Blockus_Client.View
             switch (hostStatus)
             {
                 case "0": 
-                    message = "No se encontró ninguna partida que coincida con el código ingresado"; 
+                    message = Properties.Resources.JoinMatch_noMatches; 
                     break; 
                 case "-1": 
-                    message = "La partida a la que intenta ingresar ya está llena";
+                    message = Properties.Resources.JoinMatch_fullMatch;
                     break; ; 
                 default: 
                     break; 
@@ -140,7 +141,7 @@ namespace Blockus_Client.View
 
         public void NotifyHostExit(MatchDTO matchDTO)
         {
-            MessageBox.Show("El anfitrion ha dejado la partida, seras llevado al menú principal ");
+            MessageBox.Show(Properties.Resources.JoinMatch_hostLeft);
             NavigationManager.Instance.NavigateTo(new LobbyPage()); 
         }
 
@@ -148,7 +149,7 @@ namespace Blockus_Client.View
         private void HandleError(string message, Exception ex)
         {
             Console.WriteLine(ex.ToString());
-            MessageBox.Show("Lo sentimos ha ocurrido un error al intentar comunicarse con el servidor");
+            MessageBox.Show(Properties.Resources.Error_serverConnection);
             NavigationManager.Instance.NavigateTo(new LoginPage());
             SessionManager.Instance.LogOut();
         }

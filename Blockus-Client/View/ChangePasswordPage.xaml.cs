@@ -12,6 +12,7 @@ namespace Blockus_Client.View
             InitializeComponent();
             AnimationManager.FadeIn(this, .75);
             AnimationManager.RotateImage(imageRotation, 10);
+            LanguageManager.ApplyCulture();
         }
 
         private void UpdateAccountPassword(object sender, RoutedEventArgs e)
@@ -30,7 +31,7 @@ namespace Blockus_Client.View
             AccountDTO currentAccount = SessionManager.Instance.GetCurrentAccount();
             if (currentAccount == null)
             {
-                MessageBox.Show("Ocurrio un error al conectarse al sistema, intente mas tarde");
+                MessageBox.Show(Properties.Resources.Error_noConnection);
                 return;
             }
 
@@ -42,13 +43,13 @@ namespace Blockus_Client.View
 
             if (result > 0)
             {
-                MessageBox.Show("Su contrasenia ha sido actualizada exitosamente");
+                MessageBox.Show(Properties.Resources.ModifyPassword_passwordModified);
                 SessionManager.Instance.LogOut();
                 NavigationManager.Instance.NavigateTo(new LoginPage());
             }
             else
             {
-                MessageBox.Show("Error al actualizar los datos, intente nuevamente");
+                MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation);
             }
         }
 
@@ -62,7 +63,7 @@ namespace Blockus_Client.View
             AccountDTO currentAccount = SessionManager.Instance.GetCurrentAccount();
             if (currentAccount == null)
             {
-                MessageBox.Show("Ocurrio un error al conectarse al sistema, intente mas tarde");
+                MessageBox.Show(Properties.Resources.Error_noConnection);
                 return false;
             }
 
@@ -71,13 +72,13 @@ namespace Blockus_Client.View
 
             if (enteredPassword != currentAccount.Password)
             {
-                MessageBox.Show("Tu contrasenia no coincide");
+                MessageBox.Show(Properties.Resources.Error_wrongCredentials);
                 return false;
             }
 
             if (enteredPassword == newPassword)
             {
-                MessageBox.Show("La nueva contrasenia no puede ser igual a la actual");
+                MessageBox.Show(Properties.Resources.Error_samePassword);
                 return false;
             }
 
@@ -88,13 +89,13 @@ namespace Blockus_Client.View
         {
             if (newPassword.Length < 8 || newPassword.Length > 16)
             {
-                MessageBox.Show("La contrasenia debe tener entre 8 y 16 caracteres");
+                MessageBox.Show(Properties.Resources.Error_smallPassword);
                 return false;
             }
 
             if (!System.Text.RegularExpressions.Regex.IsMatch(newPassword, @"^[a-zA-z0-9]+$"))
             {
-                MessageBox.Show("La contrasenia solo debe contener numeros o letras");
+                MessageBox.Show(Properties.Resources.Error_specialCharacters);
                 return false;
             }
 
@@ -107,7 +108,7 @@ namespace Blockus_Client.View
 
             if (string.IsNullOrEmpty(txt_Password.Password) || string.IsNullOrEmpty(txt_NewPassword.Password))
             {
-                MessageBox.Show("Campos incompletos. Llene todos los campos e intente nuevamente.");
+                MessageBox.Show(Properties.Resources.Error_incompleteFields);
                 result = false;
             }
 

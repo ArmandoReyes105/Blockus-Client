@@ -22,7 +22,7 @@ namespace Blockus_Client.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Blockus_Client.Properties {
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Blockus_Client.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Blockus_Client.Properties {
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Board style.
         /// </summary>
-        internal static string Configuration_boardStyle {
+        public static string Configuration_boardStyle {
             get {
                 return ResourceManager.GetString("Configuration_boardStyle", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Losses.
         /// </summary>
-        internal static string Configuration_loses {
+        public static string Configuration_loses {
             get {
                 return ResourceManager.GetString("Configuration_loses", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Change your password.
         /// </summary>
-        internal static string Configuration_modifyPassword {
+        public static string Configuration_modifyPassword {
             get {
                 return ResourceManager.GetString("Configuration_modifyPassword", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Settings.
         /// </summary>
-        internal static string Configuration_Settings {
+        public static string Configuration_Settings {
             get {
                 return ResourceManager.GetString("Configuration_Settings", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Stats.
         /// </summary>
-        internal static string Configuration_stats {
+        public static string Configuration_stats {
             get {
                 return ResourceManager.GetString("Configuration_stats", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Tiles style: .
         /// </summary>
-        internal static string Configuration_TilesStyle {
+        public static string Configuration_TilesStyle {
             get {
                 return ResourceManager.GetString("Configuration_TilesStyle", resourceCulture);
             }
@@ -117,25 +117,142 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Victories.
         /// </summary>
-        internal static string Configuration_victories {
+        public static string Configuration_victories {
             get {
                 return ResourceManager.GetString("Configuration_victories", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You are already logged in.
+        /// </summary>
+        public static string Error_alreadyLogged {
+            get {
+                return ResourceManager.GetString("Error_alreadyLogged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incomplete fields. Fill in all fields and try again..
+        /// </summary>
+        public static string Error_incompleteFields {
+            get {
+                return ResourceManager.GetString("Error_incompleteFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The entered data does not match.
+        /// </summary>
+        public static string Error_noCoincidences {
+            get {
+                return ResourceManager.GetString("Error_noCoincidences", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred while trying to connect to the database, please try it later..
+        /// </summary>
+        public static string Error_noConnection {
+            get {
+                return ResourceManager.GetString("Error_noConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred while trying to retrieve your data..
+        /// </summary>
+        public static string Error_retrievingData {
+            get {
+                return ResourceManager.GetString("Error_retrievingData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The new password cannot be the same as your current password..
+        /// </summary>
+        public static string Error_samePassword {
+            get {
+                return ResourceManager.GetString("Error_samePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred while trying to connect to the server, try again later..
+        /// </summary>
+        public static string Error_serverConnection {
+            get {
+                return ResourceManager.GetString("Error_serverConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your password must be 8-16 characters long..
+        /// </summary>
+        public static string Error_smallPassword {
+            get {
+                return ResourceManager.GetString("Error_smallPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your password must only have letters and/or numbers..
+        /// </summary>
+        public static string Error_specialCharacters {
+            get {
+                return ResourceManager.GetString("Error_specialCharacters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred while updating your data, please try again later..
+        /// </summary>
+        public static string Error_unsuccesfulOperation {
+            get {
+                return ResourceManager.GetString("Error_unsuccesfulOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Wrong credentials.
+        /// </summary>
+        public static string Error_wrongCredentials {
+            get {
+                return ResourceManager.GetString("Error_wrongCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Delete friend.
+        /// </summary>
+        public static string FriendCard_delete {
+            get {
+                return ResourceManager.GetString("FriendCard_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a My friends.
         /// </summary>
-        internal static string Friends_addedFriends {
+        public static string Friends_addedFriends {
             get {
                 return ResourceManager.GetString("Friends_addedFriends", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Search.
+        /// </summary>
+        public static string Friends_search {
+            get {
+                return ResourceManager.GetString("Friends_search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Search by username.
         /// </summary>
-        internal static string Friends_searchUser {
+        public static string Friends_searchUser {
             get {
                 return ResourceManager.GetString("Friends_searchUser", resourceCulture);
             }
@@ -144,7 +261,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Back.
         /// </summary>
-        internal static string Global_back {
+        public static string Global_back {
             get {
                 return ResourceManager.GetString("Global_back", resourceCulture);
             }
@@ -153,7 +270,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Cancel.
         /// </summary>
-        internal static string Global_cancelButton {
+        public static string Global_cancelButton {
             get {
                 return ResourceManager.GetString("Global_cancelButton", resourceCulture);
             }
@@ -162,16 +279,34 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Continue.
         /// </summary>
-        internal static string Global_continueButton {
+        public static string Global_continueButton {
             get {
                 return ResourceManager.GetString("Global_continueButton", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Blockus.
+        /// </summary>
+        public static string Global_gameName {
+            get {
+                return ResourceManager.GetString("Global_gameName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a English.
+        /// </summary>
+        public static string Global_language {
+            get {
+                return ResourceManager.GetString("Global_language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Create an account.
         /// </summary>
-        internal static string Global_noAccount {
+        public static string Global_noAccount {
             get {
                 return ResourceManager.GetString("Global_noAccount", resourceCulture);
             }
@@ -180,16 +315,25 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Ok.
         /// </summary>
-        internal static string Global_okButton {
+        public static string Global_okButton {
             get {
                 return ResourceManager.GetString("Global_okButton", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a password.
+        /// </summary>
+        public static string Global_password {
+            get {
+                return ResourceManager.GetString("Global_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enter the match code shared by the host to be able to play with your friends..
         /// </summary>
-        internal static string Global_privateMode {
+        public static string Global_privateMode {
             get {
                 return ResourceManager.GetString("Global_privateMode", resourceCulture);
             }
@@ -198,34 +342,79 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Game will search for a match you can join..
         /// </summary>
-        internal static string Global_publicMode {
+        public static string Global_publicMode {
             get {
                 return ResourceManager.GetString("Global_publicMode", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Username.
+        /// </summary>
+        public static string Global_username {
+            get {
+                return ResourceManager.GetString("Global_username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Enter the match code to join a match.
         /// </summary>
-        internal static string JoinMatch_enterCode {
+        public static string JoinMatch_enterCode {
             get {
                 return ResourceManager.GetString("JoinMatch_enterCode", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The match you tried to join is already full..
+        /// </summary>
+        public static string JoinMatch_fullMatch {
+            get {
+                return ResourceManager.GetString("JoinMatch_fullMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The host has left the match, you will be sent back to the lobby..
+        /// </summary>
+        public static string JoinMatch_hostLeft {
+            get {
+                return ResourceManager.GetString("JoinMatch_hostLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Join.
         /// </summary>
-        internal static string JoinMatch_join {
+        public static string JoinMatch_join {
             get {
                 return ResourceManager.GetString("JoinMatch_join", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a No match found for the entered code..
+        /// </summary>
+        public static string JoinMatch_noMatches {
+            get {
+                return ResourceManager.GetString("JoinMatch_noMatches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred while trying to join the match.
+        /// </summary>
+        public static string JoinMatch_unableToJoin {
+            get {
+                return ResourceManager.GetString("JoinMatch_unableToJoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Configuration.
         /// </summary>
-        internal static string Lobby_Configuration {
+        public static string Lobby_Configuration {
             get {
                 return ResourceManager.GetString("Lobby_Configuration", resourceCulture);
             }
@@ -234,7 +423,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Create match.
         /// </summary>
-        internal static string Lobby_createMatch {
+        public static string Lobby_createMatch {
             get {
                 return ResourceManager.GetString("Lobby_createMatch", resourceCulture);
             }
@@ -243,7 +432,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Friends.
         /// </summary>
-        internal static string Lobby_Friends {
+        public static string Lobby_Friends {
             get {
                 return ResourceManager.GetString("Lobby_Friends", resourceCulture);
             }
@@ -252,7 +441,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Join match.
         /// </summary>
-        internal static string Lobby_joinMatch {
+        public static string Lobby_joinMatch {
             get {
                 return ResourceManager.GetString("Lobby_joinMatch", resourceCulture);
             }
@@ -261,7 +450,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Logout.
         /// </summary>
-        internal static string Lobby_logout {
+        public static string Lobby_logout {
             get {
                 return ResourceManager.GetString("Lobby_logout", resourceCulture);
             }
@@ -270,7 +459,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Forgot your password?.
         /// </summary>
-        internal static string Login_forgotPassword {
+        public static string Login_forgotPassword {
             get {
                 return ResourceManager.GetString("Login_forgotPassword", resourceCulture);
             }
@@ -279,16 +468,34 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Play as guest .
         /// </summary>
-        internal static string Login_guest {
+        public static string Login_guest {
             get {
                 return ResourceManager.GetString("Login_guest", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a your account.
+        /// </summary>
+        public static string Login_in {
+            get {
+                return ResourceManager.GetString("Login_in", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Log in.
+        /// </summary>
+        public static string Login_log {
+            get {
+                return ResourceManager.GetString("Login_log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Login.
         /// </summary>
-        internal static string Login_login {
+        public static string Login_login {
             get {
                 return ResourceManager.GetString("Login_login", resourceCulture);
             }
@@ -297,16 +504,34 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Don&apos;t have an account? Register here.
         /// </summary>
-        internal static string Login_noAccount {
+        public static string Login_noAccount {
             get {
                 return ResourceManager.GetString("Login_noAccount", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred: creating match.
+        /// </summary>
+        public static string MatchDetails_createError {
+            get {
+                return ResourceManager.GetString("MatchDetails_createError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred: leaving match .
+        /// </summary>
+        public static string MatchDetails_errorLeft {
+            get {
+                return ResourceManager.GetString("MatchDetails_errorLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Game mode:.
         /// </summary>
-        internal static string MatchDetails_gameMode {
+        public static string MatchDetails_gameMode {
             get {
                 return ResourceManager.GetString("MatchDetails_gameMode", resourceCulture);
             }
@@ -315,7 +540,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Match code: .
         /// </summary>
-        internal static string MatchDetails_matchCode {
+        public static string MatchDetails_matchCode {
             get {
                 return ResourceManager.GetString("MatchDetails_matchCode", resourceCulture);
             }
@@ -324,7 +549,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Number of players: .
         /// </summary>
-        internal static string MatchDetails_noPlayers {
+        public static string MatchDetails_noPlayers {
             get {
                 return ResourceManager.GetString("MatchDetails_noPlayers", resourceCulture);
             }
@@ -333,7 +558,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Only players with the match code can join..
         /// </summary>
-        internal static string MatchDetails_note {
+        public static string MatchDetails_note {
             get {
                 return ResourceManager.GetString("MatchDetails_note", resourceCulture);
             }
@@ -342,7 +567,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Private.
         /// </summary>
-        internal static string MatchDetails_private {
+        public static string MatchDetails_private {
             get {
                 return ResourceManager.GetString("MatchDetails_private", resourceCulture);
             }
@@ -351,7 +576,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Public.
         /// </summary>
-        internal static string MatchDetails_public {
+        public static string MatchDetails_public {
             get {
                 return ResourceManager.GetString("MatchDetails_public", resourceCulture);
             }
@@ -360,7 +585,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Searching for players.
         /// </summary>
-        internal static string MatchDetails_searchingPlayers {
+        public static string MatchDetails_searchingPlayers {
             get {
                 return ResourceManager.GetString("MatchDetails_searchingPlayers", resourceCulture);
             }
@@ -369,7 +594,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Waiting for a player.
         /// </summary>
-        internal static string MatchDetails_waitingPlayer {
+        public static string MatchDetails_waitingPlayer {
             get {
                 return ResourceManager.GetString("MatchDetails_waitingPlayer", resourceCulture);
             }
@@ -378,7 +603,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Current password: .
         /// </summary>
-        internal static string ModifyPassword_actualPassword {
+        public static string ModifyPassword_actualPassword {
             get {
                 return ResourceManager.GetString("ModifyPassword_actualPassword", resourceCulture);
             }
@@ -387,7 +612,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Change your password.
         /// </summary>
-        internal static string ModifyPassword_modify {
+        public static string ModifyPassword_modify {
             get {
                 return ResourceManager.GetString("ModifyPassword_modify", resourceCulture);
             }
@@ -396,7 +621,7 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Enter your new password: .
         /// </summary>
-        internal static string ModifyPassword_newPassword {
+        public static string ModifyPassword_newPassword {
             get {
                 return ResourceManager.GetString("ModifyPassword_newPassword", resourceCulture);
             }
@@ -405,25 +630,61 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a NOTE: once your password is modified you will be asked to log in again with your new password..
         /// </summary>
-        internal static string ModifyPassword_note {
+        public static string ModifyPassword_note {
             get {
                 return ResourceManager.GetString("ModifyPassword_note", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Your password has been modified succesfully .
+        /// </summary>
+        public static string ModifyPassword_passwordModified {
+            get {
+                return ResourceManager.GetString("ModifyPassword_passwordModified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Waiting for a player.
+        /// </summary>
+        public static string PlayerCard {
+            get {
+                return ResourceManager.GetString("PlayerCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Confirm your password.
         /// </summary>
-        internal static string Register_confirmPassword {
+        public static string Register_confirmPassword {
             get {
                 return ResourceManager.GetString("Register_confirmPassword", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred while creating your account.
+        /// </summary>
+        public static string Register_creationFailure {
+            get {
+                return ResourceManager.GetString("Register_creationFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Register success.
+        /// </summary>
+        public static string Register_creationSuccess {
+            get {
+                return ResourceManager.GetString("Register_creationSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Email.
         /// </summary>
-        internal static string Register_email {
+        public static string Register_email {
             get {
                 return ResourceManager.GetString("Register_email", resourceCulture);
             }
@@ -432,18 +693,45 @@ namespace Blockus_Client.Properties {
         /// <summary>
         ///   Busca una cadena traducida similar a Email must be &apos;@gmail.com&apos;.
         /// </summary>
-        internal static string Register_emailRestriction {
+        public static string Register_emailRestriction {
             get {
                 return ResourceManager.GetString("Register_emailRestriction", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Invalid data.
+        /// </summary>
+        public static string Register_incorrectData {
+            get {
+                return ResourceManager.GetString("Register_incorrectData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Note: once you click on &apos;Continue&apos; an email will be sent to the email address above, with a verification code for the correct creation of your account..
         /// </summary>
-        internal static string Register_signUpNote {
+        public static string Register_signUpNote {
             get {
                 return ResourceManager.GetString("Register_signUpNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your account has been succesfully created!.
+        /// </summary>
+        public static string Register_success {
+            get {
+                return ResourceManager.GetString("Register_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Add friend.
+        /// </summary>
+        public static string UserCard {
+            get {
+                return ResourceManager.GetString("UserCard", resourceCulture);
             }
         }
     }
