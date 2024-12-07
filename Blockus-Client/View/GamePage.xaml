@@ -15,6 +15,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -22,8 +23,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Frame x:Name="Frame_Chat" Grid.Column="3" Margin="10 0 0 0" NavigationUIVisibility="Hidden" Grid.Row="1" Width="300" Visibility="Collapsed"/>
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
-            <Button Content="Abrir chat grupal" Style="{StaticResource Text_Button}" Focusable="False"/>
+            <Button Content="Abrir chat grupal" Style="{StaticResource Text_Button}" Focusable="False" Click="Button_Click_1"/>
         </StackPanel>
 
         <Grid Grid.Column="1" Grid.Row="1">
@@ -102,6 +105,8 @@
             <controls:ActivePlayerCard Grid.Row="0" x:Name="UserControl_CardThree" Margin="0 0 0 10"/>
             <controls:ActivePlayerCard Grid.Row="1" x:Name="UserControl_CardFour" Margin="0 10 0 0"/>
         </Grid>
-        
+
+
+        <Border x:Name="Border_Chat" Background="#000000" Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity=".5" Visibility="Collapsed" MouseLeftButtonDown="Border_Chat_MouseLeftButtonDown"/>
     </Grid>
 </Page>

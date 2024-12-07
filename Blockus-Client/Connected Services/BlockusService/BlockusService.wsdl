@@ -32,6 +32,14 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IChatService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -158,6 +166,30 @@
   <wsdl:message name="IMatchService_OnPlayerLeave_InputCallbackMessage">
     <wsdl:part name="parameters" element="tns:OnPlayerLeaveResponse" />
   </wsdl:message>
+  <wsdl:message name="IChatService_JoinToChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToChat" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_JoinToChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_LeaveChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveChat" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_LeaveChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_OnReciveMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnReciveMessage" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_OnReciveMessage_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnReciveMessageResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAccountService">
     <wsdl:operation name="CreateAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/CreateAccount" message="tns:IAccountService_CreateAccount_InputMessage" />
@@ -243,6 +275,24 @@
     <wsdl:operation name="OnPlayerLeave">
       <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/OnPlayerLeave" message="tns:IMatchService_OnPlayerLeave_OutputCallbackMessage" />
       <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/OnPlayerLeaveResponse" message="tns:IMatchService_OnPlayerLeave_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IChatService">
+    <wsdl:operation name="JoinToChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/JoinToChat" message="tns:IChatService_JoinToChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/JoinToChatResponse" message="tns:IChatService_JoinToChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/SendMessage" message="tns:IChatService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/SendMessageResponse" message="tns:IChatService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/LeaveChat" message="tns:IChatService_LeaveChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/LeaveChatResponse" message="tns:IChatService_LeaveChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnReciveMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/OnReciveMessage" message="tns:IChatService_OnReciveMessage_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/OnReciveMessageResponse" message="tns:IChatService_OnReciveMessage_InputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAccountService" type="tns:IAccountService">
@@ -438,6 +488,46 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IChatService" type="tns:IChatService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IChatService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="JoinToChat">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/JoinToChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveChat">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/LeaveChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnReciveMessage">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/OnReciveMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="ServiceImplementation">
     <wsdl:port name="NetTcpBinding_IAccountService" binding="tns:NetTcpBinding_IAccountService">
       <soap12:address location="net.tcp://localhost:8090/Services" />
@@ -458,6 +548,12 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IMatchService" binding="tns:NetTcpBinding_IMatchService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IChatService" binding="tns:NetTcpBinding_IChatService">
       <soap12:address location="net.tcp://localhost:8090/Services" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>

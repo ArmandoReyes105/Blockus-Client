@@ -28,9 +28,10 @@ namespace Blockus_Client.View
 
         public GamePage()
         {
-            InitializeComponent();
-            SetUpUI(); 
+            InitializeComponent(); 
+            SetUpUI();
             SetUpMatch();
+            Frame_Chat.Navigate(new ChatPage(_matchCode));
 
         }
 
@@ -246,5 +247,16 @@ namespace Blockus_Client.View
             MessageBox.Show("El jugador " + username + " ah abandonado la partida");
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Border_Chat.Visibility = Visibility.Visible;
+            Frame_Chat.Visibility = Visibility.Visible;
+        }
+
+        private void Border_Chat_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Frame_Chat.Visibility=Visibility.Collapsed;
+            Border_Chat.Visibility = Visibility.Collapsed;
+        }
     }
 }

@@ -79,11 +79,20 @@
     <Compile Include="UserControls\ActivePlayerCard.xaml.cs">
       <DependentUpon>ActivePlayerCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\OwnMessage.xaml.cs">
+      <DependentUpon>OwnMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PlayerCard.xaml.cs">
       <DependentUpon>PlayerCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\PlayerMessage.xaml.cs">
+      <DependentUpon>PlayerMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Validations\AccountValidator.cs" />
     <Compile Include="Validations\ValidatorHelper.cs" />
+    <Compile Include="View\ChatPage.xaml.cs">
+      <DependentUpon>ChatPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -147,7 +156,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\OwnMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\PlayerCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PlayerMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChatPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
