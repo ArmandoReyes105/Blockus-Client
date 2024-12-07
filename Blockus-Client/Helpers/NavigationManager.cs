@@ -38,5 +38,7 @@ namespace Blockus_Client.Helpers
             }
         }
 
+        public Page CurrentPage => mainFrame?.Content as Page;
+
     }
 }

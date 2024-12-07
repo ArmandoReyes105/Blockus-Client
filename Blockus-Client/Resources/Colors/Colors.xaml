@@ -5,6 +5,7 @@
     <SolidColorBrush x:Key="BackgroundColor" Color="#0D0D0D"/>
 
     <SolidColorBrush x:Key="Gray" Color="#343434"/>
+    <SolidColorBrush x:Key="DarkGray" Color="#161616"/>
     <SolidColorBrush x:Key="Red" Color="#BC1919"/>
     <SolidColorBrush x:Key="Blue" Color="#33AEBC"/>
     <SolidColorBrush x:Key="Green" Color="#24BC19"/>

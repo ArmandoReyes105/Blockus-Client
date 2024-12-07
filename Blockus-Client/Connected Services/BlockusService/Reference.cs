@@ -336,6 +336,121 @@ namespace Blockus_Client.BlockusService {
         Green = 3,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BlockDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class BlockDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Blockus_Client.BlockusService.Block BlockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Blockus_Client.BlockusService.Color ColorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Blockus_Client.BlockusService.Block Block {
+            get {
+                return this.BlockField;
+            }
+            set {
+                if ((this.BlockField.Equals(value) != true)) {
+                    this.BlockField = value;
+                    this.RaisePropertyChanged("Block");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Blockus_Client.BlockusService.Color Color {
+            get {
+                return this.ColorField;
+            }
+            set {
+                if ((this.ColorField.Equals(value) != true)) {
+                    this.ColorField = value;
+                    this.RaisePropertyChanged("Color");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Block", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
+    public enum Block : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block01 = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block02 = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block03 = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GameResult", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
+    public enum GameResult : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Winner = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Losser = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Movement", Namespace="http://schemas.datacontract.org/2004/07/Services.Enums")]
+    public enum Movement : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Up = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Down = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Left = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Right = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RotationCW = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RotationCCW = 6,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IAccountService")]
     public interface IAccountService {
@@ -530,6 +645,143 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task LeaveMatchAsync(string username) {
             return base.Channel.LeaveMatchAsync(username);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IMatchService", CallbackContract=typeof(Blockus_Client.BlockusService.IMatchServiceCallback))]
+    public interface IMatchService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/JoinToActiveMatch", ReplyAction="http://tempuri.org/IMatchService/JoinToActiveMatchResponse")]
+        Blockus_Client.BlockusService.MatchDTO JoinToActiveMatch(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/JoinToActiveMatch", ReplyAction="http://tempuri.org/IMatchService/JoinToActiveMatchResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> JoinToActiveMatchAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/GetCurrentBlock", ReplyAction="http://tempuri.org/IMatchService/GetCurrentBlockResponse")]
+        Blockus_Client.BlockusService.BlockDTO GetCurrentBlock(string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/GetCurrentBlock", ReplyAction="http://tempuri.org/IMatchService/GetCurrentBlockResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.BlockDTO> GetCurrentBlockAsync(string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/PlaceBlock", ReplyAction="http://tempuri.org/IMatchService/PlaceBlockResponse")]
+        Blockus_Client.BlockusService.GameResult PlaceBlock(string matchCode, int points);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/PlaceBlock", ReplyAction="http://tempuri.org/IMatchService/PlaceBlockResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.GameResult> PlaceBlockAsync(string matchCode, int points);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/MakeMovement", ReplyAction="http://tempuri.org/IMatchService/MakeMovementResponse")]
+        void MakeMovement(string matchCode, Blockus_Client.BlockusService.Movement movement);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/MakeMovement", ReplyAction="http://tempuri.org/IMatchService/MakeMovementResponse")]
+        System.Threading.Tasks.Task MakeMovementAsync(string matchCode, Blockus_Client.BlockusService.Movement movement);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/SkipTurn", ReplyAction="http://tempuri.org/IMatchService/SkipTurnResponse")]
+        Blockus_Client.BlockusService.GameResult SkipTurn(string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/SkipTurn", ReplyAction="http://tempuri.org/IMatchService/SkipTurnResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.GameResult> SkipTurnAsync(string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/LeaveActiveMatch", ReplyAction="http://tempuri.org/IMatchService/LeaveActiveMatchResponse")]
+        void LeaveActiveMatch(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/LeaveActiveMatch", ReplyAction="http://tempuri.org/IMatchService/LeaveActiveMatchResponse")]
+        System.Threading.Tasks.Task LeaveActiveMatchAsync(string username);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMatchServiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/OnBlockPlaced", ReplyAction="http://tempuri.org/IMatchService/OnBlockPlacedResponse")]
+        void OnBlockPlaced();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/OnCurrentBlockChanged", ReplyAction="http://tempuri.org/IMatchService/OnCurrentBlockChangedResponse")]
+        void OnCurrentBlockChanged(Blockus_Client.BlockusService.BlockDTO block);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/OnOpponentMovement", ReplyAction="http://tempuri.org/IMatchService/OnOpponentMovementResponse")]
+        void OnOpponentMovement(Blockus_Client.BlockusService.Movement movement);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/OnGameFinished", ReplyAction="http://tempuri.org/IMatchService/OnGameFinishedResponse")]
+        void OnGameFinished(Blockus_Client.BlockusService.GameResult gameResult);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatchService/OnPlayerLeave", ReplyAction="http://tempuri.org/IMatchService/OnPlayerLeaveResponse")]
+        void OnPlayerLeave(string username, Blockus_Client.BlockusService.Color color);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMatchServiceChannel : Blockus_Client.BlockusService.IMatchService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MatchServiceClient : System.ServiceModel.DuplexClientBase<Blockus_Client.BlockusService.IMatchService>, Blockus_Client.BlockusService.IMatchService {
+        
+        public MatchServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public MatchServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public MatchServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MatchServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MatchServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public Blockus_Client.BlockusService.MatchDTO JoinToActiveMatch(string username) {
+            return base.Channel.JoinToActiveMatch(username);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchDTO> JoinToActiveMatchAsync(string username) {
+            return base.Channel.JoinToActiveMatchAsync(username);
+        }
+        
+        public Blockus_Client.BlockusService.BlockDTO GetCurrentBlock(string matchCode) {
+            return base.Channel.GetCurrentBlock(matchCode);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.BlockDTO> GetCurrentBlockAsync(string matchCode) {
+            return base.Channel.GetCurrentBlockAsync(matchCode);
+        }
+        
+        public Blockus_Client.BlockusService.GameResult PlaceBlock(string matchCode, int points) {
+            return base.Channel.PlaceBlock(matchCode, points);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.GameResult> PlaceBlockAsync(string matchCode, int points) {
+            return base.Channel.PlaceBlockAsync(matchCode, points);
+        }
+        
+        public void MakeMovement(string matchCode, Blockus_Client.BlockusService.Movement movement) {
+            base.Channel.MakeMovement(matchCode, movement);
+        }
+        
+        public System.Threading.Tasks.Task MakeMovementAsync(string matchCode, Blockus_Client.BlockusService.Movement movement) {
+            return base.Channel.MakeMovementAsync(matchCode, movement);
+        }
+        
+        public Blockus_Client.BlockusService.GameResult SkipTurn(string matchCode) {
+            return base.Channel.SkipTurn(matchCode);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.GameResult> SkipTurnAsync(string matchCode) {
+            return base.Channel.SkipTurnAsync(matchCode);
+        }
+        
+        public void LeaveActiveMatch(string username) {
+            base.Channel.LeaveActiveMatch(username);
+        }
+        
+        public System.Threading.Tasks.Task LeaveActiveMatchAsync(string username) {
+            return base.Channel.LeaveActiveMatchAsync(username);
         }
     }
 }

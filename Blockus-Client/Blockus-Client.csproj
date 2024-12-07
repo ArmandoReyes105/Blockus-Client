@@ -58,14 +58,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Blocks\Block01.cs" />
+    <Compile Include="Blocks\Block02.cs" />
+    <Compile Include="Blocks\Block03.cs" />
+    <Compile Include="Blocks\BlockFactory.cs" />
+    <Compile Include="Blocks\BlockTemplate.cs" />
     <Compile Include="Connected Services\BlockusService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="GameBoard\BoardPainter.cs" />
+    <Compile Include="GameBoard\GameGrid.cs" />
+    <Compile Include="GameBoard\GameState.cs" />
+    <Compile Include="GameBoard\Position.cs" />
     <Compile Include="Helpers\AnimationManager.cs" />
     <Compile Include="Helpers\HashManager.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
+    <Compile Include="Helpers\TilesImageManager.cs" />
+    <Compile Include="UserControls\ActivePlayerCard.xaml.cs">
+      <DependentUpon>ActivePlayerCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PlayerCard.xaml.cs">
       <DependentUpon>PlayerCard.xaml</DependentUpon>
     </Compile>
@@ -130,6 +143,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\ActivePlayerCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\PlayerCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -180,6 +197,12 @@
     <None Include="App.config" />
     <None Include="Connected Services\BlockusService\BlockusService.wsdl" />
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.AccountDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.BlockDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.GameResult.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.MatchDTO.datasource">
@@ -248,6 +271,30 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\ProfileImage-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\TilesNormal\NormalBlue.png" />
+    <Resource Include="Resources\Tiles\TilesNormal\NormalGreen.png" />
+    <Resource Include="Resources\Tiles\TilesNormal\NormalRed.png" />
+    <Resource Include="Resources\Tiles\TilesNormal\NormalYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\Block-Empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\TileEmpty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\BackgroundCard-Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\BackgroundCard-Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\BackgroundCard-Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\BackgroundCard-Blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

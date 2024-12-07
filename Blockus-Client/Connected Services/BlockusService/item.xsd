@@ -30,4 +30,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MatchDTO" nillable="true" type="tns:MatchDTO" />
+  <xs:complexType name="BlockDTO">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="Block" type="q3:Block" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="Color" type="q4:Color" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlockDTO" nillable="true" type="tns:BlockDTO" />
 </xs:schema>

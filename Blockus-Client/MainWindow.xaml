@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource BackgroundColor}">
+        Background="{StaticResource BackgroundColor}"
+        KeyDown="Window_KeyDown">
 
     <Grid>
         <Image Source="Resources/Images/Blue-Ellipse.png" VerticalAlignment="Top" HorizontalAlignment="Right" Name="Image_BlueEllipse"/>

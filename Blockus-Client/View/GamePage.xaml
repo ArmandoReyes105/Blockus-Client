@@ -4,11 +4,104 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Blockus_Client.View"
+      xmlns:controls="clr-namespace:Blockus_Client.UserControls"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
+      d:Background="{StaticResource BackgroundColor}"
       Title="GamePage">
 
-    <Grid>
-        <TextBlock Text="GamePage" Style="{StaticResource Title_Text}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
+            <Button Content="Abrir chat grupal" Style="{StaticResource Text_Button}" Focusable="False"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Viewbox
+                Grid.Row="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="20">
+
+                <Grid>
+                    <Border
+                        Background="{StaticResource DarkGray}"
+                        CornerRadius="10"
+                        BorderThickness="2"/>
+
+                    <Canvas
+                        x:Name="GameCanvas"
+                        Width="550"
+                        Height="550"/>
+
+                    <Canvas
+                        x:Name="BlockCanvas"
+                        Width="550"
+                        Opacity=".7"
+                        Height="550"/>
+                </Grid>
+            </Viewbox>
+        </Grid>
+
+        <Button
+            Content="Regresar" Style="{StaticResource Text_Button}" HorizontalAlignment="Left" Focusable="False" Click="Button_Click"/>
+        
+        <Grid Grid.Row="1" Margin="0 20 0 0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <controls:ActivePlayerCard Grid.Row="0" x:Name="UserControl_CardOne" Margin="0 0 0 10"/>
+            <controls:ActivePlayerCard Grid.Row="1" x:Name="UserControl_CardTwo" Margin="0 10 0 0"/>
+
+            <StackPanel Grid.Row="2" VerticalAlignment="Center">
+                <TextBlock 
+                    Text="Turno de:" Style="{StaticResource Normal_Text}"/>
+                <TextBlock 
+                    x:Name="Txt_Turn"
+                    Text="Username" Style="{StaticResource Subtitle_Text}" Margin="0 0 0 0"/>
+                <TextBlock 
+                    x:Name="Txt_Label"
+                    Text="¿Te quedaste sin movimientos?" Style="{StaticResource Normal_Text}"
+                    TextWrapping="Wrap"
+                    Margin="0 20 0 0"/>
+                <Button
+                    x:Name="Btn_Skip"
+                    Content="Saltar"
+                    Style="{StaticResource Normal_Button}"
+                    Click="Btn_Skip_Click"
+                    Width="100"
+                    Focusable="False"
+                    HorizontalAlignment="Left"
+                    Margin="0 10 0 0"/>
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2" Margin="0 20 0 0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <controls:ActivePlayerCard Grid.Row="0" x:Name="UserControl_CardThree" Margin="0 0 0 10"/>
+            <controls:ActivePlayerCard Grid.Row="1" x:Name="UserControl_CardFour" Margin="0 10 0 0"/>
+        </Grid>
+        
     </Grid>
 </Page>

@@ -40,6 +40,12 @@ namespace Blockus_Client
             SessionManager.Instance.LogOut(); 
         }
 
-        
+        private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (NavigationManager.Instance.CurrentPage is GamePage gamePage)
+            {
+                gamePage.HandleKeyDown(e);
+            }
+        }
     }
 }

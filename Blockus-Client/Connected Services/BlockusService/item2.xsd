@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services.Dtos" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services.Enums" />
   <xs:element name="CreateAccount">
     <xs:complexType>
       <xs:sequence>
@@ -110,6 +111,147 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="NotifyHostExitResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinToActiveMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinToActiveMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="JoinToActiveMatchResult" nillable="true" type="q10:MatchDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentBlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentBlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="GetCurrentBlockResult" nillable="true" type="q11:BlockDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceBlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="points" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceBlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="PlaceBlockResult" type="q12:GameResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakeMovement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchCode" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="movement" type="q13:Movement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MakeMovementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipTurn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SkipTurnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="SkipTurnResult" type="q14:GameResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaveActiveMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LeaveActiveMatchResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnBlockPlaced">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnBlockPlacedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnCurrentBlockChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="block" nillable="true" type="q15:BlockDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnCurrentBlockChangedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnOpponentMovement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="movement" type="q16:Movement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnOpponentMovementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnGameFinished">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="gameResult" type="q17:GameResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnGameFinishedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnPlayerLeave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="color" type="q18:Color" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnPlayerLeaveResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

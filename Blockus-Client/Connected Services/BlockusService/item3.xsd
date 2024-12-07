@@ -16,4 +16,32 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Color" nillable="true" type="tns:Color" />
+  <xs:simpleType name="Block">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Block01" />
+      <xs:enumeration value="Block02" />
+      <xs:enumeration value="Block03" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Block" nillable="true" type="tns:Block" />
+  <xs:simpleType name="GameResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Winner" />
+      <xs:enumeration value="Losser" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GameResult" nillable="true" type="tns:GameResult" />
+  <xs:simpleType name="Movement">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Up" />
+      <xs:enumeration value="Down" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="RotationCW" />
+      <xs:enumeration value="RotationCCW" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Movement" nillable="true" type="tns:Movement" />
 </xs:schema>
