@@ -1,0 +1,37 @@
+﻿<Page x:Class="Blockus_Client.View.LobbyPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Blockus_Client.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      d:Background="{StaticResource BackgroundColor}"
+      Title="LobbyPage">
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Blockus" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Game_Title}"/>
+
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30, 0, 50, 0">
+            <Button x:Name="btn_CreateMatch" Content="Crear partida" Style="{StaticResource Underline_Button}" Click="CreateMatch" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_JoinMatch" Content="Unirse a partida" Style="{StaticResource Underline_Button}" Click="JoinMatch" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_Friends" Content="Mis amigos" Style="{StaticResource Underline_Button}" Click="FriendList" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_Config" Content="Configuracion" Style="{StaticResource Underline_Button}" Click="AccountConfig" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+            <Button x:Name="btn_LogOut" Content="Cerrar sesion" Style="{StaticResource Underline_Button}" Click="LogOut" Margin="0 30 0 0" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Margin="70" Grid.Column="1">
+            <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image.RenderTransform>
+                    <RotateTransform x:Name="imageRotation" Angle="0" CenterX="220" CenterY="220"/>
+                </Image.RenderTransform>
+            </Image>
+        </Viewbox>
+
+    </Grid>
+</Page>

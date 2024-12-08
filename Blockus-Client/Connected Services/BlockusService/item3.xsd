@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Services.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Services.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="GameType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Private" />
+      <xs:enumeration value="Public" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GameType" nillable="true" type="tns:GameType" />
+  <xs:simpleType name="Color">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Red" />
+      <xs:enumeration value="Blue" />
+      <xs:enumeration value="Yellow" />
+      <xs:enumeration value="Green" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Color" nillable="true" type="tns:Color" />
+  <xs:simpleType name="Block">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Block01" />
+      <xs:enumeration value="Block02" />
+      <xs:enumeration value="Block03" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Block" nillable="true" type="tns:Block" />
+  <xs:simpleType name="GameResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Winner" />
+      <xs:enumeration value="Losser" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GameResult" nillable="true" type="tns:GameResult" />
+  <xs:simpleType name="Movement">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Up" />
+      <xs:enumeration value="Down" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="RotationCW" />
+      <xs:enumeration value="RotationCCW" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Movement" nillable="true" type="tns:Movement" />
+  <xs:complexType name="ArrayOfBlock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Block" type="tns:Block" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBlock" nillable="true" type="tns:ArrayOfBlock" />
+</xs:schema>

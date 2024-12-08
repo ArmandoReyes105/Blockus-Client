@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <FontFamily x:Key="Comfortaa-Bold">/Resources/Fonts/Comfortaa-Bold.ttf#Comfortaa</FontFamily>
+    <FontFamily x:Key="Comfortaa-Regular">/Resources/Fonts/Comfortaa-Regular.ttf#Comfortaa</FontFamily>
+
+</ResourceDictionary>

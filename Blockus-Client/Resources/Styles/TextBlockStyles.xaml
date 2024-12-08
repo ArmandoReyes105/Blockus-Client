@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="Game_Title" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Bold}"/>
+        <Setter Property="FontSize" Value="38"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="Title_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Bold}"/>
+        <Setter Property="FontSize" Value="26"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="Subtitle_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Bold}"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="Normal_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="Small_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="SuperSmall_Text" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource Comfortaa-Regular}"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+</ResourceDictionary>

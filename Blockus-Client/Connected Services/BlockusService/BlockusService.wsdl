@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServiceImplementation" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IAccountService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_ISessionService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMatchMakingService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IChatService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IMatchService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetTcpBinding_IResultsService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Services.Dtos" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services.Enums" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Services.MatchState" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAccountService_CreateAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_CreateAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccount" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_UpdateAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAccountResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResults" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAccountResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetProfileConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetProfileConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_AddFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFriend" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_AddFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAddedFriends_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddedFriends" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_GetAddedFriends_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddedFriendsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_DeleteFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFriend" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_DeleteFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_SearchByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByUsername" />
+  </wsdl:message>
+  <wsdl:message name="IAccountService_SearchByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionService_LogIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="ISessionService_LogIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISessionService_LogOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogOut" />
+  </wsdl:message>
+  <wsdl:message name="ISessionService_LogOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_CreateMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_CreateMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_JoinToMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_JoinToMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_LeaveMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerEntry_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerEntry" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerEntry_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerExit_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerExit" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyPlayerExit_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPlayerExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyHostExit_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyHostExit" />
+  </wsdl:message>
+  <wsdl:message name="IMatchMakingService_NotifyHostExit_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:NotifyHostExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_JoinToChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToChat" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_JoinToChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_LeaveChat_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveChat" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_LeaveChat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_OnReciveMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnReciveMessage" />
+  </wsdl:message>
+  <wsdl:message name="IChatService_OnReciveMessage_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnReciveMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_JoinToActiveMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToActiveMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_JoinToActiveMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinToActiveMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_GetCurrentBlock_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentBlock" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_GetCurrentBlock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentBlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_PlaceBlock_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlaceBlock" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_PlaceBlock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlaceBlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_MakeMovement_InputMessage">
+    <wsdl:part name="parameters" element="tns:MakeMovement" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_MakeMovement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MakeMovementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_SkipTurn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SkipTurn" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_SkipTurn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SkipTurnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_LeaveActiveMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveActiveMatch" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_LeaveActiveMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveActiveMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnBlockPlaced_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnBlockPlaced" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnBlockPlaced_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnBlockPlacedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnCurrentBlockChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCurrentBlockChanged" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnCurrentBlockChanged_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnCurrentBlockChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnOpponentMovement_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnOpponentMovement" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnOpponentMovement_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnOpponentMovementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnGameFinished_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnGameFinished" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnGameFinished_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnGameFinishedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnPlayerLeave_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlayerLeave" />
+  </wsdl:message>
+  <wsdl:message name="IMatchService_OnPlayerLeave_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnPlayerLeaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultsService_GetMatchResume_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchResume" />
+  </wsdl:message>
+  <wsdl:message name="IResultsService_GetMatchResume_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMatchResumeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResultsService_UpdateResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResults" />
+  </wsdl:message>
+  <wsdl:message name="IResultsService_UpdateResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResultsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAccountService">
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/CreateAccount" message="tns:IAccountService_CreateAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/CreateAccountResponse" message="tns:IAccountService_CreateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/UpdateAccount" message="tns:IAccountService_UpdateAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/UpdateAccountResponse" message="tns:IAccountService_UpdateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetAccountResults" message="tns:IAccountService_GetAccountResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetAccountResultsResponse" message="tns:IAccountService_GetAccountResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileConfiguration">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetProfileConfiguration" message="tns:IAccountService_GetProfileConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetProfileConfigurationResponse" message="tns:IAccountService_GetProfileConfiguration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/AddFriend" message="tns:IAccountService_AddFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/AddFriendResponse" message="tns:IAccountService_AddFriend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddedFriends">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/GetAddedFriends" message="tns:IAccountService_GetAddedFriends_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/GetAddedFriendsResponse" message="tns:IAccountService_GetAddedFriends_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/DeleteFriend" message="tns:IAccountService_DeleteFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/DeleteFriendResponse" message="tns:IAccountService_DeleteFriend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAccountService/SearchByUsername" message="tns:IAccountService_SearchByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAccountService/SearchByUsernameResponse" message="tns:IAccountService_SearchByUsername_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISessionService">
+    <wsdl:operation name="LogIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionService/LogIn" message="tns:ISessionService_LogIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionService/LogInResponse" message="tns:ISessionService_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISessionService/LogOut" message="tns:ISessionService_LogOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISessionService/LogOutResponse" message="tns:ISessionService_LogOut_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMatchMakingService">
+    <wsdl:operation name="CreateMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/CreateMatch" message="tns:IMatchMakingService_CreateMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/CreateMatchResponse" message="tns:IMatchMakingService_CreateMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="JoinToMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/JoinToMatch" message="tns:IMatchMakingService_JoinToMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/JoinToMatchResponse" message="tns:IMatchMakingService_JoinToMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/LeaveMatch" message="tns:IMatchMakingService_LeaveMatch_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerEntry">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerEntry" message="tns:IMatchMakingService_NotifyPlayerEntry_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerEntryResponse" message="tns:IMatchMakingService_NotifyPlayerEntry_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerExit">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerExit" message="tns:IMatchMakingService_NotifyPlayerExit_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyPlayerExitResponse" message="tns:IMatchMakingService_NotifyPlayerExit_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyHostExit">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyHostExit" message="tns:IMatchMakingService_NotifyHostExit_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchMakingService/NotifyHostExitResponse" message="tns:IMatchMakingService_NotifyHostExit_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IChatService">
+    <wsdl:operation name="JoinToChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/JoinToChat" message="tns:IChatService_JoinToChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/JoinToChatResponse" message="tns:IChatService_JoinToChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/SendMessage" message="tns:IChatService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/SendMessageResponse" message="tns:IChatService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveChat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/LeaveChat" message="tns:IChatService_LeaveChat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/LeaveChatResponse" message="tns:IChatService_LeaveChat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnReciveMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IChatService/OnReciveMessage" message="tns:IChatService_OnReciveMessage_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IChatService/OnReciveMessageResponse" message="tns:IChatService_OnReciveMessage_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMatchService">
+    <wsdl:operation name="JoinToActiveMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/JoinToActiveMatch" message="tns:IMatchService_JoinToActiveMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/JoinToActiveMatchResponse" message="tns:IMatchService_JoinToActiveMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBlock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/GetCurrentBlock" message="tns:IMatchService_GetCurrentBlock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/GetCurrentBlockResponse" message="tns:IMatchService_GetCurrentBlock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaceBlock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/PlaceBlock" message="tns:IMatchService_PlaceBlock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/PlaceBlockResponse" message="tns:IMatchService_PlaceBlock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeMovement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/MakeMovement" message="tns:IMatchService_MakeMovement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/MakeMovementResponse" message="tns:IMatchService_MakeMovement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SkipTurn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/SkipTurn" message="tns:IMatchService_SkipTurn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/SkipTurnResponse" message="tns:IMatchService_SkipTurn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveActiveMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/LeaveActiveMatch" message="tns:IMatchService_LeaveActiveMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/LeaveActiveMatchResponse" message="tns:IMatchService_LeaveActiveMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnBlockPlaced">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/OnBlockPlaced" message="tns:IMatchService_OnBlockPlaced_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/OnBlockPlacedResponse" message="tns:IMatchService_OnBlockPlaced_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnCurrentBlockChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/OnCurrentBlockChanged" message="tns:IMatchService_OnCurrentBlockChanged_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/OnCurrentBlockChangedResponse" message="tns:IMatchService_OnCurrentBlockChanged_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnOpponentMovement">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/OnOpponentMovement" message="tns:IMatchService_OnOpponentMovement_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/OnOpponentMovementResponse" message="tns:IMatchService_OnOpponentMovement_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnGameFinished">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/OnGameFinished" message="tns:IMatchService_OnGameFinished_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/OnGameFinishedResponse" message="tns:IMatchService_OnGameFinished_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayerLeave">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMatchService/OnPlayerLeave" message="tns:IMatchService_OnPlayerLeave_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMatchService/OnPlayerLeaveResponse" message="tns:IMatchService_OnPlayerLeave_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IResultsService">
+    <wsdl:operation name="GetMatchResume">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultsService/GetMatchResume" message="tns:IResultsService_GetMatchResume_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultsService/GetMatchResumeResponse" message="tns:IResultsService_GetMatchResume_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResultsService/UpdateResults" message="tns:IResultsService_UpdateResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResultsService/UpdateResultsResponse" message="tns:IResultsService_UpdateResults_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IAccountService" type="tns:IAccountService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IAccountService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CreateAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/UpdateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountResults">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/GetAccountResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/GetProfileConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFriend">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/AddFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddedFriends">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/GetAddedFriends" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFriend">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/DeleteFriend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByUsername">
+      <soap12:operation soapAction="http://tempuri.org/IAccountService/SearchByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_ISessionService" type="tns:ISessionService">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISessionService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="LogIn">
+      <soap12:operation soapAction="http://tempuri.org/ISessionService/LogIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogOut">
+      <soap12:operation soapAction="http://tempuri.org/ISessionService/LogOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IMatchMakingService" type="tns:IMatchMakingService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IMatchMakingService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="CreateMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/CreateMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JoinToMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/JoinToMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/LeaveMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerEntry">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/NotifyPlayerEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPlayerExit">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/NotifyPlayerExit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyHostExit">
+      <soap12:operation soapAction="http://tempuri.org/IMatchMakingService/NotifyHostExit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IChatService" type="tns:IChatService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IChatService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="JoinToChat">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/JoinToChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveChat">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/LeaveChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnReciveMessage">
+      <soap12:operation soapAction="http://tempuri.org/IChatService/OnReciveMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IMatchService" type="tns:IMatchService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IMatchService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="JoinToActiveMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/JoinToActiveMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentBlock">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/GetCurrentBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceBlock">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/PlaceBlock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeMovement">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/MakeMovement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SkipTurn">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/SkipTurn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveActiveMatch">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/LeaveActiveMatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnBlockPlaced">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/OnBlockPlaced" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnCurrentBlockChanged">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/OnCurrentBlockChanged" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnOpponentMovement">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/OnOpponentMovement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnGameFinished">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/OnGameFinished" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OnPlayerLeave">
+      <soap12:operation soapAction="http://tempuri.org/IMatchService/OnPlayerLeave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IResultsService" type="tns:IResultsService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IResultsService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetMatchResume">
+      <soap12:operation soapAction="http://tempuri.org/IResultsService/GetMatchResume" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResults">
+      <soap12:operation soapAction="http://tempuri.org/IResultsService/UpdateResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceImplementation">
+    <wsdl:port name="NetTcpBinding_IAccountService" binding="tns:NetTcpBinding_IAccountService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_ISessionService" binding="tns:NetTcpBinding_ISessionService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IMatchMakingService" binding="tns:NetTcpBinding_IMatchMakingService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IChatService" binding="tns:NetTcpBinding_IChatService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IMatchService" binding="tns:NetTcpBinding_IMatchService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IResultsService" binding="tns:NetTcpBinding_IResultsService">
+      <soap12:address location="net.tcp://localhost:8090/Services" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8090/Services</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

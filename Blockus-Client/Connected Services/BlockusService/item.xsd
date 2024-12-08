@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Services.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Services.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services.Enums" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Services.MatchState" />
+  <xs:complexType name="AccountDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfileImage" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccountDTO" nillable="true" type="tns:AccountDTO" />
+  <xs:complexType name="ResultsDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAccount" type="xs:int" />
+      <xs:element minOccurs="0" name="Losses" type="xs:int" />
+      <xs:element minOccurs="0" name="Victories" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultsDTO" nillable="true" type="tns:ResultsDTO" />
+  <xs:complexType name="ProfileConfigurationDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoardStyle" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAccount" type="xs:int" />
+      <xs:element minOccurs="0" name="TilesStyle" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProfileConfigurationDTO" nillable="true" type="tns:ProfileConfigurationDTO" />
+  <xs:complexType name="ArrayOfPublicAccountDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PublicAccountDTO" nillable="true" type="tns:PublicAccountDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPublicAccountDTO" nillable="true" type="tns:ArrayOfPublicAccountDTO" />
+  <xs:complexType name="PublicAccountDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ProfileImage" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PublicAccountDTO" nillable="true" type="tns:PublicAccountDTO" />
+  <xs:complexType name="MatchDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Host" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MatchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="MatchType" type="q1:GameType" />
+      <xs:element minOccurs="0" name="NumberOfPlayers" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Players" nillable="true" type="q2:ArrayOfKeyValueOfColorPublicAccountDTOBq5rivj3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchDTO" nillable="true" type="tns:MatchDTO" />
+  <xs:complexType name="BlockDTO">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="Block" type="q3:Block" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="Color" type="q4:Color" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlockDTO" nillable="true" type="tns:BlockDTO" />
+  <xs:complexType name="MatchResumeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MatchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Services.MatchState" minOccurs="0" name="PlayerList" nillable="true" type="q5:ArrayOfPlayerState" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Services.MatchState" minOccurs="0" name="Winner" nillable="true" type="q6:PlayerState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchResumeDTO" nillable="true" type="tns:MatchResumeDTO" />
+</xs:schema>

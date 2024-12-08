@@ -1,0 +1,113 @@
+﻿<Page x:Class="Blockus_Client.View.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Blockus_Client.View"
+      xmlns:controls="clr-namespace:Blockus_Client.UserControls"
+      xmlns:p="clr-namespace:Blockus_Client.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      d:Background="{StaticResource BackgroundColor}"
+      Title="GamePage">
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Frame x:Name="Frame_Chat" Grid.Column="3" Margin="10 0 0 0" NavigationUIVisibility="Hidden" Grid.Row="1" Width="300" Visibility="Collapsed"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
+            <Button Content="{x:Static p:Resources.GamePage_openChat}" Style="{StaticResource Text_Button}" Focusable="False" Click="Button_Click_1"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Viewbox
+                Grid.Row="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="20">
+
+                <Grid>
+                    <Border
+                        Background="{StaticResource DarkGray}"
+                        CornerRadius="10"
+                        BorderThickness="2"/>
+
+                    <Canvas
+                        x:Name="GameCanvas"
+                        Width="550"
+                        Height="550"/>
+
+                    <Canvas
+                        x:Name="BlockCanvas"
+                        Width="550"
+                        Opacity=".7"
+                        Height="550"/>
+                </Grid>
+            </Viewbox>
+        </Grid>
+
+        <Button
+            Content="{x:Static p:Resources.Global_return}" Style="{StaticResource Text_Button}" HorizontalAlignment="Left" Focusable="False" Click="Button_Click"/>
+        
+        <Grid Grid.Row="1" Margin="0 20 0 0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <controls:ActivePlayerCard Grid.Row="0" x:Name="UserControl_CardOne" Margin="0 0 0 10"/>
+            <controls:ActivePlayerCard Grid.Row="1" x:Name="UserControl_CardTwo" Margin="0 10 0 0"/>
+
+            <StackPanel Grid.Row="2" VerticalAlignment="Center">
+                <TextBlock 
+                    Text="{x:Static p:Resources.ChatPage_playerTurn}" Style="{StaticResource Normal_Text}"/>
+                <TextBlock 
+                    x:Name="Txt_Turn"
+                    Text="Username" Style="{StaticResource Subtitle_Text}" Margin="0 0 0 0"/>
+                <TextBlock 
+                    x:Name="Txt_Label"
+                    Text="{x:Static p:Resources.GamePage_noMoves}" Style="{StaticResource Normal_Text}"
+                    TextWrapping="Wrap"
+                    Margin="0 20 0 0"/>
+                <Button
+                    x:Name="Btn_Skip"
+                    Content="{x:Static p:Resources.GamePage_pass}"
+                    Style="{StaticResource Normal_Button}"
+                    Click="Btn_Skip_Click"
+                    Width="100"
+                    Focusable="False"
+                    HorizontalAlignment="Left"
+                    Margin="0 10 0 0"/>
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2" Margin="0 20 0 0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <controls:ActivePlayerCard Grid.Row="0" x:Name="UserControl_CardThree" Margin="0 0 0 10"/>
+            <controls:ActivePlayerCard Grid.Row="1" x:Name="UserControl_CardFour" Margin="0 10 0 0"/>
+        </Grid>
+
+
+        <Border x:Name="Border_Chat" Background="#000000" Grid.ColumnSpan="3" Grid.RowSpan="2" Opacity=".5" Visibility="Collapsed" MouseLeftButtonDown="Border_Chat_MouseLeftButtonDown"/>
+    </Grid>
+</Page>

@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blockus_Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource BackgroundColor}"
+        KeyDown="Window_KeyDown">
+
     <Grid>
-        
+        <Image Source="Resources/Images/Blue-Ellipse.png" VerticalAlignment="Top" HorizontalAlignment="Right" Name="Image_BlueEllipse"/>
+        <Image Source="Resources/Images/Yellow-Ellipse.png" VerticalAlignment="Bottom" HorizontalAlignment="Left" Name="Image_YellowEllipse"/>
+
+        <Frame Name="Frame_Main" Style="{StaticResource Normal_Frame}" JournalOwnership="OwnsJournal"/>
     </Grid>
+    
 </Window>
