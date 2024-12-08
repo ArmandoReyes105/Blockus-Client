@@ -58,21 +58,20 @@ namespace Blockus_Client.UserControls
 
                     switch (result)
                     {
-                        case 1: // Success
-                            MessageBox.Show("Friend added successfully!");
+                        case 1:
+                            MessageBox.Show(Properties.Resources.Message_addSuccess);
                             break;
 
-                        case 0: // Already friends
-                            MessageBox.Show("You are already friends with this user.");
+                        case 0:
+                            MessageBox.Show(Properties.Resources.Message_alreadyFriends);
                             break;
 
-                        case -2: // Adding oneself
-                            MessageBox.Show("You cannot add yourself as a friend.");
+                        case -2:
+                            MessageBox.Show(Properties.Resources.Message_isYou);
                             break;
 
-                        case -1: // Generic error
                         default:
-                            MessageBox.Show("An error occurred. Please try again.");
+                            MessageBox.Show(Properties.Resources.Message_genericError);
                             break;
                     }
 

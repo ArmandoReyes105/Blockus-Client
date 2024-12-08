@@ -214,7 +214,7 @@
     <value>Username</value>
   </data>
   <data name="JoinMatch_enterCode" xml:space="preserve">
-    <value>Enter the code to join a match</value>
+    <value>Enter the code to join a match </value>
   </data>
   <data name="JoinMatch_fullMatch" xml:space="preserve">
     <value>The match you tried to join is already full.</value>
@@ -338,5 +338,68 @@
   </data>
   <data name="UserCard" xml:space="preserve">
     <value>Add friend</value>
+  </data>
+  <data name="ChatPage_title" xml:space="preserve">
+    <value>Group chat</value>
+  </data>
+  <data name="ChatPage_close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ChatPage_send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="GamePage_openChat" xml:space="preserve">
+    <value>Open group chat</value>
+  </data>
+  <data name="ChatPage_playerTurn" xml:space="preserve">
+    <value>Your turn: </value>
+  </data>
+  <data name="GamePage_noMoves" xml:space="preserve">
+    <value>Out of moves?</value>
+  </data>
+  <data name="GamePage_pass" xml:space="preserve">
+    <value>Pass</value>
+  </data>
+  <data name="ActivePlayerCard_points" xml:space="preserve">
+    <value>Points:  </value>
+  </data>
+  <data name="Message_message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="ResultPage_return" xml:space="preserve">
+    <value>Return to lobby</value>
+  </data>
+  <data name="Message_alreadyFriends" xml:space="preserve">
+    <value>You are already friends with this user.</value>
+  </data>
+  <data name="Message_addSuccess" xml:space="preserve">
+    <value>Friend added successfully</value>
+  </data>
+  <data name="Message_isYou" xml:space="preserve">
+    <value>You cannot add yourself as a friend.</value>
+  </data>
+  <data name="Message_genericError" xml:space="preserve">
+    <value>An error ocurred. Please try again</value>
+  </data>
+  <data name="GamePage_invalidPosition" xml:space="preserve">
+    <value>Invalid position!</value>
+  </data>
+  <data name="GamePage_cantPlace" xml:space="preserve">
+    <value>Can't be placed here</value>
+  </data>
+  <data name="GamePage_nearSameColor" xml:space="preserve">
+    <value>Is near the same color</value>
+  </data>
+  <data name="GamePage_player" xml:space="preserve">
+    <value>The player: </value>
+  </data>
+  <data name="GamePage_hasLeft" xml:space="preserve">
+    <value>has left the match</value>
+  </data>
+  <data name="ResultPage_winner" xml:space="preserve">
+    <value>Winner</value>
+  </data>
+  <data name="ResultPage_loser" xml:space="preserve">
+    <value>Loser</value>
   </data>
 </root>

@@ -35,7 +35,6 @@ namespace Blockus_Client.View
             if (validationResults.Count > 0)
             {
                 MessageBox.Show(validationResults[0].ErrorMessage, Properties.Resources.Register_incorrectData, MessageBoxButton.OK);
-                //Datos incorrectos
                 return;
             }
 

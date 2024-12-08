@@ -19,7 +19,6 @@ namespace Blockus_Client.UserControls
 
         public void ResetInformation()
         {
-            txt_Username.Text = "Esperando jugador ...";
 
             SolidColorBrush brush = (SolidColorBrush)Application.Current.Resources["Gray"];
 

@@ -1,4 +1,5 @@
 ﻿using Blockus_Client.BlockusService;
+using Blockus_Client.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Windows;
@@ -15,6 +16,7 @@ namespace Blockus_Client.UserControls
         public ActivePlayerCard()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
         }
 
         public void LoadPlayerInformation(PublicAccountDTO account, BlockusService.Color color)

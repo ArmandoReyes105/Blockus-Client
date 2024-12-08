@@ -17,6 +17,7 @@ namespace Blockus_Client.View
         public ChatPage(string matchCode)
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
 
             _chatClient = new ChatServiceClient(new InstanceContext(this));
             _matchCode = matchCode;

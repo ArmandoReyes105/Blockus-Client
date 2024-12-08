@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Blockus_Client.View"
       xmlns:controls="clr-namespace:Blockus_Client.UserControls"
+      xmlns:p="clr-namespace:Blockus_Client.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       d:Background="{StaticResource BackgroundColor}"
@@ -26,7 +27,7 @@
         <Frame x:Name="Frame_Chat" Grid.Column="3" Margin="10 0 0 0" NavigationUIVisibility="Hidden" Grid.Row="1" Width="300" Visibility="Collapsed"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
-            <Button Content="Abrir chat grupal" Style="{StaticResource Text_Button}" Focusable="False" Click="Button_Click_1"/>
+            <Button Content="{x:Static p:Resources.GamePage_openChat}" Style="{StaticResource Text_Button}" Focusable="False" Click="Button_Click_1"/>
         </StackPanel>
 
         <Grid Grid.Column="1" Grid.Row="1">
@@ -57,7 +58,7 @@
         </Grid>
 
         <Button
-            Content="Regresar" Style="{StaticResource Text_Button}" HorizontalAlignment="Left" Focusable="False" Click="Button_Click"/>
+            Content="{x:Static p:Resources.Global_return}" Style="{StaticResource Text_Button}" HorizontalAlignment="Left" Focusable="False" Click="Button_Click"/>
         
         <Grid Grid.Row="1" Margin="0 20 0 0">
 
@@ -72,18 +73,18 @@
 
             <StackPanel Grid.Row="2" VerticalAlignment="Center">
                 <TextBlock 
-                    Text="Turno de:" Style="{StaticResource Normal_Text}"/>
+                    Text="{x:Static p:Resources.ChatPage_playerTurn}" Style="{StaticResource Normal_Text}"/>
                 <TextBlock 
                     x:Name="Txt_Turn"
                     Text="Username" Style="{StaticResource Subtitle_Text}" Margin="0 0 0 0"/>
                 <TextBlock 
                     x:Name="Txt_Label"
-                    Text="¿Te quedaste sin movimientos?" Style="{StaticResource Normal_Text}"
+                    Text="{x:Static p:Resources.GamePage_noMoves}" Style="{StaticResource Normal_Text}"
                     TextWrapping="Wrap"
                     Margin="0 20 0 0"/>
                 <Button
                     x:Name="Btn_Skip"
-                    Content="Saltar"
+                    Content="{x:Static p:Resources.GamePage_pass}"
                     Style="{StaticResource Normal_Button}"
                     Click="Btn_Skip_Click"
                     Width="100"

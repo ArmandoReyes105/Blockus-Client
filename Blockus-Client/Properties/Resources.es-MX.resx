@@ -214,7 +214,7 @@
     <value>Nombre de usuario</value>
   </data>
   <data name="JoinMatch_enterCode" xml:space="preserve">
-    <value>Ingrese el código para unirse a la partida</value>
+    <value>Ingrese el código para unirse a la partida </value>
   </data>
   <data name="JoinMatch_fullMatch" xml:space="preserve">
     <value>La partida a la que intentas unirte esta llena.</value>
@@ -338,5 +338,68 @@
   </data>
   <data name="UserCard" xml:space="preserve">
     <value>Añadir amigo</value>
+  </data>
+  <data name="ChatPage_title" xml:space="preserve">
+    <value>Chat grupal</value>
+  </data>
+  <data name="ChatPage_close" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="ChatPage_send" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="GamePage_openChat" xml:space="preserve">
+    <value>Abrir chat grupal</value>
+  </data>
+  <data name="ChatPage_playerTurn" xml:space="preserve">
+    <value>Turno de: </value>
+  </data>
+  <data name="GamePage_noMoves" xml:space="preserve">
+    <value>¿Te quedaste sin movimientos?</value>
+  </data>
+  <data name="GamePage_pass" xml:space="preserve">
+    <value>Paso</value>
+  </data>
+  <data name="ActivePlayerCard_points" xml:space="preserve">
+    <value>Puntos:</value>
+  </data>
+  <data name="Message_message" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="ResultPage_return" xml:space="preserve">
+    <value>Ir a Inicio</value>
+  </data>
+  <data name="Message_alreadyFriends" xml:space="preserve">
+    <value>Ya eres amigo de este jugador</value>
+  </data>
+  <data name="Message_addSuccess" xml:space="preserve">
+    <value>Amigo añadido con exito</value>
+  </data>
+  <data name="Message_isYou" xml:space="preserve">
+    <value>No te puedes añadir a ti mismo.</value>
+  </data>
+  <data name="Message_genericError" xml:space="preserve">
+    <value>Ocurrió un error. Por favor intente de nuevo.</value>
+  </data>
+  <data name="GamePage_invalidPosition" xml:space="preserve">
+    <value>Posición invalida</value>
+  </data>
+  <data name="GamePage_cantPlace" xml:space="preserve">
+    <value>No se puede colocar </value>
+  </data>
+  <data name="GamePage_nearSameColor" xml:space="preserve">
+    <value>Esta junto al mismo color</value>
+  </data>
+  <data name="GamePage_player" xml:space="preserve">
+    <value>El jugador: </value>
+  </data>
+  <data name="GamePage_hasLeft" xml:space="preserve">
+    <value>ha abandonado la partida</value>
+  </data>
+  <data name="ResultPage_winner" xml:space="preserve">
+    <value>Ganador</value>
+  </data>
+  <data name="ResultPage_loser" xml:space="preserve">
+    <value>Perdedor</value>
   </data>
 </root>

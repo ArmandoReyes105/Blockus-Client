@@ -23,7 +23,6 @@ namespace Blockus_Client.UserControls
         public void ResetInformation()
         {
             Image_FriendProfileImage.Visibility = Visibility.Hidden;
-            txt_FriendName.Text = "You can add up to 10 friend. ";
             btn_Remove.Visibility = Visibility.Hidden;
         }
 

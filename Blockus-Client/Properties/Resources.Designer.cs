@@ -61,6 +61,51 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Points:  .
+        /// </summary>
+        public static string ActivePlayerCard_points {
+            get {
+                return ResourceManager.GetString("ActivePlayerCard_points", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Close.
+        /// </summary>
+        public static string ChatPage_close {
+            get {
+                return ResourceManager.GetString("ChatPage_close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your turn: .
+        /// </summary>
+        public static string ChatPage_playerTurn {
+            get {
+                return ResourceManager.GetString("ChatPage_playerTurn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Send.
+        /// </summary>
+        public static string ChatPage_send {
+            get {
+                return ResourceManager.GetString("ChatPage_send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Group chat.
+        /// </summary>
+        public static string ChatPage_title {
+            get {
+                return ResourceManager.GetString("ChatPage_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Board style.
         /// </summary>
         public static string Configuration_boardStyle {
@@ -250,6 +295,78 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Can&apos;t be placed here.
+        /// </summary>
+        public static string GamePage_cantPlace {
+            get {
+                return ResourceManager.GetString("GamePage_cantPlace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a has left the match.
+        /// </summary>
+        public static string GamePage_hasLeft {
+            get {
+                return ResourceManager.GetString("GamePage_hasLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Invalid position!.
+        /// </summary>
+        public static string GamePage_invalidPosition {
+            get {
+                return ResourceManager.GetString("GamePage_invalidPosition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Is near the same color.
+        /// </summary>
+        public static string GamePage_nearSameColor {
+            get {
+                return ResourceManager.GetString("GamePage_nearSameColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Out of moves?.
+        /// </summary>
+        public static string GamePage_noMoves {
+            get {
+                return ResourceManager.GetString("GamePage_noMoves", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Open group chat.
+        /// </summary>
+        public static string GamePage_openChat {
+            get {
+                return ResourceManager.GetString("GamePage_openChat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pass.
+        /// </summary>
+        public static string GamePage_pass {
+            get {
+                return ResourceManager.GetString("GamePage_pass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The player: .
+        /// </summary>
+        public static string GamePage_player {
+            get {
+                return ResourceManager.GetString("GamePage_player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancel.
         /// </summary>
         public static string Global_cancelButton {
@@ -349,7 +466,7 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Enter the code to join a match.
+        ///   Busca una cadena traducida similar a Enter the code to join a match .
         /// </summary>
         public static string JoinMatch_enterCode {
             get {
@@ -592,6 +709,51 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Friend added successfully.
+        /// </summary>
+        public static string Message_addSuccess {
+            get {
+                return ResourceManager.GetString("Message_addSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You are already friends with this user..
+        /// </summary>
+        public static string Message_alreadyFriends {
+            get {
+                return ResourceManager.GetString("Message_alreadyFriends", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a An error ocurred. Please try again.
+        /// </summary>
+        public static string Message_genericError {
+            get {
+                return ResourceManager.GetString("Message_genericError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You cannot add yourself as a friend..
+        /// </summary>
+        public static string Message_isYou {
+            get {
+                return ResourceManager.GetString("Message_isYou", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Message.
+        /// </summary>
+        public static string Message_message {
+            get {
+                return ResourceManager.GetString("Message_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Current password:.
         /// </summary>
         public static string ModifyPassword_actualPassword {
@@ -714,6 +876,33 @@ namespace Blockus_Client.Properties {
         public static string Register_success {
             get {
                 return ResourceManager.GetString("Register_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Loser.
+        /// </summary>
+        public static string ResultPage_loser {
+            get {
+                return ResourceManager.GetString("ResultPage_loser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Return to lobby.
+        /// </summary>
+        public static string ResultPage_return {
+            get {
+                return ResourceManager.GetString("ResultPage_return", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Winner.
+        /// </summary>
+        public static string ResultPage_winner {
+            get {
+                return ResourceManager.GetString("ResultPage_winner", resourceCulture);
             }
         }
         

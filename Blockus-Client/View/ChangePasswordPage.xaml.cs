@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Blockus_Client.View
 {
-    /// <summary>
-    /// Lógica de interacción para ChangePasswordPage.xaml
-    /// </summary>
     public partial class ChangePasswordPage : Page
     {
         public ChangePasswordPage()

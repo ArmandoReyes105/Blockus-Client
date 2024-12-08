@@ -15,6 +15,7 @@ namespace Blockus_Client.View
         public WinnerPage(string matchCode)
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
 
             _matchCode = matchCode;
 
@@ -26,11 +27,11 @@ namespace Blockus_Client.View
                 _matchResume = client.GetMatchResume(matchCode);
                 client.UpdateResults(id, GameResult.Winner);
 
-                Txt_Winner.Text = "Winner " + _matchResume.Winner.Username; 
+                Txt_Winner.Text = Properties.Resources.ResultPage_winner + _matchResume.Winner.Username; 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lo sentimos ha ocurrido un error al intentar comunicarse con el servidor", ex.Message);
+                MessageBox.Show(Properties.Resources.Error_serverConnection, ex.Message);
                 NavigationManager.Instance.NavigateTo(new LoginPage());
                 SessionManager.Instance.LogOut();
             }

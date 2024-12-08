@@ -65,7 +65,7 @@ namespace Blockus_Client.View
             }
             catch (Exception ex)
             {
-                HandleError("Error: Unirse al juego", ex);
+                HandleError(Properties.Resources.JoinMatch_unableToJoin, ex);
             }
         }
 
@@ -147,9 +147,9 @@ namespace Blockus_Client.View
             }
             else
             {
-                if (!_gameState.CanBePlaced()) Txt_Label.Text = "No se puede colocar";
-                if (!_gameState.IsValidPosition()) Txt_Label.Text = "No es una posicion valida";
-                if (_gameState.IsNextSameColor()) Txt_Label.Text = "Esta junto al mismo color";
+                if (!_gameState.CanBePlaced()) Txt_Label.Text = Properties.Resources.GamePage_cantPlace;
+                if (!_gameState.IsValidPosition()) Txt_Label.Text = Properties.Resources.GamePage_invalidPosition;
+                if (_gameState.IsNextSameColor()) Txt_Label.Text = Properties.Resources.GamePage_nearSameColor;
             }
         }
 
@@ -178,7 +178,7 @@ namespace Blockus_Client.View
         private void HandleError(string message, Exception ex)
         {
             Console.WriteLine(ex.ToString());
-            MessageBox.Show("Lo sentimos ha ocurrido un error al intentar comunicarse con el servidor");
+            MessageBox.Show(Properties.Resources.Error_serverConnection);
             NavigationManager.Instance.NavigateTo(new LoginPage());
             SessionManager.Instance.LogOut();
         }
@@ -253,7 +253,7 @@ namespace Blockus_Client.View
             _match.Players.Remove(color);
             _cards[color].Visibility = Visibility.Collapsed;
 
-            MessageBox.Show("El jugador " + username + " ah abandonado la partida");
+            MessageBox.Show(Properties.Resources.GamePage_player + username + Properties.Resources.GamePage_hasLeft);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

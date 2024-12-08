@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Blockus_Client.UserControls"
+             xmlns:p="clr-namespace:Blockus_Client.Properties"
              mc:Ignorable="d" 
              MaxHeight="200" MaxWidth="200"
              d:DesignHeight="200" d:DesignWidth="200">
@@ -21,7 +22,7 @@
                 <StackPanel>
                     <TextBlock x:Name="Txt_Username" Text="Username" Style="{StaticResource Subtitle_Text}"/>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Puntos: " Style="{StaticResource Normal_Text}"/>
+                        <TextBlock Text="{x:Static p:Resources.ActivePlayerCard_points}" Style="{StaticResource Normal_Text}"/>
                         <TextBlock Name="Txt_Points" Text="0" Style="{StaticResource Normal_Text}"/>
                     </StackPanel>
                 </StackPanel>

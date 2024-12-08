@@ -27,7 +27,7 @@ namespace Blockus_Client.View
             }
             catch (Exception ex) 
             {
-                HandleError("Error: Create new match", ex);
+                HandleError(Properties.Resources.MatchDetails_createError, ex);
             }
             
         }
@@ -62,7 +62,7 @@ namespace Blockus_Client.View
             }
             catch (Exception ex)
             {
-                HandleError("Error: get out of matchmaking", ex); 
+                HandleError(Properties.Resources.MatchDetails_errorLeft, ex); 
             }
 
         }
@@ -107,7 +107,7 @@ namespace Blockus_Client.View
 
         public void NotifyHostExit(MatchDTO matchDTO)
         {
-            MessageBox.Show("El anfitrion ha dejado la partida, seras llevado al menú principal ");
+            MessageBox.Show(Properties.Resources.JoinMatch_hostLeft);
             NavigationManager.Instance.NavigateTo(new LobbyPage());
         }
 
@@ -115,7 +115,7 @@ namespace Blockus_Client.View
         private void HandleError(string message, Exception ex)
         {
             Console.WriteLine(ex.ToString());
-            MessageBox.Show("Lo sentimos ha ocurrido un error al intentar comunicarse con el servidor");
+            MessageBox.Show(Properties.Resources.Error_serverConnection);
             NavigationManager.Instance.NavigateTo(new LoginPage());
             SessionManager.Instance.LogOut();
         }
