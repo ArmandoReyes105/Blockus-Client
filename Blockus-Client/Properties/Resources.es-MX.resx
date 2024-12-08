@@ -118,225 +118,225 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Configuration_boardStyle" xml:space="preserve">
-    <value>Board style</value>
+    <value>Estilo de tablero: </value>
   </data>
   <data name="Configuration_loses" xml:space="preserve">
-    <value>Losses</value>
+    <value>Derrotas</value>
   </data>
   <data name="Configuration_modifyPassword" xml:space="preserve">
-    <value>Change your password</value>
+    <value>Cambiar contraseña</value>
   </data>
   <data name="Configuration_settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Ajustes</value>
   </data>
   <data name="Configuration_stats" xml:space="preserve">
-    <value>Stats</value>
+    <value>Estadísticas</value>
   </data>
   <data name="Configuration_tilesStyle" xml:space="preserve">
-    <value>Tiles style: </value>
+    <value>Estilo de piezas: </value>
   </data>
   <data name="Configuration_victories" xml:space="preserve">
-    <value>Victories</value>
+    <value>Victorias </value>
   </data>
   <data name="Error_alreadyLogged" xml:space="preserve">
-    <value>You are already logged in</value>
+    <value>No se puede iniciar sesión: ya tienes una sesión activa.</value>
   </data>
   <data name="Error_incompleteFields" xml:space="preserve">
-    <value>Incomplete fields. Fill in all fields and try again.</value>
+    <value>Campos incompletos. Llene todos los campos e intente nuevamente.</value>
   </data>
   <data name="Error_noCoincidences" xml:space="preserve">
-    <value>The entered data does not match</value>
+    <value>Tu contraseña no coincide.</value>
   </data>
   <data name="Error_noConnection" xml:space="preserve">
-    <value>An error ocurred while trying to connect to the database, please try it later.</value>
+    <value>Ocurrió un error al conectarse a la base de datos, por favor intente mas tarde.</value>
   </data>
   <data name="Error_retrievingData" xml:space="preserve">
-    <value>An error ocurred while trying to retrieve your data.</value>
+    <value>Lo sentimos, ocurrió un error al intentar recuperar su información.</value>
   </data>
   <data name="Error_samePassword" xml:space="preserve">
-    <value>The new password cannot be the same as your current password.</value>
+    <value>Tu contraseña nueva no puede ser igual a la actual.</value>
   </data>
   <data name="Error_serverConnection" xml:space="preserve">
-    <value>An error ocurred while trying to connect to the server, try again later.</value>
+    <value>Ocurrió un error al intentar conectarse al servidor, intente nuevamente.</value>
   </data>
   <data name="Error_specialCharacters" xml:space="preserve">
-    <value>Your password must only have letters and/or numbers.</value>
+    <value>Tu contraseña solo debe contener numeros o letras.</value>
   </data>
   <data name="Error_unsuccesfulOperation" xml:space="preserve">
-    <value>An error ocurred while updating your data, please try again later.</value>
+    <value>Error al actualizar los datos, intente mas tarde.</value>
   </data>
   <data name="Error_wrongCredentials" xml:space="preserve">
-    <value>Wrong credentials</value>
+    <value>Credenciales incorrectas.</value>
   </data>
   <data name="FriendCard_delete" xml:space="preserve">
-    <value>Delete friend</value>
+    <value>Eliminar amigo</value>
   </data>
   <data name="Friends_addedFriends" xml:space="preserve">
-    <value>My friends</value>
+    <value>Amigos agregados </value>
   </data>
   <data name="Friends_searchUser" xml:space="preserve">
-    <value>Search by username</value>
+    <value>Busca a un usuario</value>
   </data>
   <data name="Friends_search" xml:space="preserve">
-    <value>Search</value>
+    <value>Buscar</value>
   </data>
   <data name="Global_return" xml:space="preserve">
-    <value>Return</value>
+    <value>Volver</value>
   </data>
   <data name="Global_cancelButton" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="Global_continueButton" xml:space="preserve">
-    <value>Continue</value>
+    <value>Continuar</value>
   </data>
   <data name="Global_gameName" xml:space="preserve">
     <value>Blockus</value>
   </data>
   <data name="Global_language" xml:space="preserve">
-    <value>English</value>
+    <value>Español</value>
   </data>
   <data name="Global_noAccount" xml:space="preserve">
-    <value>Create an account</value>
+    <value>Crear cuenta</value>
   </data>
   <data name="Global_okButton" xml:space="preserve">
-    <value>Ok</value>
+    <value>Aceptar</value>
   </data>
   <data name="Global_password" xml:space="preserve">
-    <value>Password</value>
+    <value>Contraseña</value>
   </data>
   <data name="Global_privateMode" xml:space="preserve">
-    <value>Enter the match code shared by the host to be able to play with your friends.</value>
+    <value>Ingrese el código compartido por el anfitrión para poder jugar con tus amigos.</value>
   </data>
   <data name="Global_publicMode" xml:space="preserve">
-    <value>Game will search for a match you can join.</value>
+    <value>El juego buscará una partida a la cual te podrás unir.</value>
   </data>
   <data name="Global_username" xml:space="preserve">
-    <value>Username</value>
+    <value>Nombre de usuario</value>
   </data>
   <data name="JoinMatch_enterCode" xml:space="preserve">
-    <value>Enter the code to join a match</value>
+    <value>Ingrese el código para unirse a la partida</value>
   </data>
   <data name="JoinMatch_fullMatch" xml:space="preserve">
-    <value>The match you tried to join is already full.</value>
+    <value>La partida a la que intentas unirte esta llena.</value>
   </data>
   <data name="JoinMatch_hostLeft" xml:space="preserve">
-    <value>The host has left the match, you will be sent back to the lobby.</value>
+    <value>El anfitrión abandonó la partida, serás llevado al menú principal.</value>
   </data>
   <data name="JoinMatch_join" xml:space="preserve">
-    <value>Join</value>
+    <value>Unirse</value>
   </data>
   <data name="JoinMatch_noMatches" xml:space="preserve">
-    <value>No match found for the entered code.</value>
+    <value>No se encontro ninguna partida que coincida con el codigo ingresado.</value>
   </data>
   <data name="JoinMatch_unableToJoin" xml:space="preserve">
-    <value>An error ocurred while trying to join the match</value>
+    <value>Error al unirse a la partida</value>
   </data>
   <data name="Lobby_configuration" xml:space="preserve">
-    <value>Configuration</value>
+    <value>Configuración</value>
   </data>
   <data name="Lobby_createMatch" xml:space="preserve">
-    <value>CreateMatch</value>
+    <value>Crear partida </value>
   </data>
   <data name="Lobby_friends" xml:space="preserve">
-    <value>Friends</value>
+    <value>Amigos</value>
   </data>
   <data name="Lobby_joinMatch" xml:space="preserve">
-    <value>Join match</value>
+    <value>Unirse a partida</value>
   </data>
   <data name="Lobby_logout" xml:space="preserve">
-    <value>Logout</value>
+    <value>Cerrar sesión</value>
   </data>
   <data name="Login_forgotPassword" xml:space="preserve">
-    <value>Forgot your password?</value>
+    <value>Olvidé mi contraseña</value>
   </data>
   <data name="Login_guest" xml:space="preserve">
-    <value>Play as guest</value>
+    <value>Jugar como invitado</value>
   </data>
   <data name="Login_in" xml:space="preserve">
-    <value>your account</value>
+    <value>Sesión</value>
   </data>
   <data name="Login_log" xml:space="preserve">
-    <value>Log in</value>
+    <value>Inicia </value>
   </data>
   <data name="Login_login" xml:space="preserve">
-    <value>Login</value>
+    <value>Inicia sesión</value>
   </data>
   <data name="Login_noAccount" xml:space="preserve">
-    <value>Don't have an account? Register here</value>
+    <value>¿Aún no tienes una cuenta? Registrate aquí</value>
   </data>
   <data name="MatchDetails_createError" xml:space="preserve">
-    <value>An error ocurred: creating match</value>
+    <value>Error: creando partida</value>
   </data>
   <data name="MatchDetails_errorLeft" xml:space="preserve">
-    <value>An error ocurred: leaving match </value>
+    <value>Error: saliendo de la partida </value>
   </data>
   <data name="MatchDetails_gameMode" xml:space="preserve">
-    <value>Game mode: </value>
+    <value>Modo de juego:</value>
   </data>
   <data name="MatchDetails_matchCode" xml:space="preserve">
-    <value>Match code:</value>
+    <value>Código de partida: </value>
   </data>
   <data name="MatchDetails_noPlayers" xml:space="preserve">
-    <value>Number of players</value>
+    <value>Número de jugadores: </value>
   </data>
   <data name="MatchDetails_note" xml:space="preserve">
-    <value>Only players with the match code can join.</value>
+    <value>La partida se llenará solo con jugadores que tengan el código de partida.</value>
   </data>
   <data name="MatchDetails_private" xml:space="preserve">
-    <value>Private</value>
+    <value>Privado</value>
   </data>
   <data name="MatchDetails_public" xml:space="preserve">
-    <value>Public</value>
+    <value>Público</value>
   </data>
   <data name="MatchDetails_searchingPlayers" xml:space="preserve">
-    <value>Searching for players</value>
+    <value>Buscando jugadores</value>
   </data>
   <data name="MatchDetails_waitingPlayer" xml:space="preserve">
-    <value>Waiting for a player</value>
+    <value>Esperando jugador</value>
   </data>
   <data name="ModifyPassword_actualPassword" xml:space="preserve">
-    <value>Current password:</value>
+    <value>Contraseña actual: </value>
   </data>
   <data name="ModifyPassword_modify" xml:space="preserve">
-    <value>Change your password</value>
+    <value>Cambia tu contraseña</value>
   </data>
   <data name="ModifyPassword_newPassword" xml:space="preserve">
-    <value>Enter your new password: </value>
+    <value>Ingresa tu nueva contraseña</value>
   </data>
   <data name="ModifyPassword_note" xml:space="preserve">
-    <value>NOTE: once your password is modified you will be asked to log in again with your new password.</value>
+    <value>NOTA: una vez modificada tu contraseña se pedirá que inicies sesión con tu nueva contraseña.</value>
   </data>
   <data name="ModifyPassword_passwordModified" xml:space="preserve">
-    <value>Your password has been modified succesfully </value>
+    <value>Su contraseña ha sido actualizada exitosamente</value>
   </data>
   <data name="PlayerCard" xml:space="preserve">
-    <value>Waiting for a player</value>
+    <value>Esperando jugador</value>
   </data>
   <data name="Register_confirmPassword" xml:space="preserve">
-    <value>Confirm your password</value>
+    <value>Confirmar contraseña</value>
   </data>
   <data name="Register_creationFailure" xml:space="preserve">
-    <value>An error ocurred while creating your account</value>
+    <value>Error al crear cuenta</value>
   </data>
   <data name="Register_creationSuccess" xml:space="preserve">
-    <value>Register success</value>
+    <value>Cuenta creada</value>
   </data>
   <data name="Register_email" xml:space="preserve">
-    <value>Email</value>
+    <value>Correo electrónico</value>
   </data>
   <data name="Register_emailRestriction" xml:space="preserve">
-    <value>Email must be '@gmail.com'</value>
+    <value>El correo debe ser '@gmail.com'</value>
   </data>
   <data name="Register_incorrectData" xml:space="preserve">
-    <value>Invalid data</value>
+    <value>Datos incorrectos</value>
   </data>
   <data name="Register_signUpNote" xml:space="preserve">
-    <value>Note: once you click on 'Continue' an email will be sent to the email address above, with a verification code for the correct creation of your account.</value>
+    <value>Nota: una vez que de clic en 'Continuar' se enviará un correo a la dirección que ingresaste, el cual contiene un código de verificación para la correcta creación de tu cuenta.</value>
   </data>
   <data name="Register_success" xml:space="preserve">
-    <value>Your account has been succesfully created!</value>
+    <value>Su cuenta ha sido creada exitosamente!</value>
   </data>
   <data name="UserCard" xml:space="preserve">
-    <value>Add friend</value>
+    <value>Añadir amigo</value>
   </data>
 </root>

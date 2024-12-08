@@ -11,8 +11,9 @@ namespace Blockus_Client.View
         public LoginPage()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
             AnimationManager.FadeIn(this, .75);
-            AnimationManager.RotateImage(imageRotation, 12); 
+            AnimationManager.RotateImage(imageRotation, 12);
         }
 
         private async void Login(object sender, RoutedEventArgs e)
@@ -20,7 +21,7 @@ namespace Blockus_Client.View
             if (AreFieldsComplete())
             {
                 string password = HashManager.HashPassword(txt_Password.Password);
-                AccountDTO account; 
+                AccountDTO account;
 
                 try
                 {
@@ -30,34 +31,34 @@ namespace Blockus_Client.View
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
-                    account = null; 
+                    account = null;
                 }
-                
+
                 if (account == null)
                 {
-                    MessageBox.Show("Lo sentimos, ocurrio un error al intentarse contectar con el servidor");
-                    return; 
+                    MessageBox.Show(Properties.Resources.Error_serverConnection);
+                    return;
                 }
 
                 if (account.Id == -1)
                 {
-                    MessageBox.Show("Lo sentimos, ocurrio un error al intentar recuperar su información");
+                    MessageBox.Show(Properties.Resources.Error_retrievingData);
                     return;
                 }
 
                 if (account.Id == 0)
                 {
-                    MessageBox.Show("Credenciales incorrectas");
-                    return; 
+                    MessageBox.Show(Properties.Resources.Error_wrongCredentials);
+                    return;
                 }
 
                 if (account.Id == -2)
                 {
-                    MessageBox.Show("No se puede iniciar sesión: Tu usuario ya tiene una sesión activa");
-                    return; 
+                    MessageBox.Show(Properties.Resources.Error_alreadyLogged);
+                    return;
                 }
 
-                SessionManager.Instance.LogIn(account); 
+                SessionManager.Instance.LogIn(account);
                 NavigationManager.Instance.NavigateTo(new LobbyPage());
             }
         }
@@ -70,15 +71,15 @@ namespace Blockus_Client.View
 
         private bool AreFieldsComplete()
         {
-            bool result = true; 
+            bool result = true;
 
             if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Password))
             {
-                MessageBox.Show("Campos incompletos. Llene todos los campos e intente de nuevo");
-                result =  false;
+                MessageBox.Show(Properties.Resources.Error_incompleteFields);
+                result = false;
             }
 
-            return result; 
+            return result;
         }
 
         private void GoToNewAccountPage(object sender, RoutedEventArgs e)
@@ -89,6 +90,13 @@ namespace Blockus_Client.View
         private void ForgotPassword(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ChangeLanguage(object sender, RoutedEventArgs e)
+        {
+            LanguageManager.CurrentLanguage = LanguageManager.CurrentLanguage == "es-MX" ? "" : "es-MX";
+
+            NavigationManager.Instance.NavigateTo(new LoginPage());
         }
     }
 }

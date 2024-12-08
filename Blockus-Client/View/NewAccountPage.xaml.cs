@@ -14,6 +14,7 @@ namespace Blockus_Client.View
         public NewAccountPage()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
             AnimationManager.FadeIn(this, .75);
             AnimationManager.RotateImage(imageRotation, 10);
         }
@@ -29,12 +30,13 @@ namespace Blockus_Client.View
             };
 
             var accountValidator = new AccountValidator(account, txt_PasswordConfirmation.Password);
-            var validationResults = accountValidator.Validate(); 
+            var validationResults = accountValidator.Validate();
 
             if (validationResults.Count > 0)
             {
-                MessageBox.Show(validationResults[0].ErrorMessage, "Datos incorrectos", MessageBoxButton.OK);
-                return; 
+                MessageBox.Show(validationResults[0].ErrorMessage, Properties.Resources.Register_incorrectData, MessageBoxButton.OK);
+                //Datos incorrectos
+                return;
             }
 
             string password = HashManager.HashPassword(txt_Password.Password);
@@ -42,17 +44,16 @@ namespace Blockus_Client.View
 
             var accountClient = new AccountServiceClient();
             int result = accountClient.CreateAccount(account);
-            //int result = 1; 
             accountClient.Close();
 
             if (result != 0)
             {
-                MessageBox.Show("Su cuenta ah sido creada exitosamente", "Cuenta creada", MessageBoxButton.OK);
-                //TODO goToLobby()
+                MessageBox.Show(Properties.Resources.Register_success, Properties.Resources.Register_creationSuccess, MessageBoxButton.OK);
+                NavigationManager.Instance.NavigateTo(new LoginPage());
             }
             else
             {
-                MessageBox.Show("Ah ocurrido un error al intentar crear su cuenta", "Error al crear cuenta", MessageBoxButton.OK); 
+                MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation, Properties.Resources.Register_creationFailure, MessageBoxButton.OK);
             }
         }
 

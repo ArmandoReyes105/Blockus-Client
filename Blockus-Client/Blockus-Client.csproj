@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
@@ -74,10 +75,19 @@
     <Compile Include="GameBoard\Position.cs" />
     <Compile Include="Helpers\AnimationManager.cs" />
     <Compile Include="Helpers\HashManager.cs" />
+    <Compile Include="Helpers\LanguageManager.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Helpers\TilesImageManager.cs" />
+    <Compile Include="Properties\Resources.es-MX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es-MX.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ActivePlayerCard.xaml.cs">
       <DependentUpon>ActivePlayerCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FriendCard.xaml.cs">
+      <DependentUpon>FriendCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\OwnMessage.xaml.cs">
       <DependentUpon>OwnMessage.xaml</DependentUpon>
@@ -88,8 +98,17 @@
     <Compile Include="UserControls\PlayerMessage.xaml.cs">
       <DependentUpon>PlayerMessage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserCard.xaml.cs">
+      <DependentUpon>UserCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Validations\AccountValidator.cs" />
     <Compile Include="Validations\ValidatorHelper.cs" />
+    <Compile Include="View\AccountFriendsPage.xaml.cs">
+      <DependentUpon>AccountFriendsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChangePasswordPage.xaml.cs">
+      <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ChatPage.xaml.cs">
       <DependentUpon>ChatPage.xaml</DependentUpon>
     </Compile>
@@ -113,6 +132,9 @@
     </Compile>
     <Compile Include="View\NewAccountPage.xaml.cs">
       <DependentUpon>NewAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileConfigurationPage.xaml.cs">
+      <DependentUpon>ProfileConfigurationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WinnerPage.xaml.cs">
       <DependentUpon>WinnerPage.xaml</DependentUpon>
@@ -162,6 +184,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\FriendCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\OwnMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,6 +197,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\PlayerMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AccountFriendsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ChangePasswordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,6 +244,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ProfileConfigurationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\WinnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,10 +267,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.es-MX.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es-MX.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Lang\Recursos.es-MX.resx" />
     <None Include="App.config" />
     <None Include="Connected Services\BlockusService\BlockusService.wsdl" />
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.AccountDTO.datasource">
@@ -244,6 +291,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.MatchResumeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.ProfileConfigurationDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.PublicAccountDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.ResultsDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\BlockusService\item.xsd">
@@ -301,9 +357,7 @@
   <ItemGroup>
     <Resource Include="Resources\Images\SquareOfBlocks.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Lang\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\ProfileImage-1.png" />
   </ItemGroup>

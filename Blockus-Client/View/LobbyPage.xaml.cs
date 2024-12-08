@@ -9,18 +9,18 @@ namespace Blockus_Client.View
         public LobbyPage()
         {
             InitializeComponent();
-
-            AnimationManager.FadeIn(this, .75); 
+            LanguageManager.ApplyCulture();
+            AnimationManager.FadeIn(this, .75);
         }
 
         private void FriendList(object sender, RoutedEventArgs e)
         {
-
+            NavigationManager.Instance.NavigateTo(new AccountFriendsPage());
         }
 
         private void AccountConfig(object sender, RoutedEventArgs e)
         {
-
+            NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
         }
 
         private void CreateMatch(object sender, RoutedEventArgs e)

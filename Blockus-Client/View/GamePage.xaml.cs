@@ -28,7 +28,8 @@ namespace Blockus_Client.View
 
         public GamePage()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            LanguageManager.ApplyCulture();
             SetUpUI();
             SetUpMatch();
             Frame_Chat.Navigate(new ChatPage(_matchCode));

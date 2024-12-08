@@ -124,6 +124,192 @@ namespace Blockus_Client.BlockusService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ResultsDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class ResultsDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdAccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LossesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int VictoriesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdAccount {
+            get {
+                return this.IdAccountField;
+            }
+            set {
+                if ((this.IdAccountField.Equals(value) != true)) {
+                    this.IdAccountField = value;
+                    this.RaisePropertyChanged("IdAccount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Losses {
+            get {
+                return this.LossesField;
+            }
+            set {
+                if ((this.LossesField.Equals(value) != true)) {
+                    this.LossesField = value;
+                    this.RaisePropertyChanged("Losses");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Victories {
+            get {
+                return this.VictoriesField;
+            }
+            set {
+                if ((this.VictoriesField.Equals(value) != true)) {
+                    this.VictoriesField = value;
+                    this.RaisePropertyChanged("Victories");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProfileConfigurationDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class ProfileConfigurationDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BoardStyleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdAccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TilesStyleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BoardStyle {
+            get {
+                return this.BoardStyleField;
+            }
+            set {
+                if ((this.BoardStyleField.Equals(value) != true)) {
+                    this.BoardStyleField = value;
+                    this.RaisePropertyChanged("BoardStyle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdAccount {
+            get {
+                return this.IdAccountField;
+            }
+            set {
+                if ((this.IdAccountField.Equals(value) != true)) {
+                    this.IdAccountField = value;
+                    this.RaisePropertyChanged("IdAccount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TilesStyle {
+            get {
+                return this.TilesStyleField;
+            }
+            set {
+                if ((this.TilesStyleField.Equals(value) != true)) {
+                    this.TilesStyleField = value;
+                    this.RaisePropertyChanged("TilesStyle");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PublicAccountDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
     [System.SerializableAttribute()]
     public partial class PublicAccountDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -630,6 +816,48 @@ namespace Blockus_Client.BlockusService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/CreateAccount", ReplyAction="http://tempuri.org/IAccountService/CreateAccountResponse")]
         System.Threading.Tasks.Task<int> CreateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/UpdateAccount", ReplyAction="http://tempuri.org/IAccountService/UpdateAccountResponse")]
+        int UpdateAccount(Blockus_Client.BlockusService.AccountDTO accountDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/UpdateAccount", ReplyAction="http://tempuri.org/IAccountService/UpdateAccountResponse")]
+        System.Threading.Tasks.Task<int> UpdateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetAccountResults", ReplyAction="http://tempuri.org/IAccountService/GetAccountResultsResponse")]
+        Blockus_Client.BlockusService.ResultsDTO GetAccountResults(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetAccountResults", ReplyAction="http://tempuri.org/IAccountService/GetAccountResultsResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.ResultsDTO> GetAccountResultsAsync(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetProfileConfiguration", ReplyAction="http://tempuri.org/IAccountService/GetProfileConfigurationResponse")]
+        Blockus_Client.BlockusService.ProfileConfigurationDTO GetProfileConfiguration(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetProfileConfiguration", ReplyAction="http://tempuri.org/IAccountService/GetProfileConfigurationResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.ProfileConfigurationDTO> GetProfileConfigurationAsync(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/AddFriend", ReplyAction="http://tempuri.org/IAccountService/AddFriendResponse")]
+        int AddFriend(int idAccount, int IdAccountFriend);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/AddFriend", ReplyAction="http://tempuri.org/IAccountService/AddFriendResponse")]
+        System.Threading.Tasks.Task<int> AddFriendAsync(int idAccount, int IdAccountFriend);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetAddedFriends", ReplyAction="http://tempuri.org/IAccountService/GetAddedFriendsResponse")]
+        Blockus_Client.BlockusService.PublicAccountDTO[] GetAddedFriends(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/GetAddedFriends", ReplyAction="http://tempuri.org/IAccountService/GetAddedFriendsResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> GetAddedFriendsAsync(int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/DeleteFriend", ReplyAction="http://tempuri.org/IAccountService/DeleteFriendResponse")]
+        int DeleteFriend(int idFriend, int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/DeleteFriend", ReplyAction="http://tempuri.org/IAccountService/DeleteFriendResponse")]
+        System.Threading.Tasks.Task<int> DeleteFriendAsync(int idFriend, int idAccount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/SearchByUsername", ReplyAction="http://tempuri.org/IAccountService/SearchByUsernameResponse")]
+        Blockus_Client.BlockusService.PublicAccountDTO[] SearchByUsername(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/SearchByUsername", ReplyAction="http://tempuri.org/IAccountService/SearchByUsernameResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> SearchByUsernameAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -665,6 +893,62 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task<int> CreateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO) {
             return base.Channel.CreateAccountAsync(accountDTO);
+        }
+        
+        public int UpdateAccount(Blockus_Client.BlockusService.AccountDTO accountDTO) {
+            return base.Channel.UpdateAccount(accountDTO);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateAccountAsync(Blockus_Client.BlockusService.AccountDTO accountDTO) {
+            return base.Channel.UpdateAccountAsync(accountDTO);
+        }
+        
+        public Blockus_Client.BlockusService.ResultsDTO GetAccountResults(int idAccount) {
+            return base.Channel.GetAccountResults(idAccount);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.ResultsDTO> GetAccountResultsAsync(int idAccount) {
+            return base.Channel.GetAccountResultsAsync(idAccount);
+        }
+        
+        public Blockus_Client.BlockusService.ProfileConfigurationDTO GetProfileConfiguration(int idAccount) {
+            return base.Channel.GetProfileConfiguration(idAccount);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.ProfileConfigurationDTO> GetProfileConfigurationAsync(int idAccount) {
+            return base.Channel.GetProfileConfigurationAsync(idAccount);
+        }
+        
+        public int AddFriend(int idAccount, int IdAccountFriend) {
+            return base.Channel.AddFriend(idAccount, IdAccountFriend);
+        }
+        
+        public System.Threading.Tasks.Task<int> AddFriendAsync(int idAccount, int IdAccountFriend) {
+            return base.Channel.AddFriendAsync(idAccount, IdAccountFriend);
+        }
+        
+        public Blockus_Client.BlockusService.PublicAccountDTO[] GetAddedFriends(int idAccount) {
+            return base.Channel.GetAddedFriends(idAccount);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> GetAddedFriendsAsync(int idAccount) {
+            return base.Channel.GetAddedFriendsAsync(idAccount);
+        }
+        
+        public int DeleteFriend(int idFriend, int idAccount) {
+            return base.Channel.DeleteFriend(idFriend, idAccount);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteFriendAsync(int idFriend, int idAccount) {
+            return base.Channel.DeleteFriendAsync(idFriend, idAccount);
+        }
+        
+        public Blockus_Client.BlockusService.PublicAccountDTO[] SearchByUsername(string username) {
+            return base.Channel.SearchByUsername(username);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> SearchByUsernameAsync(string username) {
+            return base.Channel.SearchByUsernameAsync(username);
         }
     }
     
@@ -819,6 +1103,89 @@ namespace Blockus_Client.BlockusService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IChatService", CallbackContract=typeof(Blockus_Client.BlockusService.IChatServiceCallback))]
+    public interface IChatService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
+        void JoinToChat(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
+        System.Threading.Tasks.Task JoinToChatAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
+        void SendMessage(string username, string matchCode, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
+        System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
+        void LeaveChat(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
+        System.Threading.Tasks.Task LeaveChatAsync(string username);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IChatServiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/OnReciveMessage", ReplyAction="http://tempuri.org/IChatService/OnReciveMessageResponse")]
+        void OnReciveMessage(string username, string message);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IChatServiceChannel : Blockus_Client.BlockusService.IChatService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ChatServiceClient : System.ServiceModel.DuplexClientBase<Blockus_Client.BlockusService.IChatService>, Blockus_Client.BlockusService.IChatService {
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void JoinToChat(string username) {
+            base.Channel.JoinToChat(username);
+        }
+        
+        public System.Threading.Tasks.Task JoinToChatAsync(string username) {
+            return base.Channel.JoinToChatAsync(username);
+        }
+        
+        public void SendMessage(string username, string matchCode, string message) {
+            base.Channel.SendMessage(username, matchCode, message);
+        }
+        
+        public System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message) {
+            return base.Channel.SendMessageAsync(username, matchCode, message);
+        }
+        
+        public void LeaveChat(string username) {
+            base.Channel.LeaveChat(username);
+        }
+        
+        public System.Threading.Tasks.Task LeaveChatAsync(string username) {
+            return base.Channel.LeaveChatAsync(username);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IMatchService", CallbackContract=typeof(Blockus_Client.BlockusService.IMatchServiceCallback))]
     public interface IMatchService {
         
@@ -952,89 +1319,6 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task LeaveActiveMatchAsync(string username) {
             return base.Channel.LeaveActiveMatchAsync(username);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IChatService", CallbackContract=typeof(Blockus_Client.BlockusService.IChatServiceCallback))]
-    public interface IChatService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
-        void JoinToChat(string username);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
-        System.Threading.Tasks.Task JoinToChatAsync(string username);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
-        void SendMessage(string username, string matchCode, string message);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
-        System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
-        void LeaveChat(string username);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
-        System.Threading.Tasks.Task LeaveChatAsync(string username);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IChatServiceCallback {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/OnReciveMessage", ReplyAction="http://tempuri.org/IChatService/OnReciveMessageResponse")]
-        void OnReciveMessage(string username, string message);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IChatServiceChannel : Blockus_Client.BlockusService.IChatService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ChatServiceClient : System.ServiceModel.DuplexClientBase<Blockus_Client.BlockusService.IChatService>, Blockus_Client.BlockusService.IChatService {
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
-        }
-        
-        public void JoinToChat(string username) {
-            base.Channel.JoinToChat(username);
-        }
-        
-        public System.Threading.Tasks.Task JoinToChatAsync(string username) {
-            return base.Channel.JoinToChatAsync(username);
-        }
-        
-        public void SendMessage(string username, string matchCode, string message) {
-            base.Channel.SendMessage(username, matchCode, message);
-        }
-        
-        public System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message) {
-            return base.Channel.SendMessageAsync(username, matchCode, message);
-        }
-        
-        public void LeaveChat(string username) {
-            base.Channel.LeaveChat(username);
-        }
-        
-        public System.Threading.Tasks.Task LeaveChatAsync(string username) {
-            return base.Channel.LeaveChatAsync(username);
         }
     }
     

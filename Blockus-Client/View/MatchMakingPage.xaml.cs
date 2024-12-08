@@ -17,6 +17,7 @@ namespace Blockus_Client.View
         public MatchMakingPage()
         {
             InitializeComponent();
+            LanguageManager.ApplyCulture();
             AnimationManager.FadeIn(this, .75);
             client = new MatchMakingServiceClient(new InstanceContext(this));
 

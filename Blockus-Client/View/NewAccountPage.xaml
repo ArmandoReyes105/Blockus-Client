@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Blockus_Client.View"
+      xmlns:p="clr-namespace:Blockus_Client.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       d:Background="{StaticResource BackgroundColor}"
@@ -15,7 +16,7 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="1" Content="Iniciar sesión" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Click="goToLogin"/>
+        <Button Grid.Column="1" Content="{x:Static p:Resources.Login_login}" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Click="goToLogin"/>
 
         <Viewbox>
             <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" Margin="0 0 136 0" HorizontalAlignment="Center">
@@ -24,20 +25,20 @@
                 </Image.RenderTransform>
             </Image>
         </Viewbox>
-        
-        
+
+
         <!--Account Form-->
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0">
-            
+
             <StackPanel Orientation="Horizontal" Margin="0 0 0 30">
                 <TextBlock Text="Crear " Style="{StaticResource Title_Text}"/>
                 <TextBlock Text="Cuenta" Style="{StaticResource Title_Text}" Foreground="{StaticResource PrimaryColor}"/>
             </StackPanel>
-            
-            <TextBlock Text="Nombre de usuario" Style="{StaticResource Normal_Text}"/>
+
+            <TextBlock Text="{x:Static p:Resources.Global_username}" Style="{StaticResource Normal_Text}"/>
             <TextBox Name="txt_Username" Width="300" HorizontalAlignment="Left" Style="{StaticResource Normal_TextBox}" MaxLength="20"/>
 
-            <TextBlock Text="Correo electronico" Style="{StaticResource Normal_Text}"/>
+            <TextBlock Text="{x:Static p:Resources.Register_email}" Style="{StaticResource Normal_Text}"/>
             <TextBox Name="txt_Email" Width="615" HorizontalAlignment="Left" Style="{StaticResource Normal_TextBox}" MaxLength="254"/>
 
             <Grid>
@@ -48,24 +49,24 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
-                    <TextBlock Text="Contraseña" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock Text="{x:Static p:Resources.Global_password}" Style="{StaticResource Normal_Text}"/>
                     <PasswordBox Name="txt_Password"  Width="300" HorizontalAlignment="Left" Style="{StaticResource Normal_PasswordBox}" MaxLength="16"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="2">
-                    <TextBlock Text=" ConfirmarContraseña" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock Text="{x:Static p:Resources.Register_confirmPassword}" Style="{StaticResource Normal_Text}"/>
                     <PasswordBox Name="txt_PasswordConfirmation" Width="300" HorizontalAlignment="Left" Style="{StaticResource Normal_PasswordBox}" MaxLength="16"/>
                 </StackPanel>
 
             </Grid>
 
             <StackPanel Orientation="Horizontal">
-                <Button Name="btn_Continue" Content="Continuar" Margin="0 10 0 0" Click="CreateAccount" Style="{StaticResource Normal_Button}" Width="150"/>
-                <Button Name="btn_Cancel" Content="Cancelar" Margin="15 10 0 0" Style="{StaticResource Border_Button}" Width="150"/>
+                <Button Name="btn_Continue" Content="{x:Static p:Resources.Global_continueButton}" Margin="0 10 0 0" Click="CreateAccount" Style="{StaticResource Normal_Button}" Width="150"/>
+                <Button Name="btn_Cancel" Content="{x:Static p:Resources.Global_cancelButton}" Margin="15 10 0 0" Style="{StaticResource Border_Button}" Width="150"/>
             </StackPanel>
 
-            <TextBlock Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 15 0 0" MaxWidth="615" Text="Nota: Una vez que de clic en siguiente se le enviará un correo al email que ingreso con un codigo de verificación para la creación correcta de su cuenta"/>
+            <TextBlock Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 15 0 0" MaxWidth="615" Text="{x:Static p:Resources.Register_signUpNote}"/>
         </StackPanel>
-        
+
     </Grid>
 </Page>

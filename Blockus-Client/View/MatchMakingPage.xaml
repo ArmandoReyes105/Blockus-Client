@@ -5,13 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Blockus_Client.View"
       xmlns:UserControls="clr-namespace:Blockus_Client.UserControls"
+            xmlns:p="clr-namespace:Blockus_Client.Properties"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="MatchMakingPage"
       d:Background="{StaticResource BackgroundColor}">
 
     <Grid>
-        <Button Content="Regresar" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Margin="20" Click="LeaveMatch"/>
+        <Button Content="{x:Static p:Resources.Global_return}" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Margin="20" Click="LeaveMatch"/>
 
         <Grid>
             <Grid.RowDefinitions>
@@ -19,12 +20,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            
+
             <!--Title and time bar-->
             <StackPanel HorizontalAlignment="Center" Margin="0 20 0 0">
-                <TextBlock Text="Blockus" Style="{StaticResource Game_Title}"/>
+                <TextBlock Text="{x:Static p:Resources.Global_gameName}" Style="{StaticResource Game_Title}"/>
             </StackPanel>
-            
+
             <!--Gamers profiles-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" Visibility="Hidden">
                 <UserControls:PlayerCard Width="225"/>
@@ -46,7 +47,7 @@
                 <UserControls:PlayerCard x:Name="uc_CardThree" Grid.Column="2" Margin="10 0"/>
                 <UserControls:PlayerCard x:Name="uc_CardFour" Grid.Column="3" Margin="10 0"/>
             </Grid>
-            
+
             <!--Match Configuration-->
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
@@ -67,16 +68,16 @@
                 </Border>
 
                 <StackPanel Grid.Column="0" HorizontalAlignment="Left" Margin="20 20" VerticalAlignment="Center">
-                    <TextBlock Text="Modo de juego" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock Text="{x:Static p:Resources.MatchDetails_gameMode}" Style="{StaticResource Normal_Text}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 10">
-                        <RadioButton Content="Privado" Style="{StaticResource Normal_RadioButton}" FontSize="18" IsChecked="True"/>
-                        <RadioButton Content="Público" Style="{StaticResource Normal_RadioButton}" FontSize="18" Margin="50 0 0 0" Visibility="Hidden"/>
+                        <RadioButton Content="{x:Static p:Resources.MatchDetails_private}" Style="{StaticResource Normal_RadioButton}" FontSize="18" IsChecked="True"/>
+                        <RadioButton Content="{x:Static p:Resources.MatchDetails_public}" Style="{StaticResource Normal_RadioButton}" FontSize="18" Margin="50 0 0 0" Visibility="Hidden"/>
                     </StackPanel>
-                    <TextBlock Text="La partida se llenará solo con las personas que ingresen el código" Style="{StaticResource Normal_Text}" HorizontalAlignment="Left" Margin="0 10 0 0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{x:Static p:Resources.MatchDetails_note}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Left" Margin="0 10 0 0" TextWrapping="Wrap"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center" Margin="20 0" VerticalAlignment="Center">
-                    <TextBlock Text="Buscando jugadores . . ." Style="{StaticResource Normal_Text}"/>
+                    <TextBlock Text="{x:Static p:Resources.MatchDetails_searchingPlayers}" Style="{StaticResource Normal_Text}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10">
                         <TextBlock x:Name="txt_Players" Text="0" Style="{StaticResource Subtitle_Text}"/>
                         <TextBlock Text="/" Style="{StaticResource Subtitle_Text}"/>
@@ -85,17 +86,17 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="2" HorizontalAlignment="Right" Margin="20 20" VerticalAlignment="Center">
-                    <TextBlock Text="Numero de jugadores" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock Text="{x:Static p:Resources.MatchDetails_noPlayers}" Style="{StaticResource Normal_Text}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 10">
                         <RadioButton Content="2" Style="{StaticResource Normal_RadioButton}" FontSize="18" Visibility="Hidden"/>
                         <RadioButton Content="4" Style="{StaticResource Normal_RadioButton}" FontSize="18" IsChecked="True" Margin="50 0 0 0"/>
                     </StackPanel>
-                    <TextBlock Text="Código de partida" Style="{StaticResource Normal_Text}" HorizontalAlignment="Right"/>
+                    <TextBlock Text="{x:Static p:Resources.MatchDetails_matchCode}" Style="{StaticResource Normal_Text}" HorizontalAlignment="Right"/>
                     <TextBlock Name="txt_MatchCode" Text="------" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}" HorizontalAlignment="Right" Margin="0 10 0 0"/>
                 </StackPanel>
-                
+
             </Grid>
-            
+
         </Grid>
     </Grid>
 </Page>
