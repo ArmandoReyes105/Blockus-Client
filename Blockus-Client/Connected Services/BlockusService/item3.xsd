@@ -44,4 +44,10 @@
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Movement" nillable="true" type="tns:Movement" />
+  <xs:complexType name="ArrayOfBlock">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Block" type="tns:Block" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBlock" nillable="true" type="tns:ArrayOfBlock" />
 </xs:schema>

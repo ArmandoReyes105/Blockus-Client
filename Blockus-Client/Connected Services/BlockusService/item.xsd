@@ -2,6 +2,7 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Services.Dtos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Services.Dtos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Services.Enums" />
   <xs:import schemaLocation="http://localhost:8080/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8080/?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Services.MatchState" />
   <xs:complexType name="AccountDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
@@ -37,4 +38,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BlockDTO" nillable="true" type="tns:BlockDTO" />
+  <xs:complexType name="MatchResumeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MatchCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Services.MatchState" minOccurs="0" name="PlayerList" nillable="true" type="q5:ArrayOfPlayerState" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Services.MatchState" minOccurs="0" name="Winner" nillable="true" type="q6:PlayerState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchResumeDTO" nillable="true" type="tns:MatchResumeDTO" />
 </xs:schema>

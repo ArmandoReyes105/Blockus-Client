@@ -307,4 +307,33 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetMatchResume">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMatchResumeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Services.Dtos" minOccurs="0" name="GetMatchResumeResult" nillable="true" type="q19:MatchResumeDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAccount" type="xs:int" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Services.Enums" minOccurs="0" name="gameResult" type="q20:GameResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResultsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateResultsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

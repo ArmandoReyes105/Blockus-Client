@@ -105,11 +105,17 @@
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\LosserPage.xaml.cs">
+      <DependentUpon>LosserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MatchMakingPage.xaml.cs">
       <DependentUpon>MatchMakingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\NewAccountPage.xaml.cs">
       <DependentUpon>NewAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinnerPage.xaml.cs">
+      <DependentUpon>WinnerPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -188,11 +194,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\LosserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MatchMakingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\NewAccountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WinnerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -229,6 +243,9 @@
     <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.MatchDTO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\BlockusService\Blockus_Client.BlockusService.MatchResumeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\BlockusService\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -242,6 +259,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\BlockusService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BlockusService\item5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">

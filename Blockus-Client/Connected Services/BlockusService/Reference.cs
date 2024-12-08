@@ -451,6 +451,176 @@ namespace Blockus_Client.BlockusService {
         RotationCCW = 6,
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MatchResumeDTO", Namespace="http://schemas.datacontract.org/2004/07/Services.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class MatchResumeDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MatchCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Blockus_Client.BlockusService.PlayerState[] PlayerListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Blockus_Client.BlockusService.PlayerState WinnerField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MatchCode {
+            get {
+                return this.MatchCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MatchCodeField, value) != true)) {
+                    this.MatchCodeField = value;
+                    this.RaisePropertyChanged("MatchCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Blockus_Client.BlockusService.PlayerState[] PlayerList {
+            get {
+                return this.PlayerListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlayerListField, value) != true)) {
+                    this.PlayerListField = value;
+                    this.RaisePropertyChanged("PlayerList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Blockus_Client.BlockusService.PlayerState Winner {
+            get {
+                return this.WinnerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WinnerField, value) != true)) {
+                    this.WinnerField = value;
+                    this.RaisePropertyChanged("Winner");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PlayerState", Namespace="http://schemas.datacontract.org/2004/07/Services.MatchState")]
+    [System.SerializableAttribute()]
+    public partial class PlayerState : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Blockus_Client.BlockusService.Block[] BlocksListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Blockus_Client.BlockusService.Color ColorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PuntuationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Blockus_Client.BlockusService.Block[] BlocksList {
+            get {
+                return this.BlocksListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BlocksListField, value) != true)) {
+                    this.BlocksListField = value;
+                    this.RaisePropertyChanged("BlocksList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Blockus_Client.BlockusService.Color Color {
+            get {
+                return this.ColorField;
+            }
+            set {
+                if ((this.ColorField.Equals(value) != true)) {
+                    this.ColorField = value;
+                    this.RaisePropertyChanged("Color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Puntuation {
+            get {
+                return this.PuntuationField;
+            }
+            set {
+                if ((this.PuntuationField.Equals(value) != true)) {
+                    this.PuntuationField = value;
+                    this.RaisePropertyChanged("Puntuation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IAccountService")]
     public interface IAccountService {
@@ -865,6 +1035,67 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task LeaveChatAsync(string username) {
             return base.Channel.LeaveChatAsync(username);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IResultsService")]
+    public interface IResultsService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IResultsService/GetMatchResume", ReplyAction="http://tempuri.org/IResultsService/GetMatchResumeResponse")]
+        Blockus_Client.BlockusService.MatchResumeDTO GetMatchResume(string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IResultsService/GetMatchResume", ReplyAction="http://tempuri.org/IResultsService/GetMatchResumeResponse")]
+        System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchResumeDTO> GetMatchResumeAsync(string matchCode);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IResultsService/UpdateResults", ReplyAction="http://tempuri.org/IResultsService/UpdateResultsResponse")]
+        int UpdateResults(int idAccount, Blockus_Client.BlockusService.GameResult gameResult);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IResultsService/UpdateResults", ReplyAction="http://tempuri.org/IResultsService/UpdateResultsResponse")]
+        System.Threading.Tasks.Task<int> UpdateResultsAsync(int idAccount, Blockus_Client.BlockusService.GameResult gameResult);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IResultsServiceChannel : Blockus_Client.BlockusService.IResultsService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ResultsServiceClient : System.ServiceModel.ClientBase<Blockus_Client.BlockusService.IResultsService>, Blockus_Client.BlockusService.IResultsService {
+        
+        public ResultsServiceClient() {
+        }
+        
+        public ResultsServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ResultsServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ResultsServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ResultsServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Blockus_Client.BlockusService.MatchResumeDTO GetMatchResume(string matchCode) {
+            return base.Channel.GetMatchResume(matchCode);
+        }
+        
+        public System.Threading.Tasks.Task<Blockus_Client.BlockusService.MatchResumeDTO> GetMatchResumeAsync(string matchCode) {
+            return base.Channel.GetMatchResumeAsync(matchCode);
+        }
+        
+        public int UpdateResults(int idAccount, Blockus_Client.BlockusService.GameResult gameResult) {
+            return base.Channel.UpdateResults(idAccount, gameResult);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateResultsAsync(int idAccount, Blockus_Client.BlockusService.GameResult gameResult) {
+            return base.Channel.UpdateResultsAsync(idAccount, gameResult);
         }
     }
 }

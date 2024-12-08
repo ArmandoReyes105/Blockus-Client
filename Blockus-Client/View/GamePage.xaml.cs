@@ -229,7 +229,15 @@ namespace Blockus_Client.View
 
         public void OnGameFinished(GameResult gameResult)
         {
-            MessageBox.Show(SessionManager.Instance.GetUsername() + " " + gameResult.ToString());
+            //MessageBox.Show(SessionManager.Instance.GetUsername() + " " + gameResult.ToString());
+            if (gameResult == GameResult.Winner)
+            {
+                NavigationManager.Instance.NavigateTo(new WinnerPage(_matchCode));
+            }
+            else
+            {
+                NavigationManager.Instance.NavigateTo(new LosserPage(_matchCode));
+            }
         }
 
         public void OnBlockPlaced()
