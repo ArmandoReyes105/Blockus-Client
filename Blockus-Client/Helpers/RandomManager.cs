@@ -17,6 +17,26 @@ namespace Blockus_Client.Helpers
             return prefix + randomDigits;
         }
 
+        public static string GenerateRandomCode()
+        {
+            Random random = new Random();
+
+            string numbers = string.Empty;
+            for (int i = 0; i < 3; i++)
+            {
+                numbers += random.Next(0, 10); 
+            }
+
+            string letters = string.Empty;
+            for (int i = 0; i < 3; i++)
+            {
+                char letter = (char)random.Next('A', 'Z' + 1);
+                letters += letter;
+            }
+
+            return $"{letters}{numbers}";
+        }
+
         private static string GenerateRandomDigits(int lenght)
         {
             const string chars = "0123456789";

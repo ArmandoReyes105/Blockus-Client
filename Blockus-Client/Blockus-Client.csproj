@@ -97,6 +97,7 @@
     <Compile Include="GameBoard\GameState.cs" />
     <Compile Include="GameBoard\Position.cs" />
     <Compile Include="Helpers\AnimationManager.cs" />
+    <Compile Include="Helpers\EmailManager.cs" />
     <Compile Include="Helpers\HashManager.cs" />
     <Compile Include="Helpers\LanguageManager.cs" />
     <Compile Include="Helpers\RandomManager.cs" />
