@@ -16,7 +16,6 @@ namespace Blockus_Client.UserControls
         public ActivePlayerCard()
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
         }
 
         public void LoadPlayerInformation(PublicAccountDTO account, BlockusService.Color color)

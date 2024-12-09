@@ -122,6 +122,9 @@
     <Compile Include="UserControls\PlayerMessage.xaml.cs">
       <DependentUpon>PlayerMessage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\PunctuationCard.xaml.cs">
+      <DependentUpon>PunctuationCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserCard.xaml.cs">
       <DependentUpon>UserCard.xaml</DependentUpon>
     </Compile>
@@ -221,6 +224,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\PlayerMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PunctuationCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
