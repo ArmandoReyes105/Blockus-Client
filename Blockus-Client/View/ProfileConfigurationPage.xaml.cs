@@ -88,6 +88,25 @@ namespace Blockus_Client.View
             }
         }
 
+        private void ChangeLanguage(object sender, RoutedEventArgs e)
+        {
+            if (sender is RadioButton clickedButton)
+            {
+                switch (clickedButton.Name)
+                {
+                    case nameof(Rbtn_English):
+                        LanguageManager.SetLanguageToEnglish();
+                        break;
+
+                    case nameof(Rbtn_Espanish):
+                        LanguageManager.SetLanguageToSpanish();
+                        break;
+                }
+
+                NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
+            }
+        }
+
         private void InitializeTiles()
         {
             int tiles = SessionManager.Instance.GetTilesConfiguration();

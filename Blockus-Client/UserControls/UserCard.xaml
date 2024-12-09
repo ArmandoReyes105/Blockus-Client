@@ -6,16 +6,11 @@
              xmlns:local="clr-namespace:Blockus_Client.UserControls"
              xmlns:p="clr-namespace:Blockus_Client.Properties"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:DesignWidth="660">
-    <Grid  Margin="10, 10, 10, 10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="140"/>
-        </Grid.ColumnDefinitions>
-
-        <Image Width="100" Height="100" Name="Image_UserProfileImage" Source="/Resources/Images/ProfileImage-0.png" Stretch="Fill" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-        <TextBlock x:Name="txt_Username" Text="USERNAME_PLACEHOLDER" Style="{StaticResource Normal_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-        <Button x:Name="btn_Add" Content="{x:Static p:Resources.UserCard}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="AddNewFriend" Style="{StaticResource Text_Button}" Grid.Column="2"/>
+             d:DesignHeight="150" d:DesignWidth="150" Margin="10" Width="150" Height="150">
+    <Grid>
+        <Image x:Name="Image_UserProfileImage" Source="/Resources/Images/ProfileImage-0.png" Stretch="Fill" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+        <Border BorderBrush="{StaticResource PrimaryColor}" BorderThickness="1" CornerRadius="5" Background="#80000000"/>
+        <TextBlock x:Name="txt_Username" Text="PLACEHOLDER" Style="{StaticResource Normal_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+        <Button x:Name="btn_Add" Content="{x:Static p:Resources.UserCard}" VerticalAlignment="Bottom"  Click="AddNewFriend" Style="{StaticResource Normal_Button}" Grid.Column="2"/>
     </Grid>
 </UserControl>
