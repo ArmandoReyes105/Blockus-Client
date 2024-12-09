@@ -1,5 +1,6 @@
 ﻿using Blockus_Client.Helpers;
 using Blockus_Client.View;
+using log4net;
 using System;
 using System.ComponentModel;
 using System.Windows;
@@ -10,6 +11,7 @@ namespace Blockus_Client
 {
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace Blockus_Client
             NavigationManager.Instance.NavigateTo(new LoginPage());
 
             PlayImageAnimation(Image_BlueEllipse, .5, 3);
-            PlayImageAnimation(Image_YellowEllipse, .45, 4); 
+            PlayImageAnimation(Image_YellowEllipse, .45, 4);
         }
 
         private void PlayImageAnimation(Image image, double animationValue, int time)
