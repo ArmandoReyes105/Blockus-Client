@@ -16,7 +16,7 @@ namespace Blockus_Client.View
         {
             InitializeComponent();
             GetMatchResume(matchCode);
-            Txt_Winner.Text = Properties.Resources.ResultPage_loser + " " + _matchResume.Winner.Username;
+            Txt_Winner.Text = Properties.Resources.ResultPage_winner + " " + _matchResume.Winner.Username;
 
             if (!SessionManager.Instance.IsAGuest())
             {

@@ -3,35 +3,26 @@ using Blockus_Client.Helpers;
 using Blockus_Client.View;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using log4net;
+using System.ServiceModel;
 
 namespace Blockus_Client.UserControls
 {
     public partial class UserCard : UserControl
     {
-        public PublicAccountDTO account;
+        private static readonly ILog log = LogManager.GetLogger(typeof(UserCard));
+        private PublicAccountDTO _account;
         public UserCard()
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
         }
 
         public void LoadUserInformation(PublicAccountDTO account)
         {
-            this.account = account;
+            this._account = account;
             txt_Username.Text = account.Username;
 
             var imageMapping = new Dictionary<int, string>
@@ -54,38 +45,40 @@ namespace Blockus_Client.UserControls
                 using (AccountServiceClient client = new AccountServiceClient())
                 {
                     AccountDTO currentAccount = SessionManager.Instance.GetCurrentAccount();
-                    int result = client.AddFriend(currentAccount.Id, account.Id);
-
-                    switch (result)
-                    {
-                        case 1:
-                            MessageBox.Show(Properties.Resources.Message_addSuccess);
-                            break;
-
-                        case 0:
-                            MessageBox.Show(Properties.Resources.Message_alreadyFriends);
-                            break;
-
-                        case -2:
-                            MessageBox.Show(Properties.Resources.Message_isYou);
-                            break;
-
-                        default:
-                            MessageBox.Show(Properties.Resources.Message_genericError);
-                            break;
-                    }
-
-                    NavigationManager.Instance.NavigateTo(new AccountFriendsPage());
+                    int result = client.AddFriend(currentAccount.Id, _account.Id);
+                    ShowResult(result);
                 }
             }
-            catch (EntityException ex)
+            catch (CommunicationException ex)
             {
-                Console.WriteLine(ex.Message);
+                log.Error("Add Friend: " + ex.Message);
+                MessageBox.Show(Properties.Resources.Error_serverConnection);
+                NavigationManager.Instance.NavigateTo(new LoginPage());
             }
-            catch (SqlException ex)
+        }
+
+        private void ShowResult(int result)
+        {
+            switch (result)
             {
-                Console.WriteLine(ex.Message);
+                case 1:
+                    MessageBox.Show(Properties.Resources.Message_addSuccess);
+                    break;
+
+                case 0:
+                    MessageBox.Show(Properties.Resources.Message_alreadyFriends);
+                    break;
+
+                case -2:
+                    MessageBox.Show(Properties.Resources.Message_isYou);
+                    break;
+
+                default:
+                    MessageBox.Show(Properties.Resources.Message_genericError);
+                    break;
             }
+
+            NavigationManager.Instance.NavigateTo(new AccountFriendsPage());
         }
     }
 }

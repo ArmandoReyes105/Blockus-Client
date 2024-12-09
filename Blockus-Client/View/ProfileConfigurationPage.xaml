@@ -65,8 +65,8 @@
 
             <TextBlock Text="{x:Static p:Resources.Global_language}" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}"/>
             <StackPanel Orientation="Horizontal"  Margin="0 20 0 0">
-                <RadioButton Content="Español" Style="{StaticResource Normal_RadioButton}" Margin="0 0 20 0"/>
-                <RadioButton Content="English" Style="{StaticResource Normal_RadioButton}" />
+                <RadioButton x:Name="Rbtn_Espanish" Click="ChangeLanguage" Content="Español" Style="{StaticResource Normal_RadioButton}" Margin="0 0 20 0"/>
+                <RadioButton x:Name="Rbtn_English" Click="ChangeLanguage" Content="English" Style="{StaticResource Normal_RadioButton}" />
             </StackPanel>
 
             <TextBlock Text="{x:Static p:Resources.Configuration_tilesStyle}" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}" Margin="0 20 0 0"/>
