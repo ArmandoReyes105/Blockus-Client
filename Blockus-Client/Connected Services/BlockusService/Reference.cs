@@ -595,6 +595,60 @@ namespace Blockus_Client.BlockusService {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Block03 = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block04 = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block05 = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block06 = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block07 = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block08 = 7,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block09 = 8,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block10 = 9,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block11 = 10,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block12 = 11,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block13 = 12,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block14 = 13,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block15 = 14,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block16 = 15,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block17 = 16,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block18 = 17,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block19 = 18,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block20 = 19,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Block21 = 20,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
