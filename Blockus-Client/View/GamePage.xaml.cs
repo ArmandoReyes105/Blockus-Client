@@ -233,11 +233,11 @@ namespace Blockus_Client.View
             //MessageBox.Show(SessionManager.Instance.GetUsername() + " " + gameResult.ToString());
             if (gameResult == GameResult.Winner)
             {
-                NavigationManager.Instance.NavigateTo(new WinnerPage(_matchCode));
+                NavigationManager.Instance.NavigateTo(new WinnerPage(_matchCode, _match));
             }
             else
             {
-                NavigationManager.Instance.NavigateTo(new LosserPage(_matchCode));
+                NavigationManager.Instance.NavigateTo(new LosserPage(_matchCode, _match));
             }
         }
 

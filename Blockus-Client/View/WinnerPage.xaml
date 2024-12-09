@@ -5,14 +5,82 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Blockus_Client.View"
       xmlns:p="clr-namespace:Blockus_Client.Properties"
+      xmlns:controls="clr-namespace:Blockus_Client.UserControls"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="1280"
       Title="WinnerPage">
 
-    <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="Txt_Winner" Text="{x:Static p:Resources.ResultPage_winner}" Style="{StaticResource Title_Text}" HorizontalAlignment="Center"/>
-            <Button Content="Regresar al lobby" Style="{StaticResource Normal_Button}" Click="NavigateToLobby"/>
-        </StackPanel>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="5" Grid.Column="1">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#01000000" Offset="0"/>
+                        <GradientStop x:Name="GradientStop_PlayerColor" Color="red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Grid>
+                        <Image x:Name="Image_Winner" Source="/Resources/Images/ProfileImage-2.png" Width="100" Height="100" Stretch="UniformToFill" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Border BorderBrush="{StaticResource PrimaryColor}" BorderThickness="1" CornerRadius="5"/>
+                    </Grid>
+                </Viewbox>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="has ganado" Style="{StaticResource Game_Title}" HorizontalAlignment="Center" Foreground="{StaticResource PrimaryColor}"/>
+
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Text="Tu puntuación: " Style="{StaticResource Subtitle_Text}" HorizontalAlignment="Center" Grid.Row="1"/>
+                        <TextBlock x:Name="Txt_Punctuation" Text="56" Style="{StaticResource Game_Title}" HorizontalAlignment="Center" Foreground="{StaticResource PrimaryColor}" Grid.Row="1" Margin="0 5 0 0"/>
+                    </StackPanel>
+
+                    <TextBlock Text="Si eres un chingon" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center" Grid.Row="2" Margin="0 5 0 0" TextWrapping="Wrap"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Margin="10 0 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <TextBlock Text="Perdedores: " Style="{StaticResource Subtitle_Text}"/>
+                <WrapPanel x:Name="WrapPanel_Lossers" HorizontalAlignment="Center">
+                </WrapPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Margin="0 20 0 0">
+                <TextBlock Text="Tabla de puntuaciones: " Style="{StaticResource Subtitle_Text}"/>
+                <StackPanel x:Name="StackPanel_Punctuation">
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Button Content="Regresar al lobby" Style="{StaticResource Normal_Button}" Click="NavigateToLobby" VerticalAlignment="Bottom" Margin="0 0 20 0" Grid.Column="1" HorizontalAlignment="Right"/>
     </Grid>
 </Page>

@@ -28,7 +28,7 @@
 
 
         <!--Account Form-->
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0">
+        <StackPanel Name="StackPanel_Form" Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0" Visibility="Visible">
 
             <StackPanel Orientation="Horizontal" Margin="0 0 0 30">
                 <TextBlock Text="Crear " Style="{StaticResource Title_Text}"/>
@@ -66,6 +66,25 @@
             </StackPanel>
 
             <TextBlock Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 15 0 0" MaxWidth="615" Text="{x:Static p:Resources.Register_signUpNote}"/>
+        </StackPanel>
+
+        <StackPanel x:Name="StackPanel_Code" Grid.Column="1" VerticalAlignment="Center" Margin="15 0 0 0" Visibility="Collapsed">
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 30">
+                <TextBlock Text="Ingresar " Style="{StaticResource Title_Text}"/>
+                <TextBlock Text="Codigo" Style="{StaticResource Title_Text}" Foreground="{StaticResource PrimaryColor}"/>
+            </StackPanel>
+
+            <TextBlock Text="Código" Style="{StaticResource Normal_Text}" HorizontalAlignment="Center"/>
+            <TextBox x:Name="TextBox_Code" Style="{StaticResource Normal_TextBox}" MaxLength="6"/>
+
+            <TextBlock Text="Se envió un correo a la dirección de correo ingresada: " Style="{StaticResource Normal_Text}"/>
+            <TextBlock Name="Txt_Email" Text="Ejemplo@gmail.com" Style="{StaticResource Normal_Text}"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20 0 0">
+                <Button Content="Regresar" Style="{StaticResource Border_Button}" Width="100" Click="ReturnToForm"/>
+                <Button Content="Verificar" Style="{StaticResource Normal_Button}" Width="100" Margin="15 0 0 0" Click="VerifyCode"/>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

@@ -97,6 +97,7 @@
     <Compile Include="GameBoard\GameState.cs" />
     <Compile Include="GameBoard\Position.cs" />
     <Compile Include="Helpers\AnimationManager.cs" />
+    <Compile Include="Helpers\EmailManager.cs" />
     <Compile Include="Helpers\HashManager.cs" />
     <Compile Include="Helpers\LanguageManager.cs" />
     <Compile Include="Helpers\RandomManager.cs" />
@@ -121,6 +122,9 @@
     </Compile>
     <Compile Include="UserControls\PlayerMessage.xaml.cs">
       <DependentUpon>PlayerMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PunctuationCard.xaml.cs">
+      <DependentUpon>PunctuationCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserCard.xaml.cs">
       <DependentUpon>UserCard.xaml</DependentUpon>
@@ -221,6 +225,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\PlayerMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PunctuationCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
