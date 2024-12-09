@@ -1,50 +1,85 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
 using System.Windows.Controls;
-using System;
 using System.Windows;
+using log4net;
+using System.ServiceModel;
 
 namespace Blockus_Client.View
 {
     public partial class WinnerPage : Page
     {
-
-        private MatchResumeDTO _matchResume;
-        private string _matchCode; 
+        private static readonly ILog log = LogManager.GetLogger(typeof(WinnerPage));
+        private MatchResumeDTO _matchResume; 
 
         public WinnerPage(string matchCode)
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
+            GetMatchResume(matchCode);
+            Txt_Winner.Text = Properties.Resources.ResultPage_loser + " " + _matchResume.Winner.Username;
 
-            _matchCode = matchCode;
+            if (!SessionManager.Instance.IsAGuest())
+            {
+                UpdatePlayerResults();
+            }
 
-            var client = new ResultsServiceClient(); 
+        }
+
+        private void NavigateToLobby(object sender, RoutedEventArgs e)
+        {
+            NavigationManager.Instance.NavigateTo(new LobbyPage()); 
+        }
+
+        private void GetMatchResume(string matchCode)
+        {
+            var client = new ResultsServiceClient();
+
             try
             {
-                int id = SessionManager.Instance.GetCurrentAccount().Id;
-
                 _matchResume = client.GetMatchResume(matchCode);
-                client.UpdateResults(id, GameResult.Winner);
-
-                Txt_Winner.Text = Properties.Resources.ResultPage_winner + _matchResume.Winner.Username; 
             }
-            catch (Exception ex)
+            catch (CommunicationException ex)
             {
-                MessageBox.Show(Properties.Resources.Error_serverConnection, ex.Message);
-                NavigationManager.Instance.NavigateTo(new LoginPage());
-                SessionManager.Instance.LogOut();
+                log.Error("Get match resume: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection);
             }
             finally
             {
                 client.Close();
             }
-
         }
 
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void UpdatePlayerResults()
         {
-            NavigationManager.Instance.NavigateTo(new LobbyPage()); 
+            var client = new ResultsServiceClient();
+            int id = SessionManager.Instance.GetCurrentAccount().Id;
+
+            try
+            {
+                int result = client.UpdateResults(id, GameResult.Winner);
+
+                if (result == 0)
+                {
+                    MessageBox.Show(Properties.Resources.Error_UpdateData);
+                }
+
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Update results: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
+            finally
+            {
+                client.Close();
+            }
+        }
+
+        private void HandleError(string message)
+        {
+            MessageBox.Show(message);
+            NavigationManager.Instance.NavigateTo(new LoginPage());
+            SessionManager.Instance.LogOut();
         }
     }
 }

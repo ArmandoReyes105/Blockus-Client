@@ -402,4 +402,7 @@
   <data name="ResultPage_loser" xml:space="preserve">
     <value>Loser</value>
   </data>
+  <data name="Error_UpdateData" xml:space="preserve">
+    <value>We are sorry, an error occurred while trying to update your information.</value>
+  </data>
 </root>

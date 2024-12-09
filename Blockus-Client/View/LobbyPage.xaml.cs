@@ -9,6 +9,8 @@ namespace Blockus_Client.View
         public LobbyPage()
         {
             InitializeComponent();
+            InitializeButtons();
+
             LanguageManager.ApplyCulture();
             AnimationManager.FadeIn(this, .75);
         }
@@ -37,6 +39,16 @@ namespace Blockus_Client.View
         {
             SessionManager.Instance.LogOut();
             NavigationManager.Instance.NavigateTo(new LoginPage());
+        }
+
+        private void InitializeButtons()
+        {
+
+            if (SessionManager.Instance.IsAGuest())
+            {
+                btn_Config.Visibility = Visibility.Collapsed;
+                btn_Friends.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

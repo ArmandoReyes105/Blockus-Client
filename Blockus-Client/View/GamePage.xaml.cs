@@ -29,7 +29,6 @@ namespace Blockus_Client.View
         public GamePage()
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
             SetUpUI();
             SetUpMatch();
             Frame_Chat.Navigate(new ChatPage(_matchCode));
@@ -38,7 +37,8 @@ namespace Blockus_Client.View
 
         private void SetUpUI()
         {
-            var tileImages = TilesImageManager.GetTiles(1);
+            var tiles = SessionManager.Instance.GetTilesConfiguration();
+            var tileImages = TilesImageManager.GetTiles(tiles);
             _boardPainter = new BoardPainter(22, 22, GameCanvas, BlockCanvas, tileImages);
 
             _gameState.GameGrid[0, 0] = 1;

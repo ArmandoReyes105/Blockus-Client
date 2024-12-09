@@ -12,7 +12,7 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="Txt_Winner" Text="{x:Static p:Resources.ResultPage_loser}" Style="{StaticResource Title_Text}" HorizontalAlignment="Center"/>
-            <Button Content="Regresar al lobby" Style="{StaticResource Normal_Button}" Click="Button_Click"/>
+            <Button Content="Regresar al lobby" Style="{StaticResource Normal_Button}" Click="NavigateToLobby"/>
         </StackPanel>
     </Grid>
 </Page>
