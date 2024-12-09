@@ -21,6 +21,24 @@
       <xs:enumeration value="Block01" />
       <xs:enumeration value="Block02" />
       <xs:enumeration value="Block03" />
+      <xs:enumeration value="Block04" />
+      <xs:enumeration value="Block05" />
+      <xs:enumeration value="Block06" />
+      <xs:enumeration value="Block07" />
+      <xs:enumeration value="Block08" />
+      <xs:enumeration value="Block09" />
+      <xs:enumeration value="Block10" />
+      <xs:enumeration value="Block11" />
+      <xs:enumeration value="Block12" />
+      <xs:enumeration value="Block13" />
+      <xs:enumeration value="Block14" />
+      <xs:enumeration value="Block15" />
+      <xs:enumeration value="Block16" />
+      <xs:enumeration value="Block17" />
+      <xs:enumeration value="Block18" />
+      <xs:enumeration value="Block19" />
+      <xs:enumeration value="Block20" />
+      <xs:enumeration value="Block21" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Block" nillable="true" type="tns:Block" />

@@ -1,16 +1,23 @@
 ﻿using Blockus_Client.GameBoard;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Blockus_Client.Blocks
 {
-    public class Block02 : BlockTemplate
+    public class Block14 : BlockTemplate
     {
-
         private readonly Position[][] tiles = new Position[][]
         {
             new Position[]
             {
                 new Position(1, 1),
-                new Position(2, 1)
+                new Position(1, 2),
+                new Position(1, 3),
+                new Position(2, 2),
+                new Position(2, 3),
             }
         };
 
@@ -19,9 +26,10 @@ namespace Blockus_Client.Blocks
             new Position[]
             {
                 new Position(0, 0),
-                new Position(0, 2),
-                new Position(3, 0),
-                new Position(3, 2)
+                new Position(0, 4),
+                new Position(2, 0),
+                new Position(3, 1),
+                new Position(3, 4)
             }
         };
 
@@ -30,18 +38,20 @@ namespace Blockus_Client.Blocks
             new Position[]
             {
                 new Position(0, 1),
+                new Position(0, 2),
+                new Position(0, 3),
                 new Position(1, 0),
-                new Position(1, 2),
-                new Position(2, 0),
-                new Position(2, 2),
-                new Position(3, 1)
-
+                new Position(1, 4),
+                new Position(2, 1),
+                new Position(2, 4),
+                new Position(3, 2),
+                new Position(3, 3)
             }
         };
 
         public override int Color { get; set; } = 0;
 
-        public override int Punctuation { get; set; } = 2;
+        public override int Punctuation { get; set; } = 5;
 
         protected override Position[][] Tiles => tiles;
 
@@ -49,6 +59,6 @@ namespace Blockus_Client.Blocks
 
         protected override Position[][] InvalidTiles => invalidTiles;
 
-        protected override Position StartOffset => new Position(10,10);
+        protected override Position StartOffset => new Position(7, 9);
     }
 }
