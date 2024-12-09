@@ -10,7 +10,8 @@ namespace Blockus_Client.Helpers
         private static readonly ILog log = LogManager.GetLogger(typeof(SessionManager));
         private static SessionManager _instance;
         private static AccountDTO currentAccount = null;
-        private static bool _isAGuest = false; 
+        private static bool _isAGuest = false;
+        private static int _tilesConfiguration = 1; 
 
         private SessionManager() { }
 
@@ -71,5 +72,9 @@ namespace Blockus_Client.Helpers
         }
 
         public bool IsAGuest() => _isAGuest;
+
+        public void SetTilesConfiguration(int tiles) => _tilesConfiguration = tiles;
+
+        public int GetTilesConfiguration() => _tilesConfiguration;
     }
 }

@@ -10,58 +10,94 @@
       d:Background="{StaticResource BackgroundColor}"
       Title="ProfileConfigurationPage">
 
-    <Grid Margin="0, 15, 15, 15">
+    <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="960"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Vertical" Grid.Row="0">
-            <Button x:Name="back" Content="{x:Static p:Resources.Global_return}" HorizontalAlignment="Left" Margin="15, 10, 0, 0" Style="{StaticResource Text_Button}" Click="GoToLobbyPage"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <Viewbox>
-                <Image x:Name="AccountPicture" Source="/Resources/Images/ProfileImage-1.png" Width="32" Height="32" Margin="15, 15, 15, 15"/>
-            </Viewbox>
+            <Button Content="{x:Static p:Resources.Global_return}" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Click="GoToLobbyPage"/>
 
-            <TextBlock x:Name="txt_Username" Text="{x:Static p:Resources.Global_username}" HorizontalAlignment="Center" Margin="0, 0, 15, 15" Style="{StaticResource Normal_Text}"/>
-            <TextBlock x:Name="txt_Email" Text="{x:Static p:Resources.Register_email}" HorizontalAlignment="Center" Margin="0, 20, 15, 15" Style="{StaticResource Normal_Text}"/>
-            <TextBlock Text="Stats:" HorizontalAlignment="Center" Margin="0, 30, 15, 15" Style="{StaticResource Title_Text}"/>
+            <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0 20 0 0">
 
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{x:Static p:Resources.Configuration_victories}" HorizontalAlignment="Left" Margin="10, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
-                <TextBlock x:Name="txt_Victories" Text="N/A" HorizontalAlignment="Left" Margin="0, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
+                <Viewbox>
+                    <Grid>
+                        <Image x:Name="AccountPicture" Source="/Resources/Images/ProfileImage-1.png" Width="100" Height="100" Stretch="UniformToFill"/>
+                        <Border BorderThickness="1" BorderBrush="{StaticResource PrimaryColor}" CornerRadius="5"/>
+                    </Grid>
+                </Viewbox>
+
+                <TextBlock x:Name="txt_Username" Text="{x:Static p:Resources.Global_username}" HorizontalAlignment="Center" Margin="0 20 0 0" Style="{StaticResource Subtitle_Text}"/>
+                <TextBlock x:Name="txt_Email" Text="{x:Static p:Resources.Register_email}" HorizontalAlignment="Center" Margin="0, 20, 15, 15" Style="{StaticResource Normal_Text}"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{x:Static p:Resources.Configuration_loses}" HorizontalAlignment="Left" Margin="10, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
-                <TextBlock x:Name="txt_Losses" Text="N/A" HorizontalAlignment="Left" Margin="0, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
+            <StackPanel Grid.Row="2" VerticalAlignment="Center">
+                <TextBlock Text="Stats:" HorizontalAlignment="Center" Margin="0, 20" Style="{StaticResource Subtitle_Text}"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="{x:Static p:Resources.Configuration_victories}" HorizontalAlignment="Left" Margin="10, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock x:Name="txt_Victories" Text="N/A" HorizontalAlignment="Left" Margin="0, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="{x:Static p:Resources.Configuration_loses}" HorizontalAlignment="Left" Margin="10, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
+                    <TextBlock x:Name="txt_Losses" Text="N/A" HorizontalAlignment="Left" Margin="0, 5, 15, 15" Style="{StaticResource Normal_Text}"/>
+                </StackPanel>
             </StackPanel>
 
-            <TextBlock/>
+        </Grid>
+
+        <TextBlock Grid.Column="1" Text="{x:Static p:Resources.Configuration_settings}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0, 15, 0, 0" Style="{StaticResource Title_Text}"/>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="15 30 0 0">
+            <TextBlock Text="{x:Static p:Resources.Global_password}" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}"/>
+            <Grid  Margin="0 20 0 0">
+                <TextBlock Text="* * * * * * * *" HorizontalAlignment="Left" Style="{StaticResource Title_Text}" VerticalAlignment="Center" Margin="0 0 20 0"/>
+                <Button Content="{x:Static p:Resources.Configuration_modifyPassword}" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Text_Button}" Click="GoToChangePassword" />
+            </Grid>
+
+            <TextBlock Text="{x:Static p:Resources.Global_language}" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}"/>
+            <StackPanel Orientation="Horizontal"  Margin="0 20 0 0">
+                <RadioButton Content="Español" Style="{StaticResource Normal_RadioButton}" Margin="0 0 20 0"/>
+                <RadioButton Content="English" Style="{StaticResource Normal_RadioButton}" />
+            </StackPanel>
+
+            <TextBlock Text="{x:Static p:Resources.Configuration_tilesStyle}" Style="{StaticResource Subtitle_Text}" Foreground="{StaticResource PrimaryColor}" Margin="0 20 0 0"/>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Margin="0 20 0 0">
+                
+                <TextBlock Text="{x:Static p:Resources.Configuration_tilesStyle}" HorizontalAlignment="Left"  Margin="10, 10, 0, 10" Style="{StaticResource Normal_Text}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="/Resources/Tiles/TilesNormal/NormalRed.png" Height="100" Width="100"/>
+                    <Image Source="/Resources/Tiles/TilesMinimal/MinimalRed.png" Height="100" Width="100" Grid.Column="1"/>
+                    <Image Source="/Resources/Tiles/TilesArt/ArtRed.png" Height="100" Width="100" Grid.Column="2"/>
+                    <Image Source="/Resources/Tiles/TilesAnniversary/Red.png" Height="100" Width="100" Grid.Column="3"/>
+
+                    <RadioButton Click="ChangeTilesStyle" x:Name="Rbtn_Normal" Content="Normal" Style="{StaticResource Normal_RadioButton}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+                    <RadioButton Click="ChangeTilesStyle" x:Name="Rbtn_Minimal" Content="Minimal" Style="{StaticResource Normal_RadioButton}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+                    <RadioButton Click="ChangeTilesStyle" x:Name="Rbtn_Art" Content="Art" Style="{StaticResource Normal_RadioButton}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+                    <RadioButton Click="ChangeTilesStyle" x:Name="Rbtn_Anniversary" Content="Anniversary" Style="{StaticResource Normal_RadioButton}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3"/>
+                </Grid>
+            </StackPanel>
         </StackPanel>
 
-        <TextBlock Grid.Column="1" Text="{x:Static p:Resources.Configuration_settings}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 15, 0, 0" Style="{StaticResource Title_Text}"/>
-
-        <StackPanel Grid.Column="1" Margin="30, 50, 75, 500" Orientation="Vertical">
-            <TextBlock Text="{x:Static p:Resources.Global_password}" Style="{StaticResource Title_Text}" Foreground="DimGray"/>
-            <TextBlock Text="{x:Static p:Resources.Configuration_modifyPassword}" HorizontalAlignment="Left" Margin="10, 15, 0, 0" Width="650" Style="{StaticResource Title_Text}"/>
-            <Button x:Name="btn_ChangePassword" Content="{x:Static p:Resources.Global_continueButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="30, -30, 10, 10" Style="{StaticResource Border_Button}" Click="GoToChangePassword" />
-        </StackPanel>
-
-        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="30, 290, 510, 15">
-            <Viewbox Width="200" Height="200">
-                <Image x:Name="BoardStyle" Source="/Resources/Images/SquareofBlocks.png" Width="64" Height="64" Margin="0, 0, 0, 0"/>
-            </Viewbox>
-            <TextBlock Text="{x:Static p:Resources.Configuration_boardStyle}" HorizontalAlignment="Center"  Margin="10, 10, 0, 10" Style="{StaticResource Subtitle_Text}"/>
-            <ComboBox x:Name="cb_EstilosTablero" SelectionChanged="ChangeBoardStyle" />
-        </StackPanel>
-
-        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="510, 290, 30, 15">
-            <Viewbox Width="200" Height="200">
-                <Image x:Name="TileStyle" Source="/Resources/Images/SquareofBlocks.png" Width="64" Height="64" Margin="0, 0, 0, 0"/>
-            </Viewbox>
-            <TextBlock Text="{x:Static p:Resources.Configuration_tilesStyle}" HorizontalAlignment="Center"  Margin="10, 10, 0, 10" Style="{StaticResource Subtitle_Text}"/>
-            <ComboBox x:Name="cb_EstilosPiezas" SelectionChanged="ChangeTilesStyle" />
-        </StackPanel>
     </Grid>
 </Page>

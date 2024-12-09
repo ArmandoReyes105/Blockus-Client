@@ -364,7 +364,12 @@
   <ItemGroup>
     <Resource Include="Resources\Images\SquareOfBlocks.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\TilesArt\ArtBlue.png" />
+    <Resource Include="Resources\Tiles\TilesArt\ArtGreen.png" />
+    <Resource Include="Resources\Tiles\TilesArt\ArtRed.png" />
+    <Resource Include="Resources\Tiles\TilesArt\ArtYellow.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\ProfileImage-1.png" />
   </ItemGroup>
@@ -397,6 +402,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\BackgroundCard-Blue.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\TilesMinimal\MinimalBlue.png" />
+    <Resource Include="Resources\Tiles\TilesMinimal\MinimalGreen.png" />
+    <Resource Include="Resources\Tiles\TilesMinimal\MinimalRed.png" />
+    <Resource Include="Resources\Tiles\TilesMinimal\MinimalYellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tiles\TilesAnniversary\Blue.png" />
+    <Resource Include="Resources\Tiles\TilesAnniversary\Green.png" />
+    <Resource Include="Resources\Tiles\TilesAnniversary\Red.png" />
+    <Resource Include="Resources\Tiles\TilesAnniversary\Yellow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
