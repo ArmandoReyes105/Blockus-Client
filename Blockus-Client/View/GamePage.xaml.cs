@@ -143,18 +143,27 @@ namespace Blockus_Client.View
         {
             if (_gameState.CanBePlaced() && _gameState.IsValidPosition() && !_gameState.IsNextSameColor())
             {
-                var result = _matchClient.PlaceBlock(_matchCode, _gameState.CurrentBlock.Punctuation);
+                try
+                {
+                    var result = _matchClient.PlaceBlock(_matchCode, _gameState.CurrentBlock.Punctuation);
 
-                if (result != GameResult.Winner)
-                {
-                    var block = _matchClient.GetCurrentBlock(_matchCode);
-                    OnBlockPlaced(); 
-                    OnCurrentBlockChanged(block);
+                    if (result != GameResult.Winner)
+                    {
+                        var block = _matchClient.GetCurrentBlock(_matchCode);
+                        OnBlockPlaced();
+                        OnCurrentBlockChanged(block);
+                    }
+                    else
+                    {
+                        OnGameFinished(result);
+                    }
                 }
-                else
+                catch (CommunicationException ex)
                 {
-                    OnGameFinished(result); 
+                    log.Error("Notify Movement: " + ex.Message);
+                    HandleError(Properties.Resources.Error_serverConnection, ex);
                 }
+                
             }
             else
             {
