@@ -10,11 +10,13 @@ using System.ServiceModel;
 using System.Linq;
 using System.Collections.Generic;
 using Blockus_Client.UserControls;
+using log4net;
 
 namespace Blockus_Client.View
 {
     public partial class GamePage : Page, IMatchServiceCallback
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(GamePage)); 
         private BoardPainter _boardPainter;
 
         private Dictionary<BlockusService.Color, ActivePlayerCard> _cards = new Dictionary<BlockusService.Color, ActivePlayerCard>();
@@ -122,7 +124,16 @@ namespace Blockus_Client.View
             
             if (movement != Movement.None)
             {
-                _matchClient.MakeMovement(_matchCode, movement);
+                try
+                {
+                    _matchClient.MakeMovement(_matchCode, movement);
+                }
+                catch (CommunicationException ex)
+                {
+                    log.Error("Notify Movement: " + ex.Message);
+                    HandleError(Properties.Resources.Error_serverConnection, ex); 
+                }
+                
             }
             
             MoveBlock(movement);
@@ -198,22 +209,40 @@ namespace Blockus_Client.View
 
         private void Btn_Skip_Click(object sender, RoutedEventArgs e)
         {
-            var matchResult = _matchClient.SkipTurn(_matchCode);
-
-            if (matchResult != GameResult.None)
+            try
             {
-                OnGameFinished(matchResult);
-                return;
-            }
+                var matchResult = _matchClient.SkipTurn(_matchCode);
 
-            var block = _matchClient.GetCurrentBlock(_matchCode);
-            OnCurrentBlockChanged(block);
+                if (matchResult != GameResult.None)
+                {
+                    OnGameFinished(matchResult);
+                    return;
+                }
+
+                var block = _matchClient.GetCurrentBlock(_matchCode);
+                OnCurrentBlockChanged(block);
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Notify Movement: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection, ex);
+            }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _matchClient.LeaveActiveMatch(SessionManager.Instance.GetUsername());
-            NavigationManager.Instance.NavigateTo(new LobbyPage()); 
+            try
+            {
+                _matchClient.LeaveActiveMatch(SessionManager.Instance.GetUsername());
+                NavigationManager.Instance.NavigateTo(new LobbyPage());
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Notify Movement: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection, ex);
+            }
+            
         }
 
         //Callback Methods
