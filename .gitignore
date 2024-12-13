@@ -10,7 +10,11 @@
 *.userosscache
 *.sln.docstates
 
+#Blockus-Client files to ignore
 App.config
+.sonarqube/
+
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
