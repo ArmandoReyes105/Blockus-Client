@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using Blockus_Client.Validations;
 using log4net;
+using System.ServiceModel;
 
 namespace Blockus_Client.View
 {
@@ -57,18 +58,35 @@ namespace Blockus_Client.View
             string password = HashManager.HashPassword(txt_Password.Password);
             account.Password = password;
 
-            var accountClient = new AccountServiceClient();
-            int result = accountClient.CreateAccount(account);
-            accountClient.Close();
+            int result;
+
+            try
+            {
+                using (var accountClient = new AccountServiceClient())
+                {
+                    result = accountClient.CreateAccount(account);
+                }
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Create Account: " + ex.Message);
+                result = -1;
+            }
 
             if (result != 0)
             {
                 MessageBox.Show(Properties.Resources.Register_success, Properties.Resources.Register_creationSuccess, MessageBoxButton.OK);
                 NavigationManager.Instance.NavigateTo(new LoginPage());
             }
-            else
+
+            if (result == 0)
             {
                 MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation, Properties.Resources.Register_creationFailure, MessageBoxButton.OK);
+            }
+
+            if (result == -1)
+            {
+                MessageBox.Show(Properties.Resources.Error_serverConnection);
             }
         }
 
