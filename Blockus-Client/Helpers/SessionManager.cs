@@ -37,11 +37,14 @@ namespace Blockus_Client.Helpers
         {
             if (currentAccount != null) 
             {
-                SessionServiceClient client = new SessionServiceClient();
 
                 try
                 {
-                    client.LogOut(currentAccount.Username);
+                    using (var client = new SessionServiceClient())
+                    {
+                        client.LogOut(currentAccount.Username);
+                    }
+                        
                 }
                 catch(CommunicationException ex)
                 {
@@ -49,7 +52,6 @@ namespace Blockus_Client.Helpers
                 }
                 finally
                 {
-                    client.Close();
                     _isAGuest = false;
                     currentAccount = null;
                 }
