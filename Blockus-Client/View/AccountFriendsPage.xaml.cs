@@ -18,15 +18,17 @@ namespace Blockus_Client.View
 
         public AccountFriendsPage()
         {
-            InitializeComponent();
-            InitializeAFriends();
-            InitializeFriendsInformation();
-
+                InitializeComponent();
+                InitializeAFriends();
+                InitializeFriendsInformation();
         }
-
 
         private void InitializeFriendsInformation()
         {
+            if (_friends == null)
+            {
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
             foreach (var friend in _friends)
             {
                 var friendCard = new FriendCard();
@@ -42,43 +44,38 @@ namespace Blockus_Client.View
 
         private void InitializeAFriends()
         {
-            AccountServiceClient client = new AccountServiceClient();
-
             try
             {
-                _friends = client.GetAddedFriends(SessionManager.Instance.GetCurrentAccount().Id);
+                using (var client = new AccountServiceClient())
+                {
+                    _friends = client.GetAddedFriends(SessionManager.Instance.GetCurrentAccount().Id);
+                }
             }
-            catch (Exception ex)
+            catch (CommunicationException ex)
             {
                 log.Error("Get added friends: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection);
-            }
-            finally
-            {
-                client.Close(); 
             }
         }
 
         private List<PublicAccountDTO> GetPlayersByUsername(string username)
         {
-            var client = new AccountServiceClient();
             var searchResults = new List<PublicAccountDTO>();
 
             try
             {
-                searchResults = client.SearchByUsername(username).ToList();
+                using (var client = new AccountServiceClient())
+                {
+                    searchResults = client.SearchByUsername(username).ToList();
+                }
             }
             catch (CommunicationException ex)
             {
                 log.Error("Search by username: " + ex.Message);
-                HandleError(Properties.Resources.Error_serverConnection); 
-            }
-            finally
-            {
-                client.Close();
+                HandleError(Properties.Resources.Error_serverConnection);
             }
 
-            return searchResults; 
+            return searchResults;
         }
 
         private void HandleError(string message)
