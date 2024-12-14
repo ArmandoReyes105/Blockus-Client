@@ -12,11 +12,24 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
+        
         <Image Width="100" Height="100" Name="Image_FriendProfileImage" Source="/Resources/Images/ProfileImage-0.png" Stretch="Fill" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-        <TextBlock x:Name="txt_FriendName" Text="FRIENDNAME_PLACEHOLDER" Style="{StaticResource Normal_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-        <Button x:Name="btn_Remove" Content="{x:Static p:Resources.FriendCard_delete}" VerticalAlignment="Center" HorizontalAlignment="Center" Click="DeleteFriend" Style="{StaticResource Text_Button}" Grid.Column="2"/>
+        <Border BorderBrush="{StaticResource PrimaryColor}" BorderThickness="1" CornerRadius="5"/>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Margin="10 0 0 0" VerticalAlignment="Center">
+            <TextBlock x:Name="txt_FriendName" Text="FRIENDNAME_PLACEHOLDER" Style="{StaticResource Subtitle_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                <TextBlock Text="{x:Static p:Resources.Configuration_victories}" Style="{StaticResource Small_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+                <TextBlock x:Name="txt_Victories" Text="10" Style="{StaticResource Normal_Text}"  Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+
+                <TextBlock Text="{x:Static p:Resources.Configuration_loses}" Style="{StaticResource Small_Text}"  Grid.Column="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="20 0 0 0"/>
+                <TextBlock x:Name="txt_Losses" Text="10" Style="{StaticResource Normal_Text}"  Grid.Column="1" VerticalAlignment="Center"  TextWrapping="Wrap"/>
+            </StackPanel>
+        </StackPanel>
+
+        <Button x:Name="btn_Remove" Content="{x:Static p:Resources.FriendCard_delete}" VerticalAlignment="Center" Click="DeleteFriend" Style="{StaticResource Normal_Button}" Grid.Column="2" />
     </Grid>
 </UserControl>

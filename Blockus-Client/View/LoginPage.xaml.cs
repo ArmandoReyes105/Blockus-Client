@@ -1,6 +1,7 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
-using System;
+using log4net;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -8,10 +9,13 @@ namespace Blockus_Client.View
 {
     public partial class LoginPage : Page
     {
+
+        private static readonly ILog log = LogManager.GetLogger(typeof(LoginPage));
+
         public LoginPage()
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
+
             AnimationManager.FadeIn(this, .75);
             AnimationManager.RotateImage(imageRotation, 12);
         }
@@ -27,10 +31,11 @@ namespace Blockus_Client.View
                 {
                     var service = new SessionServiceClient();
                     account = await service.LogInAsync(txt_Username.Text, password);
+                    service.Close(); 
                 }
-                catch (Exception ex)
+                catch (CommunicationException ex)
                 {
-                    Console.WriteLine(ex);
+                    log.Error("Error-LogIn: " +  ex.Message);
                     account = null;
                 }
 
@@ -65,8 +70,18 @@ namespace Blockus_Client.View
 
         private void LoginAsGuest(object sender, RoutedEventArgs e)
         {
-            //TODO
-            //TODO again
+            var guestAccount = new AccountDTO
+            {
+                Id = 0,
+                Username = RandomManager.GenerateRandomName(),
+                Email = string.Empty,
+                ProfileImage = 1,
+                Password = string.Empty
+            };
+
+            SessionManager.Instance.LogIn(guestAccount);
+            SessionManager.Instance.MakeUserAGuest(); 
+            NavigationManager.Instance.NavigateTo(new LobbyPage());
         }
 
         private bool AreFieldsComplete()
@@ -87,15 +102,15 @@ namespace Blockus_Client.View
             NavigationManager.Instance.NavigateTo(new NewAccountPage());
         }
 
-        private void ForgotPassword(object sender, RoutedEventArgs e)
+        private void SetLanguageToEnglish(object sender, RoutedEventArgs e)
         {
-
+            LanguageManager.SetLanguageToEnglish();
+            NavigationManager.Instance.NavigateTo(new LoginPage());
         }
 
-        private void ChangeLanguage(object sender, RoutedEventArgs e)
+        private void SetLanguageToSpanish(object sender, RoutedEventArgs e)
         {
-            LanguageManager.CurrentLanguage = LanguageManager.CurrentLanguage == "es-MX" ? "" : "es-MX";
-
+            LanguageManager.SetLanguageToSpanish(); 
             NavigationManager.Instance.NavigateTo(new LoginPage());
         }
     }

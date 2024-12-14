@@ -10,11 +10,13 @@
       d:Background="{StaticResource BackgroundColor}"
       Title="AccountFriendsPage">
 
-    <Grid Margin="0,15,15,15">
-        <StackPanel>
-            <Button x:Name="back" Content="{x:Static p:Resources.Global_return}" HorizontalAlignment="Left" Margin="15,10,0,0" 
-                    Style="{StaticResource Text_Button}" Click="GoToLobbyPage"/>
-        </StackPanel>
+    <Grid Margin="20">
+
+        <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" HorizontalAlignment="Left" VerticalAlignment="Bottom" Opacity=".2">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="imageRotation" Angle="45" CenterX="220" CenterY="220"/>
+            </Image.RenderTransform>
+        </Image>
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -22,15 +24,39 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Margin="10, 40, 0, 10" x:Name="StackPanel_Friends">
-            </StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <StackPanel Grid.Column="1" Margin="10,40, 0, 10" x:Name="StackPanel_AddFriends">
-                <StackPanel Orientation="Horizontal" Margin="10, 15, 10, 10">
-                    <TextBox x:Name="txt_searchFriends" Text="{x:Static p:Resources.Friends_searchUser}" Width="450"  Height="60" Style="{StaticResource Normal_TextBox}"/>
-                    <Button x:Name="btn_Search" Content="{x:Static p:Resources.Friends_search}" Margin="25, -10, 0, 0" Width="100" Height="60" Style="{StaticResource Normal_Button}" Click="searchUser"/>
+                <Button x:Name="back" Content="{x:Static p:Resources.Global_return}" HorizontalAlignment="Left" VerticalAlignment="Top"  Style="{StaticResource Text_Button}" Click="GoToLobbyPage"/>
+                
+                <StackPanel Grid.Row="1" x:Name="StackPanel_Friends" Margin="0 20 0 0">
                 </StackPanel>
-            </StackPanel>
+            </Grid>
+            
+
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <TextBlock Text="{x:Static p:Resources.Friends_searchUser}" Style="{StaticResource Normal_Text}" />
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBox x:Name="txt_searchFriends"  Width="450"  Height="45" Style="{StaticResource Normal_TextBox}" TextChanged="SearchPlayers"/>
+                        <Button x:Name="btn_Search" Content="{x:Static p:Resources.Friends_search}" Margin="10, -10, 0, 0" Width="100" Height="45" Style="{StaticResource Normal_Button}"/>
+                    </StackPanel>
+                </StackPanel>
+                
+
+                <WrapPanel Grid.Column="1" x:Name="WrapPanel_AddFriends" Grid.Row="2" HorizontalAlignment="Center">
+                    
+                </WrapPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

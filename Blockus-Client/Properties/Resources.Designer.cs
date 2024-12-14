@@ -250,6 +250,15 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a We are sorry, an error occurred while trying to update your information..
+        /// </summary>
+        public static string Error_UpdateData {
+            get {
+                return ResourceManager.GetString("Error_UpdateData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Wrong credentials.
         /// </summary>
         public static string Error_wrongCredentials {

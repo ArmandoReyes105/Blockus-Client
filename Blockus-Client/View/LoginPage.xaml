@@ -31,7 +31,7 @@
 
                 <TextBlock Text="{x:Static p:Resources.Global_password}" Style="{StaticResource Normal_Text}" Margin="0 15 0 0"/>
                 <PasswordBox Name="txt_Password" Width="350" HorizontalAlignment="Left" Style="{StaticResource Normal_PasswordBox}" MaxLength="16"/>
-                <Button Content="{x:Static p:Resources.Login_forgotPassword}" HorizontalAlignment="Right" Style="{StaticResource Text_Button}" Click="ForgotPassword" FontSize="12"/>
+                <Button Content="{x:Static p:Resources.Login_forgotPassword}" HorizontalAlignment="Right" Style="{StaticResource Text_Button}" FontSize="12" Visibility="Collapsed"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
@@ -49,6 +49,12 @@
                 </Image.RenderTransform>
             </Image>
         </Viewbox>
-        <Button Grid.Column="1" Content="{x:Static p:Resources.Global_language}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Style="{StaticResource Normal_Button}" Width="90" Click="ChangeLanguage"/>
+
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1">
+            <RadioButton Content="Español" Style="{StaticResource Normal_RadioButton}" Click="SetLanguageToSpanish" Margin="0 0 10 0"/>
+            <RadioButton Content="English" Style="{StaticResource Normal_RadioButton}" Click="SetLanguageToEnglish"/>
+        </StackPanel>
+
     </Grid>
 </Page>

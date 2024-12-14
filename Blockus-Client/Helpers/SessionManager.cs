@@ -1,12 +1,17 @@
 ﻿using Blockus_Client.BlockusService;
+using log4net;
+using System.ServiceModel;
 
 
 namespace Blockus_Client.Helpers
 {
     public class SessionManager
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(SessionManager));
         private static SessionManager _instance;
-        private static AccountDTO currentAccount = null; 
+        private static AccountDTO currentAccount = null;
+        private static bool _isAGuest = false;
+        private static int _tilesConfiguration = 1; 
 
         private SessionManager() { }
 
@@ -30,13 +35,24 @@ namespace Blockus_Client.Helpers
 
         public void LogOut()
         {
-            if (currentAccount != null) 
+            if (currentAccount != null)
             {
-                SessionServiceClient client = new SessionServiceClient();
-                client.LogOut(currentAccount.Username);
-                client.Close();
-
-                currentAccount = null;
+                try
+                {
+                    using (var client = new SessionServiceClient())
+                    {
+                        client.LogOut(currentAccount.Username);
+                    }
+                }
+                catch (CommunicationException ex)
+                {
+                    log.Error("LogOut: " + ex.ToString());
+                }
+                finally
+                {
+                    _isAGuest = false;
+                    currentAccount = null;
+                }
             }
         }
 
@@ -49,5 +65,16 @@ namespace Blockus_Client.Helpers
         {
             return currentAccount.Username;
         }
+
+        public void MakeUserAGuest()
+        {
+            _isAGuest = true; 
+        }
+
+        public bool IsAGuest() => _isAGuest;
+
+        public void SetTilesConfiguration(int tiles) => _tilesConfiguration = tiles;
+
+        public int GetTilesConfiguration() => _tilesConfiguration;
     }
 }

@@ -1,51 +1,35 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
 using Blockus_Client.UserControls;
+using log4net;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Blockus_Client.View
 {
     public partial class AccountFriendsPage : Page
     {
-        private PublicAccountDTO[] friends;
+        private static readonly ILog log = LogManager.GetLogger(typeof(AccountFriendsPage));
+        private PublicAccountDTO[] _friends;
 
         public AccountFriendsPage()
         {
-            LanguageManager.ApplyCulture();
-            InitializeComponent();
-            try
-            {
-                AccountServiceClient client = new AccountServiceClient();
-                friends = client.GetAddedFriends(SessionManager.Instance.GetCurrentAccount().Id);
+                InitializeComponent();
+                InitializeAFriends();
                 InitializeFriendsInformation();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Properties.Resources.Error_serverConnection);
-                Console.WriteLine(ex.Message);
-                SessionManager.Instance.LogOut();
-                NavigationManager.Instance.NavigateTo(new LoginPage());
-            }
         }
-
 
         private void InitializeFriendsInformation()
         {
-            foreach (var friend in friends)
+            if (_friends == null)
+            {
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
+            foreach (var friend in _friends)
             {
                 var friendCard = new FriendCard();
                 friendCard.LoadFriendInformation(friend);
@@ -58,42 +42,62 @@ namespace Blockus_Client.View
             NavigationManager.Instance.NavigateTo(new LobbyPage());
         }
 
-        private void searchUser(object sender, RoutedEventArgs e)
+        private void InitializeAFriends()
         {
-            var currentAccount = SessionManager.Instance.GetCurrentAccount();
-
-            if (AreFieldsComplete())
+            try
             {
-                string username = txt_searchFriends.Text.Trim();
-                try
+                using (var client = new AccountServiceClient())
                 {
-                    var client = new AccountServiceClient();
-                    var searchResults = client.SearchByUsername(username);
-
-                    foreach (var searchResult in searchResults)
-                    {
-                        var userCard = new UserCard();
-                        userCard.LoadUserInformation(searchResult);
-                        StackPanel_AddFriends.Children.Add(userCard);
-                    }
+                    _friends = client.GetAddedFriends(SessionManager.Instance.GetCurrentAccount().Id);
                 }
-                catch (EntityException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Get added friends: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection);
             }
         }
 
-        private bool AreFieldsComplete()
+        private List<PublicAccountDTO> GetPlayersByUsername(string username)
         {
-            bool result = true;
+            var searchResults = new List<PublicAccountDTO>();
 
-            if (string.IsNullOrEmpty(txt_searchFriends.Text))
+            try
             {
-                MessageBox.Show(Properties.Resources.Error_incompleteFields);
+                using (var client = new AccountServiceClient())
+                {
+                    searchResults = client.SearchByUsername(username).ToList();
+                }
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Search by username: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection);
             }
 
-            return result;
+            return searchResults;
+        }
+
+        private void HandleError(string message)
+        {
+            MessageBox.Show(message);
+            SessionManager.Instance.LogOut();
+            NavigationManager.Instance.NavigateTo(new LoginPage());
+        }
+
+        private void SearchPlayers(object sender, TextChangedEventArgs e)
+        {
+            string username = txt_searchFriends.Text.Trim();
+            var players = GetPlayersByUsername(username);
+
+            WrapPanel_AddFriends.Children.Clear();
+
+            foreach (var player in players)
+            {
+                var userCard = new UserCard();
+                userCard.LoadUserInformation(player);
+                WrapPanel_AddFriends.Children.Add(userCard);
+            }
         }
     }
 }

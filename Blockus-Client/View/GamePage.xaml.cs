@@ -29,7 +29,6 @@ namespace Blockus_Client.View
         public GamePage()
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
             SetUpUI();
             SetUpMatch();
             Frame_Chat.Navigate(new ChatPage(_matchCode));
@@ -38,7 +37,8 @@ namespace Blockus_Client.View
 
         private void SetUpUI()
         {
-            var tileImages = TilesImageManager.GetTiles(1);
+            var tiles = SessionManager.Instance.GetTilesConfiguration();
+            var tileImages = TilesImageManager.GetTiles(tiles);
             _boardPainter = new BoardPainter(22, 22, GameCanvas, BlockCanvas, tileImages);
 
             _gameState.GameGrid[0, 0] = 1;
@@ -233,11 +233,11 @@ namespace Blockus_Client.View
             //MessageBox.Show(SessionManager.Instance.GetUsername() + " " + gameResult.ToString());
             if (gameResult == GameResult.Winner)
             {
-                NavigationManager.Instance.NavigateTo(new WinnerPage(_matchCode));
+                NavigationManager.Instance.NavigateTo(new WinnerPage(_matchCode, _match));
             }
             else
             {
-                NavigationManager.Instance.NavigateTo(new LosserPage(_matchCode));
+                NavigationManager.Instance.NavigateTo(new LosserPage(_matchCode, _match));
             }
         }
 
