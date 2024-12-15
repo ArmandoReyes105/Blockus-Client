@@ -912,6 +912,12 @@ namespace Blockus_Client.BlockusService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/SearchByUsername", ReplyAction="http://tempuri.org/IAccountService/SearchByUsernameResponse")]
         System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> SearchByUsernameAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/IsUsernameUnique", ReplyAction="http://tempuri.org/IAccountService/IsUsernameUniqueResponse")]
+        int IsUsernameUnique(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAccountService/IsUsernameUnique", ReplyAction="http://tempuri.org/IAccountService/IsUsernameUniqueResponse")]
+        System.Threading.Tasks.Task<int> IsUsernameUniqueAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1003,6 +1009,14 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task<Blockus_Client.BlockusService.PublicAccountDTO[]> SearchByUsernameAsync(string username) {
             return base.Channel.SearchByUsernameAsync(username);
+        }
+        
+        public int IsUsernameUnique(string username) {
+            return base.Channel.IsUsernameUnique(username);
+        }
+        
+        public System.Threading.Tasks.Task<int> IsUsernameUniqueAsync(string username) {
+            return base.Channel.IsUsernameUniqueAsync(username);
         }
     }
     
@@ -1157,89 +1171,6 @@ namespace Blockus_Client.BlockusService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IChatService", CallbackContract=typeof(Blockus_Client.BlockusService.IChatServiceCallback))]
-    public interface IChatService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
-        void JoinToChat(string username);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
-        System.Threading.Tasks.Task JoinToChatAsync(string username);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
-        void SendMessage(string username, string matchCode, string message);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
-        System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
-        void LeaveChat(string username);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
-        System.Threading.Tasks.Task LeaveChatAsync(string username);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IChatServiceCallback {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/OnReciveMessage", ReplyAction="http://tempuri.org/IChatService/OnReciveMessageResponse")]
-        void OnReciveMessage(string username, string message);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IChatServiceChannel : Blockus_Client.BlockusService.IChatService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ChatServiceClient : System.ServiceModel.DuplexClientBase<Blockus_Client.BlockusService.IChatService>, Blockus_Client.BlockusService.IChatService {
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
-                base(callbackInstance) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
-                base(callbackInstance, endpointConfigurationName) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(callbackInstance, binding, remoteAddress) {
-        }
-        
-        public void JoinToChat(string username) {
-            base.Channel.JoinToChat(username);
-        }
-        
-        public System.Threading.Tasks.Task JoinToChatAsync(string username) {
-            return base.Channel.JoinToChatAsync(username);
-        }
-        
-        public void SendMessage(string username, string matchCode, string message) {
-            base.Channel.SendMessage(username, matchCode, message);
-        }
-        
-        public System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message) {
-            return base.Channel.SendMessageAsync(username, matchCode, message);
-        }
-        
-        public void LeaveChat(string username) {
-            base.Channel.LeaveChat(username);
-        }
-        
-        public System.Threading.Tasks.Task LeaveChatAsync(string username) {
-            return base.Channel.LeaveChatAsync(username);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IMatchService", CallbackContract=typeof(Blockus_Client.BlockusService.IMatchServiceCallback))]
     public interface IMatchService {
         
@@ -1373,6 +1304,89 @@ namespace Blockus_Client.BlockusService {
         
         public System.Threading.Tasks.Task LeaveActiveMatchAsync(string username) {
             return base.Channel.LeaveActiveMatchAsync(username);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BlockusService.IChatService", CallbackContract=typeof(Blockus_Client.BlockusService.IChatServiceCallback))]
+    public interface IChatService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
+        void JoinToChat(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/JoinToChat", ReplyAction="http://tempuri.org/IChatService/JoinToChatResponse")]
+        System.Threading.Tasks.Task JoinToChatAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
+        void SendMessage(string username, string matchCode, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/SendMessage", ReplyAction="http://tempuri.org/IChatService/SendMessageResponse")]
+        System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
+        void LeaveChat(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/LeaveChat", ReplyAction="http://tempuri.org/IChatService/LeaveChatResponse")]
+        System.Threading.Tasks.Task LeaveChatAsync(string username);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IChatServiceCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IChatService/OnReciveMessage", ReplyAction="http://tempuri.org/IChatService/OnReciveMessageResponse")]
+        void OnReciveMessage(string username, string message);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IChatServiceChannel : Blockus_Client.BlockusService.IChatService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ChatServiceClient : System.ServiceModel.DuplexClientBase<Blockus_Client.BlockusService.IChatService>, Blockus_Client.BlockusService.IChatService {
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ChatServiceClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public void JoinToChat(string username) {
+            base.Channel.JoinToChat(username);
+        }
+        
+        public System.Threading.Tasks.Task JoinToChatAsync(string username) {
+            return base.Channel.JoinToChatAsync(username);
+        }
+        
+        public void SendMessage(string username, string matchCode, string message) {
+            base.Channel.SendMessage(username, matchCode, message);
+        }
+        
+        public System.Threading.Tasks.Task SendMessageAsync(string username, string matchCode, string message) {
+            return base.Channel.SendMessageAsync(username, matchCode, message);
+        }
+        
+        public void LeaveChat(string username) {
+            base.Channel.LeaveChat(username);
+        }
+        
+        public System.Threading.Tasks.Task LeaveChatAsync(string username) {
+            return base.Channel.LeaveChatAsync(username);
         }
     }
     

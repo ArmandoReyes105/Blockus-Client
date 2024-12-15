@@ -250,7 +250,7 @@
     <value>Olvidé mi contraseña</value>
   </data>
   <data name="Login_guest" xml:space="preserve">
-    <value>Jugar como invitado</value>
+    <value>Como invitado</value>
   </data>
   <data name="Login_in" xml:space="preserve">
     <value>Sesión</value>
@@ -404,5 +404,8 @@
   </data>
   <data name="Error_UpdateData" xml:space="preserve">
     <value>Lo sentimos, ocurrio un error al intentar actualizar su información</value>
+  </data>
+  <data name="Error_UsernameAlreadyRegistered" xml:space="preserve">
+    <value>El nombre de usuario ya está registrado. Por favor elige uno diferente.</value>
   </data>
 </root>

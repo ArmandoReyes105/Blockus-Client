@@ -17,7 +17,6 @@ namespace Blockus_Client.View
         public JoinMatchPage()
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
             client = new MatchMakingServiceClient(new InstanceContext(this)); 
         }
 

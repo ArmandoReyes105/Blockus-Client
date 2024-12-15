@@ -253,13 +253,13 @@
     <value>Play as guest</value>
   </data>
   <data name="Login_in" xml:space="preserve">
-    <value>your account</value>
+    <value> your account</value>
   </data>
   <data name="Login_log" xml:space="preserve">
     <value>Log in</value>
   </data>
   <data name="Login_login" xml:space="preserve">
-    <value>Login</value>
+    <value>Login </value>
   </data>
   <data name="Login_noAccount" xml:space="preserve">
     <value>Don't have an account? Register here</value>
@@ -404,5 +404,8 @@
   </data>
   <data name="Error_UpdateData" xml:space="preserve">
     <value>We are sorry, an error occurred while trying to update your information.</value>
+  </data>
+  <data name="Error_UsernameAlreadyRegistered" xml:space="preserve">
+    <value>The username is already registered. Please choose a differente one.</value>
   </data>
 </root>

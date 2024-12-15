@@ -259,6 +259,15 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a The username is already registered. Please choose a differente one..
+        /// </summary>
+        public static string Error_UsernameAlreadyRegistered {
+            get {
+                return ResourceManager.GetString("Error_UsernameAlreadyRegistered", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Wrong credentials.
         /// </summary>
         public static string Error_wrongCredentials {
@@ -592,7 +601,7 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a your account.
+        ///   Busca una cadena traducida similar a  your account.
         /// </summary>
         public static string Login_in {
             get {
@@ -610,7 +619,7 @@ namespace Blockus_Client.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Login.
+        ///   Busca una cadena traducida similar a Login .
         /// </summary>
         public static string Login_login {
             get {

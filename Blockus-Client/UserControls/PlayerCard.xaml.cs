@@ -14,7 +14,6 @@ namespace Blockus_Client.UserControls
         public PlayerCard()
         {
             InitializeComponent();
-            LanguageManager.ApplyCulture();
         }
 
         public void ResetInformation()

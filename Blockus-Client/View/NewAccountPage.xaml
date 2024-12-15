@@ -16,7 +16,7 @@
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="1" Content="{x:Static p:Resources.Login_login}" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Click="goToLogin"/>
+        <Button Grid.Column="1" Content="{x:Static p:Resources.Login_login}" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource Text_Button}" Click="GoToLogin"/>
 
         <Viewbox>
             <Image x:Name="imageToRotate" Source="/Resources/Images/SquareOfBlocks.png" Width="440" Height="440" Margin="0 0 136 0" HorizontalAlignment="Center">
@@ -62,7 +62,7 @@
 
             <StackPanel Orientation="Horizontal">
                 <Button Name="btn_Continue" Content="{x:Static p:Resources.Global_continueButton}" Margin="0 10 0 0" Click="CreateAccount" Style="{StaticResource Normal_Button}" Width="150"/>
-                <Button Name="btn_Cancel" Content="{x:Static p:Resources.Global_cancelButton}" Margin="15 10 0 0" Style="{StaticResource Border_Button}" Width="150"/>
+                <Button Name="btn_Cancel" Content="{x:Static p:Resources.Global_cancelButton}" Margin="15 10 0 0" Style="{StaticResource Border_Button}" Width="150" Click="GoToLogin"/>
             </StackPanel>
 
             <TextBlock Style="{StaticResource Normal_Text}" TextWrapping="Wrap" Margin="0 15 0 0" MaxWidth="615" Text="{x:Static p:Resources.Register_signUpNote}"/>

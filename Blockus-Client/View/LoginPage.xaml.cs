@@ -1,6 +1,7 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
 using log4net;
+using System;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,24 +21,12 @@ namespace Blockus_Client.View
             AnimationManager.RotateImage(imageRotation, 12);
         }
 
-        private async void Login(object sender, RoutedEventArgs e)
+        private void Login(object sender, RoutedEventArgs e)
         {
             if (AreFieldsComplete())
             {
-                string password = HashManager.HashPassword(txt_Password.Password);
-                AccountDTO account;
 
-                try
-                {
-                    var service = new SessionServiceClient();
-                    account = await service.LogInAsync(txt_Username.Text, password);
-                    service.Close(); 
-                }
-                catch (CommunicationException ex)
-                {
-                    log.Error("Error-LogIn: " +  ex.Message);
-                    account = null;
-                }
+                var account = ValidateCredentials(); 
 
                 if (account == null)
                 {
@@ -82,6 +71,36 @@ namespace Blockus_Client.View
             SessionManager.Instance.LogIn(guestAccount);
             SessionManager.Instance.MakeUserAGuest(); 
             NavigationManager.Instance.NavigateTo(new LobbyPage());
+        }
+
+        private AccountDTO ValidateCredentials()
+        {
+            string password = HashManager.HashPassword(txt_Password.Password);
+            AccountDTO account;
+
+            try
+            {
+                var service = new SessionServiceClient();
+                account = service.LogIn(txt_Username.Text.Trim(), password);
+                service.Close();
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Error-LogIn: " + ex.Message);
+                account = null;
+            }
+            catch (TimeoutException ex)
+            {
+                log.Error("Error-LogIn: " + ex.Message);
+                account = null; 
+            }
+            catch (Exception ex)
+            {
+                log.Error("Error-Login: " + ex.Message);
+                account = null; 
+            }
+
+            return account; 
         }
 
         private bool AreFieldsComplete()
