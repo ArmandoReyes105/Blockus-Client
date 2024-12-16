@@ -25,15 +25,14 @@ namespace Blockus_Client.View
 
         private void InitializeFriendsInformation()
         {
-            if (_friends == null)
+            if (_friends != null)
             {
-                HandleError(Properties.Resources.Error_serverConnection);
-            }
-            foreach (var friend in _friends)
-            {
-                var friendCard = new FriendCard();
-                friendCard.LoadFriendInformation(friend);
-                StackPanel_Friends.Children.Add(friendCard);
+                foreach (var friend in _friends)
+                {
+                    var friendCard = new FriendCard();
+                    friendCard.LoadFriendInformation(friend);
+                    StackPanel_Friends.Children.Add(friendCard);
+                }
             }
         }
 
@@ -44,17 +43,9 @@ namespace Blockus_Client.View
 
         private void InitializeAFriends()
         {
-            try
+            using (var client = new AccountServiceClient())
             {
-                using (var client = new AccountServiceClient())
-                {
-                    _friends = client.GetAddedFriends(SessionManager.Instance.GetCurrentAccount().Id);
-                }
-            }
-            catch (CommunicationException ex)
-            {
-                log.Error("Get added friends: " + ex.Message);
-                HandleError(Properties.Resources.Error_serverConnection);
+                _friends = client.GetAddedFriends(SessionManager.Instance.GetCurrentAccount().Id);
             }
         }
 

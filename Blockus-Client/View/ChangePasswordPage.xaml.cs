@@ -1,5 +1,7 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
+using System;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -36,20 +38,34 @@ namespace Blockus_Client.View
 
             currentAccount.Password = hashedNewPassword;
 
-            var accountClient = new AccountServiceClient();
-            int result = accountClient.UpdateAccount(currentAccount);
-            accountClient.Close();
+            try
+            {
+                using (var accountClient = new AccountServiceClient())
+                {
+                    int result = accountClient.UpdateAccount(currentAccount);
+                    accountClient.Close();
 
-            if (result > 0)
+                    if (result > 0)
+                    {
+                        MessageBox.Show(Properties.Resources.ModifyPassword_passwordModified);
+                        SessionManager.Instance.LogOut();
+                        NavigationManager.Instance.NavigateTo(new LoginPage());
+                    }
+                    else
+                    {
+                        MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation);
+                    }
+                }
+            } catch (CommunicationException ex)
             {
-                MessageBox.Show(Properties.Resources.ModifyPassword_passwordModified);
-                SessionManager.Instance.LogOut();
-                NavigationManager.Instance.NavigateTo(new LoginPage());
-            }
-            else
+                HandleError(Properties.Resources.Error_serverConnection);
+                return;
+            } catch (TimeoutException ex)
             {
-                MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation);
+                HandleError(Properties.Resources.Error_serverConnection);
+                return;
             }
+            
         }
 
         private void GoToProfilePage(object sender, RoutedEventArgs e)
@@ -112,6 +128,13 @@ namespace Blockus_Client.View
             }
 
             return result;
+        }
+
+        private void HandleError(string message)
+        {
+            MessageBox.Show(message);
+            SessionManager.Instance.LogOut();
+            NavigationManager.Instance.NavigateTo(new LoginPage());
         }
     }
 }

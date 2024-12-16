@@ -34,20 +34,21 @@ namespace Blockus_Client.View
 
         private void InitializeAccountInformation()
         {
-            AccountServiceClient client = new AccountServiceClient();
-
-            AccountDTO account = SessionManager.Instance.GetCurrentAccount();
-            ResultsDTO results = client.GetAccountResults(account.Id);
-            ProfileConfigurationDTO profile = client.GetProfileConfiguration(account.Id);
-            client.Close();
-
-            txt_Username.Text = account.Username;
-            txt_Email.Text = account.Email;
-
-            if (results.Id != 0)
+            using (var client = new AccountServiceClient())
             {
-                txt_Victories.Text = results.Victories.ToString();
-                txt_Losses.Text = results.Losses.ToString();
+                AccountDTO account = SessionManager.Instance.GetCurrentAccount();
+                ResultsDTO results = client.GetAccountResults(account.Id);
+                ProfileConfigurationDTO profile = client.GetProfileConfiguration(account.Id);
+                client.Close();
+
+                txt_Username.Text = account.Username;
+                txt_Email.Text = account.Email;
+
+                if (results.Id != 0)
+                {
+                    txt_Victories.Text = results.Victories.ToString();
+                    txt_Losses.Text = results.Losses.ToString();
+                }
             }
         }
 

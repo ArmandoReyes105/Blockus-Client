@@ -1,4 +1,7 @@
 ﻿using Blockus_Client.Helpers;
+using log4net;
+using System.Data;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -6,6 +9,8 @@ namespace Blockus_Client.View
 {
     public partial class LobbyPage : Page
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof (LobbyPage));
+        private static NavigationManager _navigationManager;
         public LobbyPage()
         {
             InitializeComponent();
@@ -16,12 +21,27 @@ namespace Blockus_Client.View
 
         private void FriendList(object sender, RoutedEventArgs e)
         {
-            NavigationManager.Instance.NavigateTo(new AccountFriendsPage());
+            try
+            {
+                NavigationManager.Instance.NavigateTo(new AccountFriendsPage());
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error(ex.ToString());
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
         }
 
         private void AccountConfig(object sender, RoutedEventArgs e)
         {
-            NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
+            try 
+            {
+                NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
+            } catch (CommunicationException ex)
+            {
+                log.Error(ex.ToString());
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
         }
 
         private void CreateMatch(object sender, RoutedEventArgs e)
@@ -48,6 +68,13 @@ namespace Blockus_Client.View
                 btn_Config.Visibility = Visibility.Collapsed;
                 btn_Friends.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void HandleError(string message)
+        {
+            MessageBox.Show(message);
+            SessionManager.Instance.LogOut();
+            NavigationManager.Instance.NavigateTo(new LoginPage());
         }
     }
 }

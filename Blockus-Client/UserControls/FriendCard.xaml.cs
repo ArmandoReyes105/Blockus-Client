@@ -4,6 +4,7 @@ using Blockus_Client.View;
 using log4net;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -49,8 +50,15 @@ namespace Blockus_Client.UserControls
 
                     NavigationManager.Instance.NavigateTo(new AccountFriendsPage());
                 }
-            }
-            catch (CommunicationException ex)
+            } catch (CommunicationException ex)
+            {
+                log.Error("Delete friend: " + ex.Message);
+                MessageBox.Show(Properties.Resources.Error_serverConnection);
+            } catch (TimeoutException ex)
+            {
+                log.Error("Delete friend: " + ex.Message);
+                MessageBox.Show(Properties.Resources.Error_serverConnection);
+            } catch (Exception ex)
             {
                 log.Error("Delete friend: " + ex.Message);
                 MessageBox.Show(Properties.Resources.Error_UpdateData);
@@ -80,8 +88,11 @@ namespace Blockus_Client.UserControls
                 {
                     _results = client.GetAccountResults(_friend.Id);
                 }
-            }
-            catch (CommunicationException ex)
+            } catch (CommunicationException ex)
+            {
+                log.Error("Get friend results: " + ex.Message);
+                MessageBox.Show(Properties.Resources.Error_UpdateData);
+            } catch (EntityException ex)
             {
                 log.Error("Get friend results: " + ex.Message);
                 MessageBox.Show(Properties.Resources.Error_UpdateData);
