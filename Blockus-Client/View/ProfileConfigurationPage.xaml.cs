@@ -1,7 +1,6 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
 using log4net;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -16,19 +15,7 @@ namespace Blockus_Client.View
         {
             InitializeComponent();
             InitializeTiles();
-
-            try
-            {
-                InitializeAccountInformation();
-            }
-            catch (Exception e)
-            {
-                log.Error("Get Account/Results/Configuration info: " + e.Message);
-                MessageBox.Show(Properties.Resources.Error_serverConnection);
-                Console.WriteLine(e.Message);
-                SessionManager.Instance.LogOut();
-                NavigationManager.Instance.NavigateTo(new LoginPage());
-            }
+            InitializeAccountInformation();
 
         }
 
@@ -41,13 +28,20 @@ namespace Blockus_Client.View
                 ProfileConfigurationDTO profile = client.GetProfileConfiguration(account.Id);
                 client.Close();
 
-                txt_Username.Text = account.Username;
-                txt_Email.Text = account.Email;
-
-                if (results.Id != 0)
+                if (results.Id == -1 || profile.Id == -1)
                 {
-                    txt_Victories.Text = results.Victories.ToString();
-                    txt_Losses.Text = results.Losses.ToString();
+                    MessageBox.Show(Properties.Resources.Error_retrievingData);
+                }
+                else
+                {
+                    txt_Username.Text = account.Username;
+                    txt_Email.Text = account.Email;
+
+                    if (results.Id != 0)
+                    {
+                        txt_Victories.Text = results.Victories.ToString();
+                        txt_Losses.Text = results.Losses.ToString();
+                    }
                 }
             }
         }

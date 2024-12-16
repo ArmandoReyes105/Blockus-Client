@@ -1,6 +1,8 @@
 ﻿using Blockus_Client.Helpers;
 using log4net;
+using System;
 using System.Data;
+using System.Data.Common;
 using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,6 +32,16 @@ namespace Blockus_Client.View
                 log.Error(ex.ToString());
                 HandleError(Properties.Resources.Error_serverConnection);
             }
+            catch (TimeoutException ex)
+            {
+                log.Error(ex.ToString());
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString());
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
         }
 
         private void AccountConfig(object sender, RoutedEventArgs e)
@@ -38,6 +50,16 @@ namespace Blockus_Client.View
             {
                 NavigationManager.Instance.NavigateTo(new ProfileConfigurationPage());
             } catch (CommunicationException ex)
+            {
+                log.Error(ex.ToString());
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
+            catch (TimeoutException ex)
+            {
+                log.Error(ex.ToString());
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
+            catch (Exception ex)
             {
                 log.Error(ex.ToString());
                 HandleError(Properties.Resources.Error_serverConnection);

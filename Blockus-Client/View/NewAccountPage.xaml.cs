@@ -59,24 +59,10 @@ namespace Blockus_Client.View
         private void CreateAccount(AccountDTO account)
         {
             string password = HashManager.HashPassword(txt_Password.Password);
-            account.Password = password;
-            int result; 
+            account.Password = password; 
 
-<<<<<<< HEAD
             int result = SaveAccount(account); 
-=======
-            try
-            {
-                using (var accountClient = new AccountServiceClient())
-                {
-                    result = accountClient.CreateAccount(account);
-                }
-            }
-            catch (CommunicationException ex)
-            {
-                result = -1; 
-            }
->>>>>>> 8c6696c6f00414c1d3b1c6540337d23bbd7eb307
+
 
             if (result != 0)
             {
@@ -88,16 +74,12 @@ namespace Blockus_Client.View
             {
                 MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation, Properties.Resources.Register_creationFailure, MessageBoxButton.OK);
             }
-<<<<<<< HEAD
 
-=======
             
->>>>>>> 8c6696c6f00414c1d3b1c6540337d23bbd7eb307
             if (result == -1)
             {
                 MessageBox.Show(Properties.Resources.Error_serverConnection);
             }
-<<<<<<< HEAD
         }
 
         private int SaveAccount(AccountDTO account)
@@ -127,9 +109,7 @@ namespace Blockus_Client.View
                 result = -1;
             }
 
-            return result; 
-=======
->>>>>>> 8c6696c6f00414c1d3b1c6540337d23bbd7eb307
+            return result;
         }
 
         private void ReturnToForm(object sender, RoutedEventArgs e)
