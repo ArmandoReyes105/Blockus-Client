@@ -14,7 +14,6 @@ namespace Blockus_Client.View
 
         public ProfileConfigurationPage()
         {
-            LanguageManager.ApplyCulture();
             InitializeComponent();
             InitializeTiles();
 

@@ -4,13 +4,16 @@ using System.Windows;
 using System.Windows.Controls;
 using Blockus_Client.Validations;
 using log4net;
+using System.ServiceModel;
+using System.Security.Principal;
+using System;
 
 namespace Blockus_Client.View
 {
     public partial class NewAccountPage : Page
     {
-        private static ILog log = LogManager.GetLogger(typeof(NewAccountPage));
-        private string _code;
+        private static readonly ILog log = LogManager.GetLogger(typeof(NewAccountPage));
+        private readonly string _code;
         private AccountDTO _account;
 
         public NewAccountPage()
@@ -47,7 +50,7 @@ namespace Blockus_Client.View
             StackPanel_Code.Visibility = Visibility.Visible;
         }
 
-        private void goToLogin(object sender, RoutedEventArgs e)
+        private void GoToLogin(object sender, RoutedEventArgs e)
         {
             NavigationManager.Instance.NavigateTo(new LoginPage());
         }
@@ -57,19 +60,53 @@ namespace Blockus_Client.View
             string password = HashManager.HashPassword(txt_Password.Password);
             account.Password = password;
 
-            var accountClient = new AccountServiceClient();
-            int result = accountClient.CreateAccount(account);
-            accountClient.Close();
+            int result = SaveAccount(account); 
 
             if (result != 0)
             {
                 MessageBox.Show(Properties.Resources.Register_success, Properties.Resources.Register_creationSuccess, MessageBoxButton.OK);
                 NavigationManager.Instance.NavigateTo(new LoginPage());
             }
-            else
+
+            if (result == 0)
             {
                 MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation, Properties.Resources.Register_creationFailure, MessageBoxButton.OK);
             }
+
+            if (result == -1)
+            {
+                MessageBox.Show(Properties.Resources.Error_serverConnection);
+            }
+        }
+
+        private int SaveAccount(AccountDTO account)
+        {
+            int result;
+
+            try
+            {
+                using (var accountClient = new AccountServiceClient())
+                {
+                    result = accountClient.CreateAccount(account);
+                }
+            }
+            catch (CommunicationException ex)
+            {
+                log.Error("Create Account: " + ex.Message);
+                result = -1;
+            }
+            catch (TimeoutException ex)
+            {
+                log.Error("Create Account: " + ex.Message);
+                result = -1;
+            }
+            catch (Exception ex)
+            {
+                log.Error("Create Account: " + ex.Message);
+                result = -1;
+            }
+
+            return result; 
         }
 
         private void ReturnToForm(object sender, RoutedEventArgs e)

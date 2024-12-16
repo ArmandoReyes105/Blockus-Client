@@ -130,6 +130,7 @@
       <DependentUpon>UserCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Validations\AccountValidator.cs" />
+    <Compile Include="Validations\UniqueUsernameAttribute.cs" />
     <Compile Include="Validations\ValidatorHelper.cs" />
     <Compile Include="View\AccountFriendsPage.xaml.cs">
       <DependentUpon>AccountFriendsPage.xaml</DependentUpon>

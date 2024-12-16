@@ -10,6 +10,7 @@ namespace Blockus_Client.Validations
         [Required]
         [StringLength(20, MinimumLength = 3)]
         [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "El nombre de usuario solo debe contener numeros o letras")]
+        [UniqueUsername]
         public string Username { get; set; }
 
         [Required]
@@ -18,6 +19,7 @@ namespace Blockus_Client.Validations
 
         [Required]
         [StringLength(16, MinimumLength = 8)]
+        [RegularExpression(@"^[a-zA-z0-9]+$", ErrorMessageResourceName = "Error_specialCharacters", ErrorMessageResourceType = typeof(Properties.Resources))]
         public string Password { get; set; }
 
         [Required]

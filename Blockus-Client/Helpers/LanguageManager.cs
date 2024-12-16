@@ -3,10 +3,6 @@
     public static class LanguageManager
     {
 
-        public static void ApplyCulture()
-        {
-        }
-
         public static void SetLanguageToEnglish()
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US");

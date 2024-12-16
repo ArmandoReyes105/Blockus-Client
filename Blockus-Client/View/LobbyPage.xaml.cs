@@ -11,7 +11,6 @@ namespace Blockus_Client.View
             InitializeComponent();
             InitializeButtons();
 
-            LanguageManager.ApplyCulture();
             AnimationManager.FadeIn(this, .75);
         }
 
