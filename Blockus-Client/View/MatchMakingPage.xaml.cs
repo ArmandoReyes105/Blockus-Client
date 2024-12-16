@@ -27,8 +27,7 @@ namespace Blockus_Client.View
             }
             catch (Exception ex) 
             {
-                HandleError(Properties.Resources.MatchDetails_createError);
-                log.Error(ex.Message)
+                HandleError(Properties.Resources.MatchDetails_createError, ex);
             }
             
         }
