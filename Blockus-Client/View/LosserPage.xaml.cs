@@ -60,6 +60,11 @@ namespace Blockus_Client.View
                 log.Error("Get match resume: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection);
             }
+            catch (Exception ex)
+            {
+                log.Error("Get match resume: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
         }
 
         private void UpdatePlayerResults()
@@ -83,6 +88,11 @@ namespace Blockus_Client.View
             catch (CommunicationException ex)
             {
                 log.Error("Update results: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection);
+            }
+            catch (Exception ex)
+            {
+                log.Error("Get match resume: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection);
             }
         }

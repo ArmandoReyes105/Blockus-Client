@@ -133,6 +133,11 @@ namespace Blockus_Client.View
                     log.Error("Notify Movement: " + ex.Message);
                     HandleError(Properties.Resources.Error_serverConnection, ex); 
                 }
+                catch (Exception ex)
+                {
+                    log.Error("Notify Movement: " + ex.Message);
+                    HandleError(Properties.Resources.Error_serverConnection, ex);
+                }
                 
             }
             
@@ -159,6 +164,11 @@ namespace Blockus_Client.View
                     }
                 }
                 catch (CommunicationException ex)
+                {
+                    log.Error("Notify Movement: " + ex.Message);
+                    HandleError(Properties.Resources.Error_serverConnection, ex);
+                }
+                catch (Exception ex)
                 {
                     log.Error("Notify Movement: " + ex.Message);
                     HandleError(Properties.Resources.Error_serverConnection, ex);
@@ -236,6 +246,11 @@ namespace Blockus_Client.View
                 log.Error("Notify Movement: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection, ex);
             }
+            catch (Exception ex)
+            {
+                log.Error("Notify Movement: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection, ex);
+            }
             
         }
 
@@ -247,6 +262,11 @@ namespace Blockus_Client.View
                 NavigationManager.Instance.NavigateTo(new LobbyPage());
             }
             catch (CommunicationException ex)
+            {
+                log.Error("Notify Movement: " + ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection, ex);
+            }
+            catch (Exception ex)
             {
                 log.Error("Notify Movement: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection, ex);

@@ -44,46 +44,41 @@ namespace Blockus_Client.View
 
         private void GetMatchResume(string matchCode)
         {
-            var client = new ResultsServiceClient();
-
             try
             {
-                _matchResume = client.GetMatchResume(matchCode);
+                using (var client = new ResultsServiceClient())
+                {
+                    _matchResume = client.GetMatchResume(matchCode);
+                }
+                    
             }
-            catch (CommunicationException ex)
+            catch (Exception ex)
             {
                 log.Error("Get match resume: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection);
-            }
-            finally
-            {
-                client.Close();
             }
         }
 
         private void UpdatePlayerResults()
         {
-            var client = new ResultsServiceClient();
             int id = SessionManager.Instance.GetCurrentAccount().Id;
 
             try
             {
-                int result = client.UpdateResults(id, GameResult.Winner);
-
-                if (result == 0)
+                using (var client = new ResultsServiceClient())
                 {
-                    MessageBox.Show(Properties.Resources.Error_UpdateData);
-                }
+                    int result = client.UpdateResults(id, GameResult.Winner);
 
+                    if (result == 0)
+                    {
+                        MessageBox.Show(Properties.Resources.Error_UpdateData);
+                    }
+                }
             }
-            catch (CommunicationException ex)
+            catch (Exception ex)
             {
                 log.Error("Update results: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection);
-            }
-            finally
-            {
-                client.Close();
             }
         }
 

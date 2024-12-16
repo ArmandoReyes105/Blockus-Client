@@ -1,5 +1,6 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
+using log4net;
 using System;
 using System.Linq;
 using System.ServiceModel;
@@ -10,7 +11,7 @@ namespace Blockus_Client.View
 {
     public partial class JoinMatchPage : Page, IMatchMakingServiceCallback
     {
-
+        private static readonly ILog log = LogManager.GetLogger(typeof(JoinMatchPage));
         private MatchMakingServiceClient client;
         private MatchDTO match; 
 
@@ -59,7 +60,7 @@ namespace Blockus_Client.View
             }
             catch (Exception ex)
             {
-                HandleError("", ex); 
+                HandleError(Properties.Resources.Error_serverConnection, ex); 
             }
 
         }
@@ -147,7 +148,7 @@ namespace Blockus_Client.View
         //Auxiliar methods
         private void HandleError(string message, Exception ex)
         {
-            Console.WriteLine(ex.ToString());
+            log.Error(ex.Message);
             MessageBox.Show(Properties.Resources.Error_serverConnection);
             NavigationManager.Instance.NavigateTo(new LoginPage());
             SessionManager.Instance.LogOut();

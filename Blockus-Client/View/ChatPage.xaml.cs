@@ -5,12 +5,13 @@ using System.Windows.Controls;
 using System.ServiceModel;
 using Blockus_Client.Helpers;
 using System.Windows;
+using log4net;
 
 namespace Blockus_Client.View
 {
     public partial class ChatPage : Page, IChatServiceCallback
     {
-
+        private static readonly ILog log = LogManager.GetLogger(typeof(ChatPage));
         private readonly ChatServiceClient _chatClient;
         private readonly string _matchCode; 
 
@@ -46,7 +47,8 @@ namespace Blockus_Client.View
                 }
                 catch (Exception ex) 
                 {
-                    HandleError("Error al comunicarse con el servidor", "Lo sentimos pero ocurrio un error, seras regresado al login"); 
+                    HandleError(Properties.Resources.Error_serverConnection);
+                    log.Error(ex.Message);
                 }
 
                 StackPanel_Messages.Children.Add(new OwnMessage(username, message));
@@ -63,13 +65,14 @@ namespace Blockus_Client.View
             }
             catch (Exception ex) 
             {
-                HandleError("Error al comunicarse con el servidor", ex.Message);
+                HandleError(Properties.Resources.Error_serverConnection);
+                log.Error(ex.Message);
             }
         }
 
-        private void HandleError(string title, string message)
+        private void HandleError(string message)
         {
-            MessageBox.Show(message, title);
+            MessageBox.Show(message);
             SessionManager.Instance.LogOut();
             NavigationManager.Instance.NavigateTo(new LoginPage());
         }
