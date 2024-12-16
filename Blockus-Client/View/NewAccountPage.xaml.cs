@@ -3,6 +3,7 @@ using Blockus_Client.Helpers;
 using System.Windows;
 using System.Windows.Controls;
 using Blockus_Client.Validations;
+using System.ServiceModel;
 using log4net;
 using System.ServiceModel;
 using System.Security.Principal;
@@ -59,8 +60,23 @@ namespace Blockus_Client.View
         {
             string password = HashManager.HashPassword(txt_Password.Password);
             account.Password = password;
+            int result; 
 
+<<<<<<< HEAD
             int result = SaveAccount(account); 
+=======
+            try
+            {
+                using (var accountClient = new AccountServiceClient())
+                {
+                    result = accountClient.CreateAccount(account);
+                }
+            }
+            catch (CommunicationException ex)
+            {
+                result = -1; 
+            }
+>>>>>>> 8c6696c6f00414c1d3b1c6540337d23bbd7eb307
 
             if (result != 0)
             {
@@ -72,11 +88,16 @@ namespace Blockus_Client.View
             {
                 MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation, Properties.Resources.Register_creationFailure, MessageBoxButton.OK);
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 8c6696c6f00414c1d3b1c6540337d23bbd7eb307
             if (result == -1)
             {
                 MessageBox.Show(Properties.Resources.Error_serverConnection);
             }
+<<<<<<< HEAD
         }
 
         private int SaveAccount(AccountDTO account)
@@ -107,6 +128,8 @@ namespace Blockus_Client.View
             }
 
             return result; 
+=======
+>>>>>>> 8c6696c6f00414c1d3b1c6540337d23bbd7eb307
         }
 
         private void ReturnToForm(object sender, RoutedEventArgs e)

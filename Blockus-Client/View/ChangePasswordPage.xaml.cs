@@ -56,11 +56,11 @@ namespace Blockus_Client.View
                         MessageBox.Show(Properties.Resources.Error_unsuccesfulOperation);
                     }
                 }
-            } catch (CommunicationException ex)
+            } catch (CommunicationException)
             {
                 HandleError(Properties.Resources.Error_serverConnection);
                 return;
-            } catch (TimeoutException ex)
+            } catch (TimeoutException)
             {
                 HandleError(Properties.Resources.Error_serverConnection);
                 return;
