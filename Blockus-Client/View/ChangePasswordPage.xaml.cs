@@ -64,6 +64,10 @@ namespace Blockus_Client.View
             {
                 HandleError(Properties.Resources.Error_serverConnection);
                 return;
+            } catch (Exception)
+            {
+                HandleError(Properties.Resources.Error_serverConnection);
+                return;
             }
             
         }

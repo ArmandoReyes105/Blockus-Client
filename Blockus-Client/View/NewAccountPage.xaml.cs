@@ -5,8 +5,6 @@ using System.Windows.Controls;
 using Blockus_Client.Validations;
 using System.ServiceModel;
 using log4net;
-using System.ServiceModel;
-using System.Security.Principal;
 using System;
 
 namespace Blockus_Client.View
