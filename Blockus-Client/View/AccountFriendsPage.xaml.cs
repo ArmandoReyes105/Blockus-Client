@@ -59,11 +59,17 @@ namespace Blockus_Client.View
                 {
                     searchResults = client.SearchByUsername(username).ToList();
                 }
-            }
-            catch (CommunicationException ex)
+            } catch (CommunicationException ex)
             {
                 log.Error("Search by username: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection);
+            } catch (TimeoutException ex)
+            {
+                log.Error("Search by username: " + ex.Message);
+                HandleError(Properties.Resources.Error_retrievingData);
+            } catch (Exception ex)
+            {
+                HandleError(Properties.Resources.Error_serverConnection + ex.Message);
             }
 
             return searchResults;
