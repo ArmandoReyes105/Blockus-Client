@@ -46,6 +46,11 @@ namespace Blockus_Client.View
             using (var client = new AccountServiceClient())
             {
                 _friends = client.GetAddedFriends(SessionManager.Instance.GetCurrentAccount().Id);
+
+                if (_friends == null)
+                {
+                    MessageBox.Show(Properties.Resources.Error_retrievingData);
+                }
             }
         }
 
@@ -57,19 +62,29 @@ namespace Blockus_Client.View
             {
                 using (var client = new AccountServiceClient())
                 {
-                    searchResults = client.SearchByUsername(username).ToList();
+                    var results = client.SearchByUsername(username);
+
+                    if (results == null)
+                    {
+                        MessageBox.Show(Properties.Resources.Error_retrievingData);
+                    }
+                    else
+                    {
+                        searchResults = results.ToList(); 
+                    }
                 }
             } catch (CommunicationException ex)
             {
-                log.Error("Search by username: " + ex.Message);
+                log.Error("Search by username communication: ", ex);
                 HandleError(Properties.Resources.Error_serverConnection);
             } catch (TimeoutException ex)
             {
-                log.Error("Search by username: " + ex.Message);
+                log.Error("Search by username timeout: ", ex);
                 HandleError(Properties.Resources.Error_retrievingData);
             } catch (Exception ex)
             {
-                HandleError(Properties.Resources.Error_serverConnection + ex.Message);
+                log.Error("Search by username exception: ", ex); 
+                HandleError(Properties.Resources.Error_serverConnection);
             }
 
             return searchResults;
