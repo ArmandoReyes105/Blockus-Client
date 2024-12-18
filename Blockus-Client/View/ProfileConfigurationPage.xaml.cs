@@ -31,6 +31,7 @@ namespace Blockus_Client.View
                 if (results.Id == -1 || profile.Id == -1)
                 {
                     MessageBox.Show(Properties.Resources.Error_retrievingData);
+                    StackPanel_Configuration.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
