@@ -69,6 +69,7 @@ namespace Blockus_Client.View
                 HandleError(Properties.Resources.Error_retrievingData);
             } catch (Exception ex)
             {
+                log.Error("Search by username: " + ex.Message);
                 HandleError(Properties.Resources.Error_serverConnection + ex.Message);
             }
 

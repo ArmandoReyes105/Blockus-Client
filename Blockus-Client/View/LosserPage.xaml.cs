@@ -79,7 +79,7 @@ namespace Blockus_Client.View
                     result = client.UpdateResults(id, GameResult.Losser);
                 }
 
-                if (result == 0)
+                if (result == -1)
                 {
                     MessageBox.Show(Properties.Resources.Error_UpdateData);
                 }
