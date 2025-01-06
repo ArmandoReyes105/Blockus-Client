@@ -103,6 +103,7 @@
     <Compile Include="Helpers\RandomManager.cs" />
     <Compile Include="Helpers\SessionManager.cs" />
     <Compile Include="Helpers\TilesImageManager.cs" />
+    <Compile Include="Interfaces\KickerPlayer.cs" />
     <Compile Include="Properties\Resources.es-MX.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

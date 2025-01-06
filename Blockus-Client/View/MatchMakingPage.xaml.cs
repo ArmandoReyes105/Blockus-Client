@@ -1,5 +1,6 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
+using Blockus_Client.Interfaces;
 using log4net;
 using System;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Windows.Controls;
 
 namespace Blockus_Client.View
 {
-    public partial class MatchMakingPage : Page, IMatchMakingServiceCallback
+    public partial class MatchMakingPage : Page, IMatchMakingServiceCallback, KickerPlayer
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(MatchMakingPage));
         private readonly MatchMakingServiceClient client; 
@@ -82,7 +83,12 @@ namespace Blockus_Client.View
             {
                 var color = playerList[i].Key;
                 var player = playerList[i].Value; 
-                playerCards[i].LoadPlayerInformation(player, color);
+                playerCards[i].LoadPlayerInformation(client, player, color, this);
+
+                if (match.Host == SessionManager.Instance.GetUsername())
+                {
+                    playerCards[i].showBtnKickPlayer();
+                }
             }
 
         }
@@ -120,5 +126,16 @@ namespace Blockus_Client.View
             SessionManager.Instance.LogOut();
         }
 
+        public void NotifyKickedPlayer()
+        {
+            MessageBox.Show("Te han expulsado");
+            NavigationManager.Instance.NavigateTo(new LobbyPage());
+        }
+
+        public void KickPlayer(BlockusService.Color color)
+        {
+            match.Players.Remove(color);
+            LoadInformation();
+        }
     } 
 }

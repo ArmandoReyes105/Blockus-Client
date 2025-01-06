@@ -12,7 +12,6 @@ namespace Blockus_Client.View
     public partial class LobbyPage : Page
     {
         private static readonly ILog log = LogManager.GetLogger(typeof (LobbyPage));
-        private static NavigationManager _navigationManager;
         public LobbyPage()
         {
             InitializeComponent();

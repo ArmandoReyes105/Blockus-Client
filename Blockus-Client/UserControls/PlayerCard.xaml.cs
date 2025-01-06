@@ -1,7 +1,10 @@
 ﻿using Blockus_Client.BlockusService;
 using Blockus_Client.Helpers;
+using Blockus_Client.Interfaces;
+using Blockus_Client.View;
 using System;
 using System.Collections.Generic;
+using System.ServiceModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -11,6 +14,10 @@ namespace Blockus_Client.UserControls
 {
     public partial class PlayerCard : UserControl
     {
+        private BlockusService.Color playerColor;
+        private KickerPlayer matchPage;
+        private MatchMakingServiceClient client;
+        private PublicAccountDTO account;
         public PlayerCard()
         {
             InitializeComponent();
@@ -18,6 +25,9 @@ namespace Blockus_Client.UserControls
 
         public void ResetInformation()
         {
+            btn_KickPlayer.Visibility = Visibility.Collapsed;
+            this.client = null;
+            this.account = null;
 
             SolidColorBrush brush = (SolidColorBrush)Application.Current.Resources["Gray"];
 
@@ -31,8 +41,12 @@ namespace Blockus_Client.UserControls
             AnimationManager.FadeIn(this, .75);
         }
 
-        public void LoadPlayerInformation(PublicAccountDTO account, BlockusService.Color color)
+        public void LoadPlayerInformation(MatchMakingServiceClient client, PublicAccountDTO account, BlockusService.Color color, KickerPlayer kicker)
         {
+            this.client = client;
+            this.account = account;
+            this.playerColor = color;
+            this.matchPage = kicker;
             txt_Username.Text = account.Username;
 
             var colorMapping = new Dictionary<BlockusService.Color, string> 
@@ -62,6 +76,17 @@ namespace Blockus_Client.UserControls
             }
 
             AnimationManager.FadeIn(this, .75); 
+        }
+
+        private void KickPlayer(object sender, RoutedEventArgs e)
+        {
+            client.KickPlayer(account.Username);
+            matchPage.KickPlayer(playerColor);
+        }
+
+        public void showBtnKickPlayer()
+        {
+            btn_KickPlayer.Visibility = Visibility.Visible;
         }
     }
 }
